@@ -92,6 +92,6 @@ Los datos (imágenes, transcripciones, etc.) pueden estar sujetos a licencias es
 
 ## Referencias
 
-Gilman, I., Kishore, A., Thatcher, C., Salsbery, M., Vandecreme, A., Pearce, T., & Horák, J. ". (2026). OpenSeadragon (Version 6.0.2) [Computer software]. <https://github.com/openseadragon/openseadragon>
+Gilman, I., Kishore, A., Thatcher, C., Salsbery, M., Vandecreme, A., Pearce, T., & Horák, J. (2026). OpenSeadragon (Version 6.0.2) [Computer software]. <https://github.com/openseadragon/openseadragon>
 
 Williamson, E. P., Becker, D., & Wikle, O. (2021). CollectionBuilder-CSV (Version 1+) [Computer software]. <https://github.com/CollectionBuilder/collectionbuilder-csv>
