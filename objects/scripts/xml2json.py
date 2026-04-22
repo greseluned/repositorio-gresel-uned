@@ -7,7 +7,6 @@ from PIL import Image
 NS = {"pc": "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"}
 
 XML_RE = re.compile(r"(.+)_P(\d+)\.xml$", re.IGNORECASE)
-PDF_RE = re.compile(r"(.*)\.pdf$", re.IGNORECASE)
 
 def parse_points(points_str):
     return [[int(x), int(y)] for x, y in
@@ -96,7 +95,7 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
     for base, pages_list in xmls.items():
         out_path = os.path.join(date_folder_path, f"{base}.json")
         if os.path.exists(out_path):
-            print(f"  ⏭ Ya existe: {base}.json, saltando...")
+            print(f"Ya existe: {base}.json, saltando...")
             continue
 
         pages = []
@@ -104,7 +103,7 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
 
         for page_num, xml_file in sorted(pages_list):
             xml_path = os.path.join(date_folder_path, xml_file)
-            image_filename = f"{base}_page-{page_num}.jpg"
+            image_filename = os.path.splitext(xml_file)[0] + ".jpg"
 
             # Ruta relativa actualizada
             image_path = f"objects/newspapers/{newspaper_name}/{date_folder}/images/{image_filename}"
@@ -114,20 +113,20 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
             try:
                 img = Image.open(full_image_path)
                 actual_width, actual_height = img.width, img.height
-                print(f"  ✓ Imagen: {image_filename} ({actual_width}x{actual_height})")
+                print(f"  Imagen: {image_filename} ({actual_width}x{actual_height})")
             except Exception as e:
-                print(f"  ⚠ No se pudo abrir {full_image_path}: {e}")
+                print(f"  No se pudo abrir {full_image_path}: {e}")
 
             try:
                 page_data = parse_page_xml(xml_path, image_path, page_num, actual_width, actual_height)
                 pages.append(page_data)
                 osd_tiles.append({"type": "image", "url": image_path, "buildPyramid": True})
             except Exception as e:
-                print(f"  ✗ Error parseando {xml_file}: {e}")
+                print(f"  Error parseando {xml_file}: {e}")
                 continue
 
         if not pages:
-            print(f"  ⚠ No se generaron páginas para {base}")
+            print(f"  No se generaron páginas para {base}")
             continue
 
         output = {
@@ -139,7 +138,7 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
-        print(f"  ✓ Generado: {out_path}")
+        print(f"  Generado: {out_path}")
 
 
 def main():
@@ -154,14 +153,14 @@ def main():
         if not os.path.isdir(newspaper_path):
             continue
 
-        print(f"\n📰 Periódico: {newspaper_name}")
+        print(f"\nCabecera: {newspaper_name}")
 
         for date_folder in os.listdir(newspaper_path):
             date_folder_path = os.path.join(newspaper_path, date_folder)
             if not os.path.isdir(date_folder_path):
                 continue
 
-            print(f"  📅 Fecha: {date_folder}")
+            print(f"  Fecha: {date_folder}")
             process_date_folder(date_folder_path, newspaper_name, date_folder)
 
 if __name__ == "__main__":

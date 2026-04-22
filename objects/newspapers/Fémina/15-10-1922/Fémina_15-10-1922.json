@@ -1,0 +1,210 @@
+{
+  "id": "Fémina_15-10-1922",
+  "pages": [
+    {
+      "page": 4,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Fémina/15-10-1922/images/Fémina_15-10-1922_P04.jpg",
+      "textRegions": [
+        {
+          "id": "r",
+          "type": "TextRegion",
+          "points": [
+            [
+              179,
+              118
+            ],
+            [
+              498,
+              118
+            ],
+            [
+              498,
+              183
+            ],
+            [
+              179,
+              183
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l",
+              "type": "TextLine",
+              "points": [
+                [
+                  204,
+                  140
+                ],
+                [
+                  452,
+                  151
+                ],
+                [
+                  453,
+                  121
+                ],
+                [
+                  205,
+                  110
+                ]
+              ],
+              "text": "Fémina"
+            }
+          ]
+        },
+        {
+          "id": "r_1",
+          "type": "TextRegion",
+          "points": [
+            [
+              2007,
+              115
+            ],
+            [
+              2265,
+              115
+            ],
+            [
+              2265,
+              190
+            ],
+            [
+              2007,
+              190
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  2046,
+                  136
+                ],
+                [
+                  2233,
+                  147
+                ],
+                [
+                  2235,
+                  117
+                ],
+                [
+                  2048,
+                  106
+                ]
+              ],
+              "text": "Página 4"
+            }
+          ]
+        },
+        {
+          "id": "r_2",
+          "type": "TextRegion",
+          "points": [
+            [
+              294,
+              2856
+            ],
+            [
+              2157,
+              2856
+            ],
+            [
+              2157,
+              3139
+            ],
+            [
+              294,
+              3139
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  602,
+                  2910
+                ],
+                [
+                  1803,
+                  2942
+                ],
+                [
+                  1804,
+                  2912
+                ],
+                [
+                  603,
+                  2880
+                ]
+              ],
+              "text": "SRTA. MERCEDES A. HEUREAUX"
+            },
+            {
+              "id": "l_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  839,
+                  2985
+                ],
+                [
+                  1552,
+                  2989
+                ],
+                [
+                  1552,
+                  2959
+                ],
+                [
+                  839,
+                  2955
+                ]
+              ],
+              "text": "DOCTORA EN MEDICINA"
+            },
+            {
+              "id": "l_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  409,
+                  3068
+                ],
+                [
+                  2003,
+                  3075
+                ],
+                [
+                  2003,
+                  3045
+                ],
+                [
+                  409,
+                  3038
+                ]
+              ],
+              "text": "GRADUADA EN LA UNIVERSIDAD CENTRAL DE STO. DOMINGO."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tileSources": [
+    {
+      "type": "image",
+      "url": "objects/newspapers/Fémina/15-10-1922/images/Fémina_15-10-1922_P04.jpg",
+      "buildPyramid": true
+    }
+  ]
+}

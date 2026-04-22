@@ -1,20 +1,20 @@
 - id: la-vanguardia
   title: "La Vanguardia"
-  description: "Colección de La Vanguardia."
+  description: "Periódicos de La Vanguardia."
   #cover_image: "objects/la-vanguardia-cover.jpg"   # path to a representative image
   date_start: 1920
   date_end: 1936
 
 - id: accion-libertaria
   title: "Acción Libertaria"
-  description: "Colección de Acción Libertaria."
+  description: "Periódicos de Acción Libertaria."
   #cover_image: "objects/a.jpg"
   date_start: 1921
   date_end: 1935
 
 - id: accion-consciente
   title: "Acción Consciente"
-  description: "Colección de Acción Consciente."
+  description: "Periódicos de Acción Consciente."
   #cover_image: "objects/a.jpg"
   date_start: 1921
   date_end: 1935
@@ -32,3 +32,17 @@
   #cover_image: "objects/a.jpg"
   date_start: 1909
   date_end: 1923
+
+- id: excelsior
+  title: Excelsior
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start: 1932
+  date_end:
+
+- id: la-malasia
+  title: La Malasia
+  description: ""
+  #cover-image:
+  date_start:
+  date_end:
