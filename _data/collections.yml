@@ -1,48 +1,321 @@
-- id: la-vanguardia
-  title: "La Vanguardia"
-  description: "Periódicos de La Vanguardia."
-  #cover_image: "objects/la-vanguardia-cover.jpg"   # path to a representative image
-  date_start: 1920
-  date_end: 1936
+- id: accion-consciente
+  title: "Acción Consciente"
+  description: 
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
 
 - id: accion-libertaria
   title: "Acción Libertaria"
-  description: "Periódicos de Acción Libertaria."
+  description: 
   #cover_image: "objects/a.jpg"
-  date_start: 1921
-  date_end: 1935
+  date_start:
+  date_end:
 
-- id: accion-consciente
-  title: "Acción Consciente"
-  description: "Periódicos de Acción Consciente."
-  #cover_image: "objects/a.jpg"
-  date_start: 1921
-  date_end: 1935
-
-- id: femina
-  title: Fémina
+- id: arriba-españa
+  title: "Arriba España"
   description: ""
   #cover_image: "objects/a.jpg"
-  date_start: 1921
-  date_end: 1935
+  date_start:
+  date_end:
 
-- id: prensa-femenina
-  title: Prensa Femenina
+- id: avant-sempre-sempre-avant
+  title: "Avant Sempre-Sempre Avant"
   description: ""
   #cover_image: "objects/a.jpg"
-  date_start: 1909
-  date_end: 1923
+  date_start:
+  date_end:
+
+- id: boletin-oficial-camara-comercio-española-filipinas
+  title: "Boletín oficial de la Cámara de Comercio Española en Filipinas"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start: 1905
+  date_end: 1907
+
+- id: diario-de-la-marina
+  title: "Diario de la Marina"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: domus-aurea
+  title: "Domus Aurea"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-arte-taquigráfico
+  title: "El Arte Taquigráfico"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-bello-sexo
+  title: "El Bello Sexo"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-diablillo-suelto
+  title: "El Diablillo Suelto"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-heraldo-de-la-revolución
+  title: "El Heraldo de la Revolución"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-mensajero
+  title: "El Mensajero"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-mercurio
+  title: "El Mercurio"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-oriente
+  title: "El Oriente"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-progreso
+  title: "El Progreso"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: el-sol
+  title: "El Sol"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+  - id: el-sport-ilustrado
+  title: "El Sport Ilustrado"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: estudio
+  title: "Estudio"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
 
 - id: excelsior
-  title: Excelsior
+  title: "Excelsior"
   description: ""
   #cover_image: "objects/a.jpg"
-  date_start: 1932
+  date_start:
+  date_end:
+
+- id: femina
+  title: "Fémina"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start: 
+  date_end:
+
+- id: filipinas
+  title: "Filipinas"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: filipinas-ante-europa
+  title: "Filipinas ante Europa"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: heraldo-de-la-mujer
+  title: "Heraldo de la Mujer"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: hispanidad
+  title: "Hispanidad"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: montserrat-en-filipinas
+  title: "Montserrat en Filipinas"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+  - id: labor-nueva
+  title: "Labor Nueva"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+  - id: la-ilustracion-del-oriente
+  title: "La Ilustración del Oriente"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-jurisprudencia
+  title: "La Jurisprudencia"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-juventud
+  title: "La Juventud"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
   date_end:
 
 - id: la-malasia
-  title: La Malasia
+  title: "La Malasia"
   description: ""
   #cover-image:
+  date_start:
+  date_end:
+
+- id: la-mosca
+  title: "La Mosca"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-patria
+  title: "La Patria"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-pavera
+  title: "La Pavera"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-puya
+  title: "La Puya"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: las-noticias
+  title: "Las Noticias"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-solidaridad
+  title: "La Solidaridad"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+  - id: la-vanguardia
+  title: "La Vanguardia"
+  description: 
+  #cover_image: "objects/la-vanguardia-cover.jpg"   # path to a representative image
+  date_start:
+  date_end:
+
+- id: la-verdad
+  title: "La Verdad"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: la-vida-industrial
+  title: "La Vida Industrial"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: revista-de-la-aso-femenina-camaguey
+  title: "Revista de la Aso Femenina Camagüey"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: revista-liceo-cientifico-artistico-literario-manila
+  title: "Revista del Liceo Científico, Artístico y Literario de Manila"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: revista-historica
+  title: "Revista Histórica"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: revista-popular-de-filipinas
+  title: "Revista Popular de Filipinas"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: semana
+  title: "Semana"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: sopresas-chicago
+  title: "Sorpresas Chicago"
+  description: ""
+  #cover_image: "objects/a.jpg"
+  date_start:
+  date_end:
+
+- id: yugo
+  title: "Yugo"
+  description: ""
+  #cover_image: "objects/a.jpg"
   date_start:
   date_end:
