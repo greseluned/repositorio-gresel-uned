@@ -7,7 +7,7 @@ permalink: /subjects.html
 cloud-fields: site.data.theme.subjects-fields
 ---
 
-## Explorar temas
+## Nube de palabras
 
 Utilice esta nube de palabras para explorar términos y temas.
 El tamaño de las palabras se determina por su frecuencia y todas ellas enlazan a una búsqueda correspondiente dentro del repositorio.
