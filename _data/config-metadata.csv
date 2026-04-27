@@ -2,6 +2,7 @@ field,display_name,browse_link,external_link,dc_map,schema_map
 title,Título,,,DCTERMS.title,headline
 creator,Autor,,,DCTERMS.creator,creator
 date,Fecha de publicación,,,DCTERMS.date,dateCreated
+header,Cabecera,,,,
 description,Descripción,,,DCTERMS.description,description
 subject,Temas,true,,DCTERMS.subject,keywords
 location,Lugar,,,,contentLocation

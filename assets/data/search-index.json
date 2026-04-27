@@ -1,5 +1,4 @@
 ---
-# search-index.json (in project root)
 ---
 [
   {%- for item in site.data.metadata -%}
@@ -7,10 +6,10 @@
     "id": {{ item.objectid | jsonify }},
     "title": {{ item.title | jsonify }},
     "date": {{ item.date | jsonify }},
-    "collection": {{ item.collection | jsonify }},
+    "header": {{ item.header | jsonify }},
     "location": {{ item.location | jsonify }},
     "language": {{ item.language | jsonify }},
-    "image_thumb": {{ item.image_thumb | jsonify }},
+    "thumb": {{ item.image_thumb | jsonify }},
     "object_location": {{ item.object_location | jsonify }}
   }{%- unless forloop.last -%},{%- endunless -%}
   {%- endfor -%}
