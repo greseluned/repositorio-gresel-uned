@@ -2,7 +2,7 @@
 permalink: /assets/data/search-index.json
 ---
 [
-  {%- for item in site.data.gresel-metadata -%}
+  {%- for item in site.data.metadata -%}
   {
     "id": {{ item.objectid | jsonify }},
     "title": {{ item.title | jsonify }},
