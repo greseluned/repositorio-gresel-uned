@@ -1,7 +1,7 @@
 ---
 ---
 [
-  {%- for item in site.data.metadata -%}
+  {%- for item in site.data.gresel-metadata -%}
   {
     "id": {{ item.objectid | jsonify }},
     "title": {{ item.title | jsonify }},
