@@ -1,17 +1,13 @@
 ---
 permalink: /assets/data/search-index.json
 ---
-[
-  {%- for item in site.data.gresel-metadata -%}
-  {
-    "id": {{ item.objectid | jsonify }},
-    "title": {{ item.title | jsonify }},
-    "date": {{ item.date | jsonify }},
-    "header": {{ item.header | jsonify }},
-    "location": {{ item.location | jsonify }},
-    "language": {{ item.language | jsonify }},
-    "thumb": {{ item.image_thumb | jsonify }},
-    "object_location": {{ item.object_location | jsonify }}
-  }{%- unless forloop.last -%},{%- endunless -%}
-  {%- endfor -%}
-]
+[{% for item in site.data[site.metadata] %}{% if item.objectid %}{
+  "id": {{ item.objectid | jsonify }},
+  "title": {{ item.title | jsonify }},
+  "date": {{ item.date | jsonify }},
+  "collection": {{ item.collection | jsonify }},
+  "location": {{ item.location | jsonify }},
+  "language": {{ item.language | jsonify }},
+  "thumb": {{ item.image_thumb | jsonify }},
+  "transcript": {{ item.object_transcript | jsonify }}
+}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}]
