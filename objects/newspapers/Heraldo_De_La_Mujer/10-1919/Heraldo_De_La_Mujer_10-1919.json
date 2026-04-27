@@ -1,0 +1,375 @@
+{
+  "id": "Heraldo_De_La_Mujer_10-1919",
+  "pages": [
+    {
+      "page": 1,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/10-1919/images/Heraldo_De_La_Mujer_10-1919_P01.jpg",
+      "textRegions": [
+        {
+          "id": "r",
+          "type": "TextRegion",
+          "points": [
+            [
+              619,
+              746
+            ],
+            [
+              1293,
+              746
+            ],
+            [
+              1293,
+              1147
+            ],
+            [
+              619,
+              1147
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l",
+              "type": "TextLine",
+              "points": [
+                [
+                  691,
+                  1069
+                ],
+                [
+                  896,
+                  880
+                ],
+                [
+                  876,
+                  858
+                ],
+                [
+                  671,
+                  1047
+                ]
+              ],
+              "text": "Heraldo"
+            },
+            {
+              "id": "l_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  883,
+                  1098
+                ],
+                [
+                  1228,
+                  772
+                ],
+                [
+                  1207,
+                  750
+                ],
+                [
+                  862,
+                  1076
+                ]
+              ],
+              "text": "de la Mujer"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395399",
+          "type": "TextRegion",
+          "points": [
+            [
+              1522,
+              791
+            ],
+            [
+              1789,
+              791
+            ],
+            [
+              1789,
+              913
+            ],
+            [
+              1522,
+              913
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1587,
+                  876
+                ],
+                [
+                  1753,
+                  870
+                ],
+                [
+                  1752,
+                  840
+                ],
+                [
+                  1586,
+                  846
+                ]
+              ],
+              "text": "1919"
+            }
+          ]
+        },
+        {
+          "id": "r_2",
+          "type": "TextRegion",
+          "points": [
+            [
+              1420,
+              1000
+            ],
+            [
+              1818,
+              1000
+            ],
+            [
+              1818,
+              1085
+            ],
+            [
+              1420,
+              1085
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1469,
+                  1049
+                ],
+                [
+                  1792,
+                  1049
+                ],
+                [
+                  1792,
+                  1019
+                ],
+                [
+                  1469,
+                  1019
+                ]
+              ],
+              "text": "Año II. No. "
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395397",
+          "type": "TextRegion",
+          "points": [
+            [
+              724,
+              2480
+            ],
+            [
+              1645,
+              2480
+            ],
+            [
+              1712,
+              2806
+            ],
+            [
+              730,
+              2799
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  925,
+                  2525
+                ],
+                [
+                  1437,
+                  2538
+                ],
+                [
+                  1438,
+                  2508
+                ],
+                [
+                  926,
+                  2495
+                ]
+              ],
+              "text": "Trina Padilla de Sanz"
+            },
+            {
+              "id": "l_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1049,
+                  2593
+                ],
+                [
+                  1303,
+                  2593
+                ],
+                [
+                  1303,
+                  2563
+                ],
+                [
+                  1049,
+                  2563
+                ]
+              ],
+              "text": "(La Hija del Caribe)"
+            },
+            {
+              "id": "l_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  893,
+                  2649
+                ],
+                [
+                  1447,
+                  2645
+                ],
+                [
+                  1447,
+                  2615
+                ],
+                [
+                  893,
+                  2619
+                ]
+              ],
+              "text": "Notable Poetisa Puertorriqueña"
+            },
+            {
+              "id": "l_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  720,
+                  2701
+                ],
+                [
+                  1613,
+                  2707
+                ],
+                [
+                  1613,
+                  2677
+                ],
+                [
+                  720,
+                  2671
+                ]
+              ],
+              "text": "Representante en Arecibo de \"Heraldo de la Mujer\""
+            },
+            {
+              "id": "l_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  1398,
+                  2793
+                ],
+                [
+                  1698,
+                  2797
+                ],
+                [
+                  1698,
+                  2767
+                ],
+                [
+                  1398,
+                  2763
+                ]
+              ],
+              "text": "Tip. EL COMPAS.--Cristo No. 6."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395396",
+          "type": "TextRegion",
+          "points": [
+            [
+              992,
+              2994
+            ],
+            [
+              1480,
+              2994
+            ],
+            [
+              1480,
+              3077
+            ],
+            [
+              992,
+              3077
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1046,
+                  3036
+                ],
+                [
+                  1430,
+                  3053
+                ],
+                [
+                  1431,
+                  3023
+                ],
+                [
+                  1047,
+                  3006
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tileSources": [
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/10-1919/images/Heraldo_De_La_Mujer_10-1919_P01.jpg",
+      "buildPyramid": true
+    }
+  ]
+}

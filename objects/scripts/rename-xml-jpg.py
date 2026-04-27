@@ -61,7 +61,7 @@ def extract_number(filename: str) -> int:
 
 def is_valid_date_folder(name: str) -> bool:
     """Accept DD-MM-YYYY or YYYY folder names."""
-    return bool(re.fullmatch(r"\d{4}", name) or re.fullmatch(r"\d{2}-\d{2}-\d{4}", name))
+    return bool(re.fullmatch(r"\d{4}", name) or re.fullmatch(r"\d{2}-\d{4}", name) or re.fullmatch(r"\d{2}-\d{2}-\d{4}", name))
 
 
 def collect_files(folder: Path, extension: str) -> list[Path]:

@@ -430,6 +430,112 @@ function updatePageIndicator() {
 }
 
 // ================================
+// DEEP LINKING SUPPORT
+// ================================
+let deepLinkParams = null;
+
+function parseDeepLink() {
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get('page');
+  const region = params.get('region');
+  
+  if (page && region) {
+    deepLinkParams = {
+      page: parseInt(page) - 1, // Convert to 0-indexed
+      regionId: region
+    };
+  }
+}
+
+// ================================
+// APPLY DEEP LINK (after regions render)
+// ================================
+function applyDeepLink() {
+  if (!deepLinkParams) return;
+  
+  const { page, regionId } = deepLinkParams;
+  
+  // Load target page if different
+  if (page !== currentPage) {
+    loadPage(page);
+  }
+  
+  // Wait for regions to render, then activate
+  setTimeout(() => {
+    zoomToRegionById(regionId);
+    toggleRegionContent(regionId);
+    highlightOverlay(regionId);
+  }, 500);
+  
+  deepLinkParams = null; // Clear after applying
+}
+
+function zoomToRegionById(regionId) {
+  const pageData = pages[currentPage];
+  const region = pageData.textRegions.find(r => r.id === regionId);
+  
+  if (!region) return;
+  
+  const tiledImage = viewer.world.getItemAt(0);
+  if (!tiledImage) return;
+  
+  const rect = calculateBoundingBox(region.points);
+  const viewportRect = tiledImage.imageToViewportRectangle(
+    rect.x, rect.y, rect.width, rect.height
+  );
+  
+  zoomToRegion(viewer, viewportRect);
+}
+
+// ================================
+// UPDATE INIT
+// ================================
+async function init() {
+  parseDeepLink(); // Parse URL params first
+  
+  try {
+    const response = await fetch(MANIFEST_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load manifest: ${response.status}`);
+    }
+    
+    const manifest = await response.json();
+    pages = manifest.pages;
+    
+    viewer = OpenSeadragon({
+      id: "osd",
+      prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+      showNavigator: true,
+      showRotationControl: true,
+      gestureSettingsMouse: {
+        clickToZoom: false
+      }
+    });
+
+    document.getElementById("prev-page").onclick = () => {
+      if (currentPage > 0) loadPage(currentPage - 1);
+    };
+
+    document.getElementById("next-page").onclick = () => {
+      if (currentPage < pages.length - 1) loadPage(currentPage + 1);
+    };
+
+    loadPage(deepLinkParams ? deepLinkParams.page : 0);
+    
+    // Apply deep link after first page loads
+    if (deepLinkParams) {
+      viewer.addOnceHandler('open', () => {
+        applyDeepLink();
+      });
+    }
+  } catch (error) {
+    console.error('Initialization error:', error);
+    document.getElementById('region-list').innerHTML = 
+      `<p style="color: red;">Error loading manifest: ${error.message}</p>`;
+  }
+}
+
+// ================================
 // START
 // ================================
 init();

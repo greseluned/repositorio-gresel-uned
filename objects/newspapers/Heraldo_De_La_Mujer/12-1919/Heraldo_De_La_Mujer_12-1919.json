@@ -1,0 +1,4373 @@
+{
+  "id": "Heraldo_De_La_Mujer_12-1919",
+  "pages": [
+    {
+      "page": 16,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/12-1919/images/Heraldo_De_La_Mujer_12-1919_P16.jpg",
+      "textRegions": [
+        {
+          "id": "tr_1761395408",
+          "type": "TextRegion",
+          "points": [
+            [
+              584,
+              358
+            ],
+            [
+              2167,
+              358
+            ],
+            [
+              2167,
+              446
+            ],
+            [
+              584,
+              446
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395408_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1047,
+                  378
+                ],
+                [
+                  1606,
+                  381
+                ],
+                [
+                  1606,
+                  431
+                ],
+                [
+                  1047,
+                  428
+                ]
+              ],
+              "text": "HERALDO DE LA MUJER"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395409",
+          "type": "TextRegion",
+          "points": [
+            [
+              463,
+              448
+            ],
+            [
+              2227,
+              448
+            ],
+            [
+              2227,
+              626
+            ],
+            [
+              463,
+              626
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395409_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  692,
+                  519
+                ],
+                [
+                  1940,
+                  516
+                ],
+                [
+                  1940,
+                  566
+                ],
+                [
+                  1895,
+                  569
+                ],
+                [
+                  692,
+                  569
+                ]
+              ],
+              "text": "Derechos de las mujeres"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395411",
+          "type": "TextRegion",
+          "points": [
+            [
+              762,
+              701
+            ],
+            [
+              1281,
+              701
+            ],
+            [
+              1281,
+              802
+            ],
+            [
+              762,
+              802
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395411_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  856,
+                  692
+                ],
+                [
+                  1224,
+                  692
+                ],
+                [
+                  1224,
+                  742
+                ],
+                [
+                  856,
+                  742
+                ]
+              ],
+              "text": "Por Augusto de Lima."
+            },
+            {
+              "id": "tr_1761395407_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  824,
+                  734
+                ],
+                [
+                  1176,
+                  737
+                ],
+                [
+                  1176,
+                  787
+                ],
+                [
+                  824,
+                  784
+                ]
+              ],
+              "text": "Academico de Brasil."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395407",
+          "type": "TextRegion",
+          "points": [
+            [
+              377,
+              779
+            ],
+            [
+              1355,
+              779
+            ],
+            [
+              1355,
+              2834
+            ],
+            [
+              377,
+              2834
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395407_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  495,
+                  823
+                ],
+                [
+                  1298,
+                  820
+                ],
+                [
+                  1298,
+                  870
+                ],
+                [
+                  1253,
+                  873
+                ],
+                [
+                  495,
+                  873
+                ]
+              ],
+              "text": "Cierto es que el statu quo es muy comodo porque"
+            },
+            {
+              "id": "tr_1761395407_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  871
+                ],
+                [
+                  1298,
+                  868
+                ],
+                [
+                  1298,
+                  918
+                ],
+                [
+                  426,
+                  921
+                ]
+              ],
+              "text": "no exige dispendio de energía. Toda novedad o mudanza"
+            },
+            {
+              "id": "tr_1761395407_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  913
+                ],
+                [
+                  1304,
+                  910
+                ],
+                [
+                  1304,
+                  960
+                ],
+                [
+                  1259,
+                  963
+                ],
+                [
+                  426,
+                  963
+                ]
+              ],
+              "text": "acarrea esfuerzo. Mejor es la ineria que no pensiona"
+            },
+            {
+              "id": "tr_1761395407_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  961
+                ],
+                [
+                  495,
+                  955
+                ],
+                [
+                  540,
+                  961
+                ],
+                [
+                  585,
+                  958
+                ],
+                [
+                  585,
+                  1008
+                ],
+                [
+                  540,
+                  1011
+                ],
+                [
+                  495,
+                  1005
+                ],
+                [
+                  423,
+                  1011
+                ]
+              ],
+              "text": "molestas."
+            },
+            {
+              "id": "tr_1761395407_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  492,
+                  1002
+                ],
+                [
+                  1295,
+                  999
+                ],
+                [
+                  1295,
+                  1049
+                ],
+                [
+                  492,
+                  1052
+                ]
+              ],
+              "text": "Friémonos donde estamos y que el instinto q. se sien¬"
+            },
+            {
+              "id": "tr_1761395407_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1044
+                ],
+                [
+                  1298,
+                  1041
+                ],
+                [
+                  1298,
+                  1091
+                ],
+                [
+                  1253,
+                  1094
+                ],
+                [
+                  420,
+                  1094
+                ]
+              ],
+              "text": "te garantizado por sus condiciones polorios nos con¬"
+            },
+            {
+              "id": "tr_1761395407_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  1095
+                ],
+                [
+                  513,
+                  1098
+                ],
+                [
+                  513,
+                  1148
+                ],
+                [
+                  426,
+                  1145
+                ]
+              ],
+              "text": "se."
+            },
+            {
+              "id": "tr_1761395407_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  495,
+                  1137
+                ],
+                [
+                  1301,
+                  1134
+                ],
+                [
+                  1301,
+                  1184
+                ],
+                [
+                  495,
+                  1187
+                ]
+              ],
+              "text": "Dáse el mismo fenómeno delante de las nuevas ne¬"
+            },
+            {
+              "id": "tr_1761395407_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1179
+                ],
+                [
+                  1295,
+                  1179
+                ],
+                [
+                  1295,
+                  1229
+                ],
+                [
+                  423,
+                  1229
+                ]
+              ],
+              "text": "cesidades sociales. Lo que primero ocurre a nuestro"
+            },
+            {
+              "id": "tr_1761395407_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1226
+                ],
+                [
+                  1298,
+                  1220
+                ],
+                [
+                  1298,
+                  1270
+                ],
+                [
+                  423,
+                  1276
+                ]
+              ],
+              "text": "egoismo es una repulsion a cualquier reforma que pueda"
+            },
+            {
+              "id": "tr_1761395407_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1268
+                ],
+                [
+                  1307,
+                  1265
+                ],
+                [
+                  1307,
+                  1315
+                ],
+                [
+                  423,
+                  1318
+                ]
+              ],
+              "text": "traer dislocaciones alterar el equilibrio desorganizar lo"
+            },
+            {
+              "id": "tr_1761395407_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1316
+                ],
+                [
+                  1304,
+                  1310
+                ],
+                [
+                  1304,
+                  1360
+                ],
+                [
+                  429,
+                  1366
+                ]
+              ],
+              "text": "que esta hecho por la sabiduría de los tiempos antiguos."
+            },
+            {
+              "id": "tr_1761395407_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  1361
+                ],
+                [
+                  925,
+                  1358
+                ],
+                [
+                  925,
+                  1408
+                ],
+                [
+                  432,
+                  1411
+                ]
+              ],
+              "text": "por la experencia de los siglos."
+            },
+            {
+              "id": "tr_1761395407_tl_15",
+              "type": "TextLine",
+              "points": [
+                [
+                  504,
+                  1405
+                ],
+                [
+                  1304,
+                  1394
+                ],
+                [
+                  1304,
+                  1444
+                ],
+                [
+                  1259,
+                  1449
+                ],
+                [
+                  504,
+                  1455
+                ]
+              ],
+              "text": "Así enfrentándonos con el problema femenino, que"
+            },
+            {
+              "id": "tr_1761395407_tl_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1447
+                ],
+                [
+                  1298,
+                  1438
+                ],
+                [
+                  1298,
+                  1488
+                ],
+                [
+                  429,
+                  1497
+                ]
+              ],
+              "text": "es un verdadero problema, por la temeridad de los hom¬"
+            },
+            {
+              "id": "tr_1761395407_tl_17",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1492
+                ],
+                [
+                  1304,
+                  1489
+                ],
+                [
+                  1304,
+                  1539
+                ],
+                [
+                  429,
+                  1542
+                ]
+              ],
+              "text": "bres en cerrar los ojos a la evidencia. Todos sabemos"
+            },
+            {
+              "id": "tr_1761395407_tl_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1534
+                ],
+                [
+                  1298,
+                  1528
+                ],
+                [
+                  1298,
+                  1578
+                ],
+                [
+                  429,
+                  1584
+                ]
+              ],
+              "text": "que una mujer es igual al hombre ante la ley; que el Có¬"
+            },
+            {
+              "id": "tr_1761395407_tl_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1579
+                ],
+                [
+                  1304,
+                  1573
+                ],
+                [
+                  1304,
+                  1623
+                ],
+                [
+                  423,
+                  1629
+                ]
+              ],
+              "text": "digo no le niega ninguno de los derechos concernientes"
+            },
+            {
+              "id": "tr_1761395407_tl_20",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  1623
+                ],
+                [
+                  1295,
+                  1617
+                ],
+                [
+                  1295,
+                  1667
+                ],
+                [
+                  1250,
+                  1670
+                ],
+                [
+                  426,
+                  1673
+                ]
+              ],
+              "text": "a la personalidad, a la libertad, a la propiedad, otorga¬"
+            },
+            {
+              "id": "tr_1761395407_tl_21",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1668
+                ],
+                [
+                  713,
+                  1671
+                ],
+                [
+                  713,
+                  1721
+                ],
+                [
+                  429,
+                  1718
+                ]
+              ],
+              "text": "dos a los hombres."
+            },
+            {
+              "id": "tr_1761395407_tl_22",
+              "type": "TextLine",
+              "points": [
+                [
+                  501,
+                  1710
+                ],
+                [
+                  1304,
+                  1704
+                ],
+                [
+                  1304,
+                  1754
+                ],
+                [
+                  501,
+                  1760
+                ]
+              ],
+              "text": "Todos estamos convencidos de que el sentimiento"
+            },
+            {
+              "id": "tr_1761395407_tl_23",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1755
+                ],
+                [
+                  1298,
+                  1749
+                ],
+                [
+                  1298,
+                  1799
+                ],
+                [
+                  1253,
+                  1802
+                ],
+                [
+                  429,
+                  1805
+                ]
+              ],
+              "text": "del patriotismo, desdoblamiento de sentimiento fami¬"
+            },
+            {
+              "id": "tr_1761395407_tl_24",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  1803
+                ],
+                [
+                  1301,
+                  1797
+                ],
+                [
+                  1301,
+                  1847
+                ],
+                [
+                  432,
+                  1853
+                ]
+              ],
+              "text": "liar y las aspiraciones más nobles del progreso, y de la"
+            },
+            {
+              "id": "tr_1761395407_tl_25",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  1844
+                ],
+                [
+                  1304,
+                  1835
+                ],
+                [
+                  1304,
+                  1885
+                ],
+                [
+                  1215,
+                  1891
+                ],
+                [
+                  426,
+                  1894
+                ]
+              ],
+              "text": "cultura social, no en menores ni menos intensos en el"
+            },
+            {
+              "id": "tr_1761395407_tl_26",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  1895
+                ],
+                [
+                  991,
+                  1889
+                ],
+                [
+                  991,
+                  1939
+                ],
+                [
+                  432,
+                  1945
+                ]
+              ],
+              "text": "sexo femenino que en el masculino."
+            },
+            {
+              "id": "tr_1761395407_tl_27",
+              "type": "TextLine",
+              "points": [
+                [
+                  501,
+                  1934
+                ],
+                [
+                  1307,
+                  1925
+                ],
+                [
+                  1307,
+                  1975
+                ],
+                [
+                  501,
+                  1984
+                ]
+              ],
+              "text": "Bien sabemos que existe el mismo grado de respon¬"
+            },
+            {
+              "id": "tr_1761395407_tl_28",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  1982
+                ],
+                [
+                  1307,
+                  1973
+                ],
+                [
+                  1307,
+                  2023
+                ],
+                [
+                  429,
+                  2032
+                ]
+              ],
+              "text": "sabilidad civil, criminal y moral tanto en el hombre co¬"
+            },
+            {
+              "id": "tr_1761395407_tl_29",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  2023
+                ],
+                [
+                  692,
+                  2023
+                ],
+                [
+                  692,
+                  2073
+                ],
+                [
+                  432,
+                  2073
+                ]
+              ],
+              "text": "mo en la mujer."
+            },
+            {
+              "id": "tr_1761395407_tl_30",
+              "type": "TextLine",
+              "points": [
+                [
+                  501,
+                  2068
+                ],
+                [
+                  1307,
+                  2059
+                ],
+                [
+                  1307,
+                  2109
+                ],
+                [
+                  501,
+                  2118
+                ]
+              ],
+              "text": "La penalidad no distingue los sexos, ni en un asun¬"
+            },
+            {
+              "id": "tr_1761395407_tl_31",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  2110
+                ],
+                [
+                  1307,
+                  2104
+                ],
+                [
+                  1307,
+                  2154
+                ],
+                [
+                  429,
+                  2160
+                ]
+              ],
+              "text": "to de garantía, civil se recusa a la mujer por ser mujer"
+            },
+            {
+              "id": "tr_1761395407_tl_32",
+              "type": "TextLine",
+              "points": [
+                [
+                  435,
+                  2164
+                ],
+                [
+                  1307,
+                  2146
+                ],
+                [
+                  1307,
+                  2196
+                ],
+                [
+                  435,
+                  2214
+                ]
+              ],
+              "text": "¿Habría de recusarse una garantia institucional? ¿por"
+            },
+            {
+              "id": "tr_1761395407_tl_33",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  2200
+                ],
+                [
+                  1298,
+                  2191
+                ],
+                [
+                  1298,
+                  2241
+                ],
+                [
+                  432,
+                  2250
+                ]
+              ],
+              "text": "qué? La Constitución dice: \"Son ciudadanos brasile"
+            },
+            {
+              "id": "tr_1761395407_tl_34",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  2244
+                ],
+                [
+                  1035,
+                  2244
+                ],
+                [
+                  1035,
+                  2294
+                ],
+                [
+                  432,
+                  2294
+                ]
+              ],
+              "text": "ños los que nacieron en el Brasil..."
+            },
+            {
+              "id": "tr_1761395407_tl_35",
+              "type": "TextLine",
+              "points": [
+                [
+                  507,
+                  2289
+                ],
+                [
+                  1313,
+                  2283
+                ],
+                [
+                  1313,
+                  2333
+                ],
+                [
+                  507,
+                  2339
+                ]
+              ],
+              "text": "Una mujer es tan ciudadana brasileña como un"
+            },
+            {
+              "id": "tr_1761395407_tl_36",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  2334
+                ],
+                [
+                  573,
+                  2337
+                ],
+                [
+                  573,
+                  2387
+                ],
+                [
+                  432,
+                  2384
+                ]
+              ],
+              "text": "hombre."
+            },
+            {
+              "id": "tr_1761395407_tl_37",
+              "type": "TextLine",
+              "points": [
+                [
+                  513,
+                  2379
+                ],
+                [
+                  1301,
+                  2367
+                ],
+                [
+                  1301,
+                  2417
+                ],
+                [
+                  513,
+                  2429
+                ]
+              ],
+              "text": "Para ser excluida sería necesario que la Constitu¬"
+            },
+            {
+              "id": "tr_1761395407_tl_38",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  2424
+                ],
+                [
+                  1238,
+                  2415
+                ],
+                [
+                  1238,
+                  2465
+                ],
+                [
+                  429,
+                  2474
+                ]
+              ],
+              "text": "ción dijese que solo los hombres serían ciudadanos."
+            },
+            {
+              "id": "tr_1761395407_tl_39",
+              "type": "TextLine",
+              "points": [
+                [
+                  507,
+                  2465
+                ],
+                [
+                  1304,
+                  2456
+                ],
+                [
+                  1304,
+                  2506
+                ],
+                [
+                  507,
+                  2515
+                ]
+              ],
+              "text": "No habiendo restricción de sexo, es claro que preva¬"
+            },
+            {
+              "id": "tr_1761395407_tl_40",
+              "type": "TextLine",
+              "points": [
+                [
+                  435,
+                  2510
+                ],
+                [
+                  1310,
+                  2504
+                ],
+                [
+                  1310,
+                  2554
+                ],
+                [
+                  435,
+                  2560
+                ]
+              ],
+              "text": "lece la regla del derecho romano esto es que al decir"
+            },
+            {
+              "id": "tr_1761395407_tl_41",
+              "type": "TextLine",
+              "points": [
+                [
+                  435,
+                  2555
+                ],
+                [
+                  1304,
+                  2546
+                ],
+                [
+                  1304,
+                  2596
+                ],
+                [
+                  435,
+                  2605
+                ]
+              ],
+              "text": "hombre comprende así mismo a la mujer, por una apli"
+            },
+            {
+              "id": "tr_1761395407_tl_42",
+              "type": "TextLine",
+              "points": [
+                [
+                  435,
+                  2597
+                ],
+                [
+                  1313,
+                  2594
+                ],
+                [
+                  1313,
+                  2644
+                ],
+                [
+                  435,
+                  2647
+                ]
+              ],
+              "text": "cación del Digesto: \"Hoc verbum si quis tan masculos"
+            },
+            {
+              "id": "tr_1761395407_tl_43",
+              "type": "TextLine",
+              "points": [
+                [
+                  429,
+                  2647
+                ],
+                [
+                  883,
+                  2644
+                ],
+                [
+                  883,
+                  2694
+                ],
+                [
+                  429,
+                  2697
+                ]
+              ],
+              "text": "quam femina completictur\"."
+            },
+            {
+              "id": "tr_1761395407_tl_44",
+              "type": "TextLine",
+              "points": [
+                [
+                  510,
+                  2689
+                ],
+                [
+                  1316,
+                  2686
+                ],
+                [
+                  1316,
+                  2736
+                ],
+                [
+                  1271,
+                  2739
+                ],
+                [
+                  510,
+                  2739
+                ]
+              ],
+              "text": "Si una mujer es una ciudadana, siendo mayor de"
+            },
+            {
+              "id": "tr_1761395407_tl_45",
+              "type": "TextLine",
+              "points": [
+                [
+                  435,
+                  2737
+                ],
+                [
+                  1310,
+                  2728
+                ],
+                [
+                  1310,
+                  2778
+                ],
+                [
+                  1265,
+                  2784
+                ],
+                [
+                  435,
+                  2787
+                ]
+              ],
+              "text": "21 años, sabiendo leer y escribir y teniendo una resi¬"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395405",
+          "type": "TextRegion",
+          "points": [
+            [
+              1323,
+              634
+            ],
+            [
+              2261,
+              634
+            ],
+            [
+              2261,
+              2668
+            ],
+            [
+              1323,
+              2668
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395405_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1334,
+                  689
+                ],
+                [
+                  2215,
+                  689
+                ],
+                [
+                  2215,
+                  739
+                ],
+                [
+                  1334,
+                  739
+                ]
+              ],
+              "text": "dencia legal, no puede dejar de ser capaz de votar o ser"
+            },
+            {
+              "id": "tr_1761395405_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  731
+                ],
+                [
+                  2212,
+                  731
+                ],
+                [
+                  2212,
+                  781
+                ],
+                [
+                  2188,
+                  784
+                ],
+                [
+                  1337,
+                  781
+                ]
+              ],
+              "text": "votada, a no ser que se reforme la Constitución para no"
+            },
+            {
+              "id": "tr_1761395405_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1340,
+                  779
+                ],
+                [
+                  1609,
+                  779
+                ],
+                [
+                  1609,
+                  829
+                ],
+                [
+                  1340,
+                  829
+                ]
+              ],
+              "text": "ser violada. (1)"
+            },
+            {
+              "id": "tr_1761395405_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  823
+                ],
+                [
+                  2110,
+                  820
+                ],
+                [
+                  2110,
+                  870
+                ],
+                [
+                  1412,
+                  873
+                ]
+              ],
+              "text": "Ahora hay que reconocer lo que es evidente:"
+            },
+            {
+              "id": "tr_1761395405_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1409,
+                  865
+                ],
+                [
+                  2215,
+                  868
+                ],
+                [
+                  2215,
+                  918
+                ],
+                [
+                  1409,
+                  915
+                ]
+              ],
+              "text": "La aplicación de esa ley, vendría a alterar habitos"
+            },
+            {
+              "id": "tr_1761395405_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  913
+                ],
+                [
+                  2206,
+                  910
+                ],
+                [
+                  2206,
+                  960
+                ],
+                [
+                  1337,
+                  963
+                ]
+              ],
+              "text": "establecidos y perturbar métodos electorales ya automa¬"
+            },
+            {
+              "id": "tr_1761395405_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  955
+                ],
+                [
+                  2215,
+                  958
+                ],
+                [
+                  2215,
+                  1008
+                ],
+                [
+                  1346,
+                  1005
+                ]
+              ],
+              "text": "ticos. El electorado femenino sería una novedad que los"
+            },
+            {
+              "id": "tr_1761395405_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1340,
+                  1005
+                ],
+                [
+                  1931,
+                  1002
+                ],
+                [
+                  1931,
+                  1052
+                ],
+                [
+                  1340,
+                  1055
+                ]
+              ],
+              "text": "jefes de partido deberían de estudiar."
+            },
+            {
+              "id": "tr_1761395405_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  1418,
+                  1047
+                ],
+                [
+                  2215,
+                  1047
+                ],
+                [
+                  2215,
+                  1097
+                ],
+                [
+                  1418,
+                  1097
+                ]
+              ],
+              "text": "Conviene abrir la puerta ese elemento desconocido,"
+            },
+            {
+              "id": "tr_1761395405_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  1089
+                ],
+                [
+                  2218,
+                  1089
+                ],
+                [
+                  2218,
+                  1139
+                ],
+                [
+                  2197,
+                  1142
+                ],
+                [
+                  1346,
+                  1139
+                ]
+              ],
+              "text": "quee puede traer alguna psicología nueva a las urnas. Es"
+            },
+            {
+              "id": "tr_1761395405_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1134
+                ],
+                [
+                  1761,
+                  1134
+                ],
+                [
+                  1761,
+                  1184
+                ],
+                [
+                  1343,
+                  1184
+                ]
+              ],
+              "text": "el recelo de lo imprevisto."
+            },
+            {
+              "id": "tr_1761395405_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  1179
+                ],
+                [
+                  2122,
+                  1182
+                ],
+                [
+                  2122,
+                  1232
+                ],
+                [
+                  1412,
+                  1229
+                ]
+              ],
+              "text": "Temese el deslumbramiento de una luz nueva."
+            },
+            {
+              "id": "tr_1761395405_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  1223
+                ],
+                [
+                  2212,
+                  1229
+                ],
+                [
+                  2212,
+                  1279
+                ],
+                [
+                  1412,
+                  1273
+                ]
+              ],
+              "text": "De ahí los sufismas sobre la fragilidad del sexo, y"
+            },
+            {
+              "id": "tr_1761395405_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1268
+                ],
+                [
+                  2218,
+                  1268
+                ],
+                [
+                  2218,
+                  1318
+                ],
+                [
+                  2188,
+                  1321
+                ],
+                [
+                  1337,
+                  1318
+                ]
+              ],
+              "text": "sobre la exclusiva vocación de la mujer. para ser es¬"
+            },
+            {
+              "id": "tr_1761395405_tl_15",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1313
+                ],
+                [
+                  1624,
+                  1316
+                ],
+                [
+                  1624,
+                  1366
+                ],
+                [
+                  1337,
+                  1363
+                ]
+              ],
+              "text": "clava del hombre."
+            },
+            {
+              "id": "tr_1761395405_tl_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  1418,
+                  1361
+                ],
+                [
+                  2027,
+                  1364
+                ],
+                [
+                  2027,
+                  1414
+                ],
+                [
+                  2000,
+                  1417
+                ],
+                [
+                  1418,
+                  1411
+                ]
+              ],
+              "text": "Y dice la Revista Femenina del Brasil:"
+            },
+            {
+              "id": "tr_1761395405_tl_17",
+              "type": "TextLine",
+              "points": [
+                [
+                  1415,
+                  1397
+                ],
+                [
+                  2215,
+                  1408
+                ],
+                [
+                  2215,
+                  1458
+                ],
+                [
+                  1415,
+                  1447
+                ]
+              ],
+              "text": "\"Con qué alegría podemos proclamar que el femi¬"
+            },
+            {
+              "id": "tr_1761395405_tl_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1453
+                ],
+                [
+                  2221,
+                  1450
+                ],
+                [
+                  2221,
+                  1500
+                ],
+                [
+                  2176,
+                  1503
+                ],
+                [
+                  1343,
+                  1503
+                ]
+              ],
+              "text": "nismo que no está enteramente victorioso en todas las"
+            },
+            {
+              "id": "tr_1761395405_tl_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1501
+                ],
+                [
+                  2218,
+                  1498
+                ],
+                [
+                  2218,
+                  1548
+                ],
+                [
+                  1337,
+                  1551
+                ]
+              ],
+              "text": "grandes civilizaciones mundiales, comiena a interesar a"
+            },
+            {
+              "id": "tr_1761395405_tl_20",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1543
+                ],
+                [
+                  1973,
+                  1540
+                ],
+                [
+                  1973,
+                  1590
+                ],
+                [
+                  1337,
+                  1593
+                ]
+              ],
+              "text": "algunos de nuestros grandes pensadores."
+            },
+            {
+              "id": "tr_1761395405_tl_21",
+              "type": "TextLine",
+              "points": [
+                [
+                  1415,
+                  1597
+                ],
+                [
+                  2221,
+                  1594
+                ],
+                [
+                  2221,
+                  1644
+                ],
+                [
+                  1415,
+                  1647
+                ]
+              ],
+              "text": "Augusto de Lima que es un gran poeta, un gran¬"
+            },
+            {
+              "id": "tr_1761395405_tl_22",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1644
+                ],
+                [
+                  2218,
+                  1635
+                ],
+                [
+                  2218,
+                  1685
+                ],
+                [
+                  1343,
+                  1694
+                ]
+              ],
+              "text": "jefe de estado, un académico insigne, un parlamentario"
+            },
+            {
+              "id": "tr_1761395405_tl_23",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  1689
+                ],
+                [
+                  2215,
+                  1677
+                ],
+                [
+                  2215,
+                  1727
+                ],
+                [
+                  1346,
+                  1739
+                ]
+              ],
+              "text": "y un filósofo, acaba de exponer las causas de las reivin¬"
+            },
+            {
+              "id": "tr_1761395405_tl_24",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1728
+                ],
+                [
+                  2221,
+                  1725
+                ],
+                [
+                  2221,
+                  1775
+                ],
+                [
+                  1343,
+                  1778
+                ]
+              ],
+              "text": "dicaciones feministas en el artículo que nos permitimos"
+            },
+            {
+              "id": "tr_1761395405_tl_25",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1773
+                ],
+                [
+                  1525,
+                  1776
+                ],
+                [
+                  1525,
+                  1826
+                ],
+                [
+                  1343,
+                  1823
+                ]
+              ],
+              "text": "transcribir."
+            },
+            {
+              "id": "tr_1761395405_tl_26",
+              "type": "TextLine",
+              "points": [
+                [
+                  1415,
+                  1826
+                ],
+                [
+                  2221,
+                  1820
+                ],
+                [
+                  2221,
+                  1870
+                ],
+                [
+                  1415,
+                  1876
+                ]
+              ],
+              "text": "Augusto de Lima es uno de nuestros más brillantes"
+            },
+            {
+              "id": "tr_1761395405_tl_27",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1874
+                ],
+                [
+                  2218,
+                  1862
+                ],
+                [
+                  2218,
+                  1912
+                ],
+                [
+                  2173,
+                  1918
+                ],
+                [
+                  1343,
+                  1924
+                ]
+              ],
+              "text": "poetas filósofos cuyas concepciones arrebatadas y pro¬"
+            },
+            {
+              "id": "tr_1761395405_tl_28",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1919
+                ],
+                [
+                  2185,
+                  1913
+                ],
+                [
+                  2185,
+                  1963
+                ],
+                [
+                  1343,
+                  1969
+                ]
+              ],
+              "text": "fundamente humanas, seducen, conquistan y dominan."
+            },
+            {
+              "id": "tr_1761395405_tl_29",
+              "type": "TextLine",
+              "points": [
+                [
+                  1415,
+                  1964
+                ],
+                [
+                  2221,
+                  1961
+                ],
+                [
+                  2221,
+                  2011
+                ],
+                [
+                  1415,
+                  2014
+                ]
+              ],
+              "text": "En todos sus versos hay una harmonía de vida, y un"
+            },
+            {
+              "id": "tr_1761395405_tl_30",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  2012
+                ],
+                [
+                  2224,
+                  2009
+                ],
+                [
+                  2224,
+                  2059
+                ],
+                [
+                  1346,
+                  2062
+                ]
+              ],
+              "text": "ritmo universal. Es una cadencia de hojas que caen;"
+            },
+            {
+              "id": "tr_1761395405_tl_31",
+              "type": "TextLine",
+              "points": [
+                [
+                  1349,
+                  2053
+                ],
+                [
+                  2224,
+                  2050
+                ],
+                [
+                  2224,
+                  2100
+                ],
+                [
+                  1349,
+                  2103
+                ]
+              ],
+              "text": "de vientos que pasan, ora impetuosos, ora sibilantes. Es"
+            },
+            {
+              "id": "tr_1761395405_tl_32",
+              "type": "TextLine",
+              "points": [
+                [
+                  1349,
+                  2098
+                ],
+                [
+                  2224,
+                  2092
+                ],
+                [
+                  2224,
+                  2142
+                ],
+                [
+                  2179,
+                  2145
+                ],
+                [
+                  1349,
+                  2148
+                ]
+              ],
+              "text": "el péndulo que oscila en el ciclón que desequilibra o arra¬"
+            },
+            {
+              "id": "tr_1761395405_tl_33",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  2143
+                ],
+                [
+                  2033,
+                  2140
+                ],
+                [
+                  2033,
+                  2190
+                ],
+                [
+                  1343,
+                  2193
+                ]
+              ],
+              "text": "sa. Es la vida, es el mundo, es el universo."
+            },
+            {
+              "id": "tr_1761395405_tl_34",
+              "type": "TextLine",
+              "points": [
+                [
+                  1421,
+                  2194
+                ],
+                [
+                  2218,
+                  2191
+                ],
+                [
+                  2218,
+                  2241
+                ],
+                [
+                  1421,
+                  2244
+                ]
+              ],
+              "text": "Es el poeta cosmico. Su pincel es grande e inmor¬"
+            },
+            {
+              "id": "l",
+              "type": "TextLine",
+              "points": [
+                [
+                  1350,
+                  2258
+                ],
+                [
+                  1423,
+                  2252
+                ],
+                [
+                  2221,
+                  2235
+                ],
+                [
+                  2221,
+                  2285
+                ],
+                [
+                  1350,
+                  2289
+                ]
+              ],
+              "text": "tal. Su belleza es clásica. Sus pensamientos profun¬"
+            },
+            {
+              "id": "tr_1761395405_tl_36",
+              "type": "TextLine",
+              "points": [
+                [
+                  1344,
+                  2283
+                ],
+                [
+                  1940,
+                  2286
+                ],
+                [
+                  1940,
+                  2336
+                ],
+                [
+                  1343,
+                  2333
+                ]
+              ],
+              "text": "dos. Su universalismo reconfortante."
+            },
+            {
+              "id": "tr_1761395405_tl_37",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  2334
+                ],
+                [
+                  2227,
+                  2337
+                ],
+                [
+                  2227,
+                  2387
+                ],
+                [
+                  1412,
+                  2384
+                ]
+              ],
+              "text": "Bilact lo proclama el mejor de nuestros cantores:"
+            },
+            {
+              "id": "tr_1761395405_tl_38",
+              "type": "TextLine",
+              "points": [
+                [
+                  1349,
+                  2379
+                ],
+                [
+                  2230,
+                  2382
+                ],
+                [
+                  2230,
+                  2432
+                ],
+                [
+                  1349,
+                  2429
+                ]
+              ],
+              "text": "y por todo eso deben rejubilarse las feministas con su"
+            },
+            {
+              "id": "tr_1761395405_tl_39",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  2427
+                ],
+                [
+                  2224,
+                  2427
+                ],
+                [
+                  2224,
+                  2477
+                ],
+                [
+                  1343,
+                  2477
+                ]
+              ],
+              "text": "adhesión, pues es un gran pensador que se pone a nues¬"
+            },
+            {
+              "id": "tr_1761395405_tl_40",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  2471
+                ],
+                [
+                  2221,
+                  2468
+                ],
+                [
+                  2221,
+                  2518
+                ],
+                [
+                  2176,
+                  2521
+                ],
+                [
+                  1346,
+                  2521
+                ]
+              ],
+              "text": "tro lado en la hora de los reivindicaciones y de la jus¬"
+            },
+            {
+              "id": "tr_1761395405_tl_41",
+              "type": "TextLine",
+              "points": [
+                [
+                  1346,
+                  2516
+                ],
+                [
+                  1528,
+                  2516
+                ],
+                [
+                  1528,
+                  2566
+                ],
+                [
+                  1346,
+                  2566
+                ]
+              ],
+              "text": "ticia."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395410",
+          "type": "TextRegion",
+          "points": [
+            [
+              1320,
+              2644
+            ],
+            [
+              2264,
+              2644
+            ],
+            [
+              2264,
+              2765
+            ],
+            [
+              1334,
+              2800
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395410_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1504,
+                  2641
+                ],
+                [
+                  2224,
+                  2636
+                ],
+                [
+                  2224,
+                  2686
+                ],
+                [
+                  1504,
+                  2691
+                ]
+              ],
+              "text": "En Puerto Rico, se nos reconoció el derecho"
+            },
+            {
+              "id": "tr_1761395410_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  2686
+                ],
+                [
+                  2224,
+                  2680
+                ],
+                [
+                  2224,
+                  2730
+                ],
+                [
+                  1343,
+                  2736
+                ]
+              ],
+              "text": "al voto en el Bill Jones, y nuestra Legislatura violó y de¬"
+            },
+            {
+              "id": "l_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1354,
+                  2780
+                ],
+                [
+                  1806,
+                  2772
+                ],
+                [
+                  1805,
+                  2742
+                ],
+                [
+                  1353,
+                  2750
+                ]
+              ],
+              "text": "rogó esa Ley. -La Redacción."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395406",
+          "type": "TextRegion",
+          "points": [
+            [
+              968,
+              3107
+            ],
+            [
+              1496,
+              3107
+            ],
+            [
+              1496,
+              3179
+            ],
+            [
+              968,
+              3179
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395406_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1035,
+                  3122
+                ],
+                [
+                  1453,
+                  3119
+                ],
+                [
+                  1453,
+                  3169
+                ],
+                [
+                  1035,
+                  3172
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/12-1919/images/Heraldo_De_La_Mujer_12-1919_P17.jpg",
+      "textRegions": [
+        {
+          "id": "tr_1761395412",
+          "type": "TextRegion",
+          "points": [
+            [
+              553,
+              350
+            ],
+            [
+              2074,
+              350
+            ],
+            [
+              2074,
+              445
+            ],
+            [
+              553,
+              445
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395412_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1041,
+                  378
+                ],
+                [
+                  1570,
+                  372
+                ],
+                [
+                  1570,
+                  422
+                ],
+                [
+                  1041,
+                  428
+                ]
+              ],
+              "text": "HERALDO DE LA MUJER"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395415",
+          "type": "TextRegion",
+          "points": [
+            [
+              770,
+              455
+            ],
+            [
+              1968,
+              455
+            ],
+            [
+              1968,
+              602
+            ],
+            [
+              770,
+              602
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395415_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  958,
+                  519
+                ],
+                [
+                  1633,
+                  513
+                ],
+                [
+                  1633,
+                  563
+                ],
+                [
+                  958,
+                  569
+                ]
+              ],
+              "text": "PLUMAZOS"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395414",
+          "type": "TextRegion",
+          "points": [
+            [
+              862,
+              633
+            ],
+            [
+              1817,
+              633
+            ],
+            [
+              1817,
+              747
+            ],
+            [
+              862,
+              747
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395417_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  928,
+                  668
+                ],
+                [
+                  1683,
+                  668
+                ],
+                [
+                  1683,
+                  718
+                ],
+                [
+                  928,
+                  718
+                ]
+              ],
+              "text": "EL FIN DEL MUNDO"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395407",
+          "type": "TextRegion",
+          "points": [
+            [
+              360,
+              795
+            ],
+            [
+              1347,
+              795
+            ],
+            [
+              1347,
+              2318
+            ],
+            [
+              360,
+              2318
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395407_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  483,
+                  823
+                ],
+                [
+                  1286,
+                  817
+                ],
+                [
+                  1286,
+                  867
+                ],
+                [
+                  483,
+                  873
+                ]
+              ],
+              "text": "Pasó el susto sí, señores, y el mundo sin cesar na¬"
+            },
+            {
+              "id": "tr_1761395407_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  414,
+                  865
+                ],
+                [
+                  1116,
+                  868
+                ],
+                [
+                  1116,
+                  918
+                ],
+                [
+                  414,
+                  915
+                ]
+              ],
+              "text": "vera por el piélago inmenso del vacío."
+            },
+            {
+              "id": "tr_1761395407_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  489,
+                  913
+                ],
+                [
+                  1292,
+                  907
+                ],
+                [
+                  1292,
+                  957
+                ],
+                [
+                  489,
+                  963
+                ]
+              ],
+              "text": "El susto pasó sí, señores, y a nosotros sólo queda"
+            },
+            {
+              "id": "tr_1761395407_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  412,
+                  958
+                ],
+                [
+                  1292,
+                  952
+                ],
+                [
+                  1292,
+                  1002
+                ],
+                [
+                  1247,
+                  1005
+                ],
+                [
+                  412,
+                  1008
+                ]
+              ],
+              "text": "la tomadura de pelo de aquellos sabios de pega, y este"
+            },
+            {
+              "id": "tr_1761395407_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  414,
+                  1005
+                ],
+                [
+                  1179,
+                  999
+                ],
+                [
+                  1179,
+                  1049
+                ],
+                [
+                  414,
+                  1055
+                ]
+              ],
+              "text": "mundo, dichoso infierno de guerras, no se acabó."
+            },
+            {
+              "id": "tr_1761395407_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  486,
+                  1053
+                ],
+                [
+                  821,
+                  1047
+                ],
+                [
+                  821,
+                  1097
+                ],
+                [
+                  486,
+                  1103
+                ]
+              ],
+              "text": "¡Qué ha de acabarse!"
+            },
+            {
+              "id": "tr_1761395407_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  483,
+                  1092
+                ],
+                [
+                  1292,
+                  1086
+                ],
+                [
+                  1292,
+                  1136
+                ],
+                [
+                  483,
+                  1142
+                ]
+              ],
+              "text": "Así por que lo diga un chato, se va a saber que la"
+            },
+            {
+              "id": "tr_1761395407_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  1137
+                ],
+                [
+                  1292,
+                  1131
+                ],
+                [
+                  1292,
+                  1181
+                ],
+                [
+                  1247,
+                  1184
+                ],
+                [
+                  417,
+                  1187
+                ]
+              ],
+              "text": "máquina admirable del universo se va a romper."
+            },
+            {
+              "id": "tr_1761395407_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1188
+                ],
+                [
+                  737,
+                  1185
+                ],
+                [
+                  737,
+                  1235
+                ],
+                [
+                  423,
+                  1238
+                ]
+              ],
+              "text": "Majaderías...."
+            },
+            {
+              "id": "tr_1761395407_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  489,
+                  1232
+                ],
+                [
+                  1289,
+                  1220
+                ],
+                [
+                  1289,
+                  1270
+                ],
+                [
+                  489,
+                  1282
+                ]
+              ],
+              "text": "¡Oh Puerto Rico! pobre pueblito nuestro ¿por qué"
+            },
+            {
+              "id": "tr_1761395407_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  414,
+                  1268
+                ],
+                [
+                  1295,
+                  1265
+                ],
+                [
+                  1295,
+                  1315
+                ],
+                [
+                  1250,
+                  1318
+                ],
+                [
+                  414,
+                  1318
+                ]
+              ],
+              "text": "creer, que todo lo que diga un Juan de las Yerbas, de"
+            },
+            {
+              "id": "tr_1761395407_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  414,
+                  1316
+                ],
+                [
+                  1149,
+                  1310
+                ],
+                [
+                  1149,
+                  1360
+                ],
+                [
+                  414,
+                  1366
+                ]
+              ],
+              "text": "Palotes, de allende el charo, cierto ha de ser?"
+            },
+            {
+              "id": "tr_1761395407_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  489,
+                  1361
+                ],
+                [
+                  1292,
+                  1358
+                ],
+                [
+                  1292,
+                  1408
+                ],
+                [
+                  489,
+                  1411
+                ]
+              ],
+              "text": "Mas, si lo dice un nativo de ilustración, has de"
+            },
+            {
+              "id": "tr_1761395407_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  412,
+                  1405
+                ],
+                [
+                  779,
+                  1408
+                ],
+                [
+                  779,
+                  1458
+                ],
+                [
+                  412,
+                  1455
+                ]
+              ],
+              "text": "afirma que miente él?"
+            },
+            {
+              "id": "tr_1761395407_tl_15",
+              "type": "TextLine",
+              "points": [
+                [
+                  486,
+                  1456
+                ],
+                [
+                  1173,
+                  1447
+                ],
+                [
+                  1173,
+                  1497
+                ],
+                [
+                  486,
+                  1506
+                ]
+              ],
+              "text": "¿Qué sabe el portorriqueño? sueles pensar."
+            },
+            {
+              "id": "tr_1761395407_tl_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  453,
+                  1495
+                ],
+                [
+                  1298,
+                  1489
+                ],
+                [
+                  1298,
+                  1539
+                ],
+                [
+                  1253,
+                  1542
+                ],
+                [
+                  453,
+                  1545
+                ]
+              ],
+              "text": "Para otro portorriqueño ¡qué ha de saber! Todas"
+            },
+            {
+              "id": "tr_1761395407_tl_17",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1543
+                ],
+                [
+                  1292,
+                  1534
+                ],
+                [
+                  1292,
+                  1584
+                ],
+                [
+                  420,
+                  1593
+                ]
+              ],
+              "text": "aquí miden por el rasero de su ignorancia los que la tie-"
+            },
+            {
+              "id": "tr_1761395407_tl_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1588
+                ],
+                [
+                  689,
+                  1585
+                ],
+                [
+                  689,
+                  1635
+                ],
+                [
+                  420,
+                  1638
+                ]
+              ],
+              "text": "nen á los demás.¬"
+            },
+            {
+              "id": "tr_1761395407_tl_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  495,
+                  1629
+                ],
+                [
+                  1295,
+                  1626
+                ],
+                [
+                  1295,
+                  1676
+                ],
+                [
+                  495,
+                  1679
+                ]
+              ],
+              "text": "No hay pueblo en la tierra que menos se aprecie, ni"
+            },
+            {
+              "id": "tr_1761395407_tl_20",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1677
+                ],
+                [
+                  1301,
+                  1674
+                ],
+                [
+                  1301,
+                  1724
+                ],
+                [
+                  420,
+                  1727
+                ]
+              ],
+              "text": "que tenga de sí propio un concepto más depresivo y fatal"
+            },
+            {
+              "id": "tr_1761395407_tl_21",
+              "type": "TextLine",
+              "points": [
+                [
+                  426,
+                  1719
+                ],
+                [
+                  716,
+                  1722
+                ],
+                [
+                  716,
+                  1772
+                ],
+                [
+                  426,
+                  1769
+                ]
+              ],
+              "text": "Así anda él ..."
+            },
+            {
+              "id": "tr_1761395407_tl_22",
+              "type": "TextLine",
+              "points": [
+                [
+                  492,
+                  1767
+                ],
+                [
+                  1295,
+                  1758
+                ],
+                [
+                  1295,
+                  1808
+                ],
+                [
+                  492,
+                  1817
+                ]
+              ],
+              "text": "¿Quién ha de estimar á un pueblo que empieza por"
+            },
+            {
+              "id": "tr_1761395407_tl_23",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1812
+                ],
+                [
+                  1298,
+                  1806
+                ],
+                [
+                  1298,
+                  1856
+                ],
+                [
+                  420,
+                  1862
+                ]
+              ],
+              "text": "menospreciarse a sí mismo que carece de civismo y de"
+            },
+            {
+              "id": "tr_1761395407_tl_24",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1859
+                ],
+                [
+                  788,
+                  1850
+                ],
+                [
+                  788,
+                  1900
+                ],
+                [
+                  423,
+                  1909
+                ]
+              ],
+              "text": "patrio orgullo además?"
+            },
+            {
+              "id": "tr_1761395407_tl_25",
+              "type": "TextLine",
+              "points": [
+                [
+                  498,
+                  1895
+                ],
+                [
+                  1298,
+                  1901
+                ],
+                [
+                  1298,
+                  1951
+                ],
+                [
+                  498,
+                  1945
+                ]
+              ],
+              "text": "Y si alguno suele elevarse sobre el estúpido montón,"
+            },
+            {
+              "id": "tr_1761395407_tl_26",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1943
+                ],
+                [
+                  1295,
+                  1937
+                ],
+                [
+                  1295,
+                  1987
+                ],
+                [
+                  1250,
+                  1990
+                ],
+                [
+                  423,
+                  1993
+                ]
+              ],
+              "text": "con qué premura los necios tratan de aplastarlo, de fus¬"
+            },
+            {
+              "id": "tr_1761395407_tl_27",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  1988
+                ],
+                [
+                  1292,
+                  1985
+                ],
+                [
+                  1292,
+                  2035
+                ],
+                [
+                  423,
+                  2038
+                ]
+              ],
+              "text": "tigarlo, de aislarlo para que no deslumbre al ramplón.."
+            },
+            {
+              "id": "tr_1761395407_tl_28",
+              "type": "TextLine",
+              "points": [
+                [
+                  498,
+                  2035
+                ],
+                [
+                  1304,
+                  2029
+                ],
+                [
+                  1304,
+                  2079
+                ],
+                [
+                  498,
+                  2085
+                ]
+              ],
+              "text": "Si no cuando muere le reconocen algunos de los"
+            },
+            {
+              "id": "tr_1761395407_tl_29",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  2077
+                ],
+                [
+                  835,
+                  2077
+                ],
+                [
+                  835,
+                  2127
+                ],
+                [
+                  420,
+                  2127
+                ]
+              ],
+              "text": "méritos que aquél tuviere."
+            },
+            {
+              "id": "tr_1761395407_tl_30",
+              "type": "TextLine",
+              "points": [
+                [
+                  495,
+                  2128
+                ],
+                [
+                  1307,
+                  2125
+                ],
+                [
+                  1307,
+                  2175
+                ],
+                [
+                  495,
+                  2178
+                ]
+              ],
+              "text": "Pero mientras vive ¡Dios soberano! Todas las me¬"
+            },
+            {
+              "id": "tr_1761395407_tl_31",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  2173
+                ],
+                [
+                  1301,
+                  2173
+                ],
+                [
+                  1301,
+                  2223
+                ],
+                [
+                  417,
+                  2223
+                ]
+              ],
+              "text": "dianías temen la sombra que proyecta el que vale, y"
+            },
+            {
+              "id": "tr_1761395407_tl_32",
+              "type": "TextLine",
+              "points": [
+                [
+                  423,
+                  2221
+                ],
+                [
+                  985,
+                  2218
+                ],
+                [
+                  985,
+                  2268
+                ],
+                [
+                  423,
+                  2271
+                ]
+              ],
+              "text": "ras, ras palos con él hasta anularle."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395409",
+          "type": "TextRegion",
+          "points": [
+            [
+              1334,
+              807
+            ],
+            [
+              2274,
+              807
+            ],
+            [
+              2274,
+              1332
+            ],
+            [
+              1334,
+              1332
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395409_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1403,
+                  817
+                ],
+                [
+                  2206,
+                  817
+                ],
+                [
+                  2206,
+                  867
+                ],
+                [
+                  1403,
+                  867
+                ]
+              ],
+              "text": "Se acepta del monigote extraniero hasta el dispa¬"
+            },
+            {
+              "id": "tr_1761395409_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1328,
+                  862
+                ],
+                [
+                  2206,
+                  859
+                ],
+                [
+                  2206,
+                  909
+                ],
+                [
+                  2161,
+                  912
+                ],
+                [
+                  1328,
+                  912
+                ]
+              ],
+              "text": "rate y elevan hasta los cumbres todo dislate que diga"
+            },
+            {
+              "id": "tr_1761395409_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1328,
+                  910
+                ],
+                [
+                  2215,
+                  910
+                ],
+                [
+                  2215,
+                  960
+                ],
+                [
+                  1328,
+                  960
+                ]
+              ],
+              "text": "un Mister o un Monsieur, catedrático del Instituto del"
+            },
+            {
+              "id": "tr_1761395409_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1334,
+                  955
+                ],
+                [
+                  1459,
+                  952
+                ],
+                [
+                  1459,
+                  1002
+                ],
+                [
+                  1334,
+                  1005
+                ]
+              ],
+              "text": "Nosaber"
+            },
+            {
+              "id": "tr_1761395409_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1397,
+                  999
+                ],
+                [
+                  2206,
+                  993
+                ],
+                [
+                  2206,
+                  1043
+                ],
+                [
+                  1397,
+                  1049
+                ]
+              ],
+              "text": "Pobre pueblo nuestro si así persiste, siempre serás"
+            },
+            {
+              "id": "tr_1761395409_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1328,
+                  1044
+                ],
+                [
+                  1492,
+                  1047
+                ],
+                [
+                  1492,
+                  1097
+                ],
+                [
+                  1328,
+                  1094
+                ]
+              ],
+              "text": "un Nadie."
+            },
+            {
+              "id": "tr_1761395409_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  1406,
+                  1095
+                ],
+                [
+                  1803,
+                  1086
+                ],
+                [
+                  1803,
+                  1136
+                ],
+                [
+                  1406,
+                  1145
+                ]
+              ],
+              "text": "¿Quién ha de apreciarte?"
+            },
+            {
+              "id": "tr_1761395409_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1406,
+                  1131
+                ],
+                [
+                  2203,
+                  1128
+                ],
+                [
+                  2203,
+                  1178
+                ],
+                [
+                  1406,
+                  1181
+                ]
+              ],
+              "text": "Si tú mismo no te elevas. ¿Quién va a elevarte?"
+            },
+            {
+              "id": "tr_1761395409_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  1406,
+                  1179
+                ],
+                [
+                  2206,
+                  1176
+                ],
+                [
+                  2206,
+                  1226
+                ],
+                [
+                  1406,
+                  1229
+                ]
+              ],
+              "text": "Si tú mismo no te estimas, ¿quién va a estimarte?"
+            },
+            {
+              "id": "tr_1761395409_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  1406,
+                  1223
+                ],
+                [
+                  2209,
+                  1217
+                ],
+                [
+                  2209,
+                  1267
+                ],
+                [
+                  1406,
+                  1273
+                ]
+              ],
+              "text": "Si las ramas del árbol de tu prestigio cortas enlo¬"
+            },
+            {
+              "id": "tr_1761395409_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  1325,
+                  1268
+                ],
+                [
+                  1839,
+                  1265
+                ],
+                [
+                  1839,
+                  1315
+                ],
+                [
+                  1325,
+                  1318
+                ]
+              ],
+              "text": "quecido ¿Que ha de quedarte?"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395413",
+          "type": "TextRegion",
+          "points": [
+            [
+              1945,
+              1316
+            ],
+            [
+              2154,
+              1316
+            ],
+            [
+              2154,
+              1373
+            ],
+            [
+              1945,
+              1373
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395413_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1988,
+                  1310
+                ],
+                [
+                  2146,
+                  1310
+                ],
+                [
+                  2146,
+                  1360
+                ],
+                [
+                  1988,
+                  1360
+                ]
+              ],
+              "text": "LOTYS."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395408",
+          "type": "TextRegion",
+          "points": [
+            [
+              1418,
+              1446
+            ],
+            [
+              2138,
+              1446
+            ],
+            [
+              2138,
+              1552
+            ],
+            [
+              1418,
+              1552
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395408_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1495,
+                  1474
+                ],
+                [
+                  2063,
+                  1465
+                ],
+                [
+                  2063,
+                  1515
+                ],
+                [
+                  1495,
+                  1524
+                ]
+              ],
+              "text": "Ayude a los Niños Pobres"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395411",
+          "type": "TextRegion",
+          "points": [
+            [
+              1320,
+              1600
+            ],
+            [
+              2295,
+              1600
+            ],
+            [
+              2295,
+              2227
+            ],
+            [
+              1320,
+              2227
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395411_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1406,
+                  1600
+                ],
+                [
+                  2215,
+                  1591
+                ],
+                [
+                  2215,
+                  1641
+                ],
+                [
+                  1406,
+                  1650
+                ]
+              ],
+              "text": "Es necesario que en cada municipio de esta isla,"
+            },
+            {
+              "id": "tr_1761395411_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1644
+                ],
+                [
+                  2212,
+                  1632
+                ],
+                [
+                  2212,
+                  1682
+                ],
+                [
+                  1331,
+                  1694
+                ]
+              ],
+              "text": "se organice la sociedad flantropica \"El zapato de los"
+            },
+            {
+              "id": "tr_1761395411_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1340,
+                  1686
+                ],
+                [
+                  2209,
+                  1674
+                ],
+                [
+                  2209,
+                  1724
+                ],
+                [
+                  1340,
+                  1736
+                ]
+              ],
+              "text": "niños pobres\". Esta sociedad viene trabajande des¬"
+            },
+            {
+              "id": "tr_1761395411_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1725
+                ],
+                [
+                  2221,
+                  1719
+                ],
+                [
+                  2221,
+                  1769
+                ],
+                [
+                  1337,
+                  1775
+                ]
+              ],
+              "text": "de hace varios años, en San Juan con tanto éxito que"
+            },
+            {
+              "id": "tr_1761395411_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1343,
+                  1776
+                ],
+                [
+                  2212,
+                  1764
+                ],
+                [
+                  2212,
+                  1814
+                ],
+                [
+                  1343,
+                  1826
+                ]
+              ],
+              "text": "podemos asegurar que todos los niños pobres que"
+            },
+            {
+              "id": "tr_1761395411_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1820
+                ],
+                [
+                  2140,
+                  1809
+                ],
+                [
+                  2140,
+                  1859
+                ],
+                [
+                  1331,
+                  1870
+                ]
+              ],
+              "text": "sisten a las escuelas van debidamente calzados."
+            },
+            {
+              "id": "tr_1761395411_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  1862
+                ],
+                [
+                  2218,
+                  1853
+                ],
+                [
+                  2218,
+                  1903
+                ],
+                [
+                  1412,
+                  1912
+                ]
+              ],
+              "text": "No se necesita hacer sacrificios. Aceptamos"
+            },
+            {
+              "id": "tr_1761395411_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1907
+                ],
+                [
+                  2215,
+                  1892
+                ],
+                [
+                  2215,
+                  1942
+                ],
+                [
+                  1337,
+                  1957
+                ]
+              ],
+              "text": "cualquier donativo por insignificante que sea. Mán¬"
+            },
+            {
+              "id": "tr_1761395411_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1952
+                ],
+                [
+                  1904,
+                  1940
+                ],
+                [
+                  1904,
+                  1990
+                ],
+                [
+                  1337,
+                  2002
+                ]
+              ],
+              "text": "delo hoy mismo, si usted desea a:"
+            },
+            {
+              "id": "tr_1761395411_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  1409,
+                  1988
+                ],
+                [
+                  2110,
+                  1988
+                ],
+                [
+                  2110,
+                  2038
+                ],
+                [
+                  1409,
+                  2038
+                ]
+              ],
+              "text": "Sra, María T. de Suarez, P. O. Box 1122."
+            },
+            {
+              "id": "tr_1761395411_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  1412,
+                  2038
+                ],
+                [
+                  1895,
+                  2032
+                ],
+                [
+                  1895,
+                  2082
+                ],
+                [
+                  1412,
+                  2088
+                ]
+              ],
+              "text": "Sr. Miguel M. Toro, Aduana."
+            },
+            {
+              "id": "tr_1761395411_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  1409,
+                  2080
+                ],
+                [
+                  2221,
+                  2068
+                ],
+                [
+                  2221,
+                  2118
+                ],
+                [
+                  1409,
+                  2130
+                ]
+              ],
+              "text": "Sr. Pedro M. Velez % \"National Casch Re¬"
+            },
+            {
+              "id": "tr_1761395411_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  1340,
+                  2131
+                ],
+                [
+                  1516,
+                  2113
+                ],
+                [
+                  1516,
+                  2163
+                ],
+                [
+                  1340,
+                  2181
+                ]
+              ],
+              "text": "gister Cº\""
+            },
+            {
+              "id": "tr_1761395411_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  1421,
+                  2176
+                ],
+                [
+                  2221,
+                  2164
+                ],
+                [
+                  2221,
+                  2214
+                ],
+                [
+                  1421,
+                  2226
+                ]
+              ],
+              "text": "(Este anuncio lo publica gratis EL HERALDO"
+            },
+            {
+              "id": "tr_1761395419_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1340,
+                  2224
+                ],
+                [
+                  1591,
+                  2218
+                ],
+                [
+                  1591,
+                  2268
+                ],
+                [
+                  1340,
+                  2274
+                ]
+              ],
+              "text": "DE LA MUJER.)"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395419",
+          "type": "TextRegion",
+          "points": [
+            [
+              1335,
+              1578
+            ],
+            [
+              2237,
+              1578
+            ],
+            [
+              2237,
+              2287
+            ],
+            [
+              1335,
+              2287
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395419_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  2119,
+                  2209
+                ],
+                [
+                  2218,
+                  2212
+                ],
+                [
+                  2218,
+                  2262
+                ],
+                [
+                  2119,
+                  2259
+                ]
+              ],
+              "text": "Advt."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395416",
+          "type": "TextRegion",
+          "points": [
+            [
+              518,
+              2446
+            ],
+            [
+              2163,
+              2446
+            ],
+            [
+              2163,
+              2858
+            ],
+            [
+              518,
+              2858
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395416_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  632,
+                  2486
+                ],
+                [
+                  2039,
+                  2477
+                ],
+                [
+                  2039,
+                  2527
+                ],
+                [
+                  632,
+                  2536
+                ]
+              ],
+              "text": "Lo mas necesario en su casa"
+            },
+            {
+              "id": "tr_1761395416_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  734,
+                  2582
+                ],
+                [
+                  1907,
+                  2567
+                ],
+                [
+                  1907,
+                  2617
+                ],
+                [
+                  734,
+                  2632
+                ]
+              ],
+              "text": "ES UN BUEN EQUIPO DE COCINA"
+            },
+            {
+              "id": "tr_1761395416_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  677,
+                  2671
+                ],
+                [
+                  1997,
+                  2653
+                ],
+                [
+                  1997,
+                  2703
+                ],
+                [
+                  677,
+                  2721
+                ]
+              ],
+              "text": "LE FRECEMOS LO MAS MODERNO EN ESTE RAMO."
+            },
+            {
+              "id": "tr_1761395416_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  904,
+                  2767
+                ],
+                [
+                  1761,
+                  2764
+                ],
+                [
+                  1761,
+                  2814
+                ],
+                [
+                  904,
+                  2817
+                ]
+              ],
+              "text": "VISITENOS."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395418",
+          "type": "TextRegion",
+          "points": [
+            [
+              621,
+              2721
+            ],
+            [
+              2044,
+              2721
+            ],
+            [
+              2044,
+              2948
+            ],
+            [
+              621,
+              2948
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395418_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  824,
+                  2853
+                ],
+                [
+                  1818,
+                  2862
+                ],
+                [
+                  1818,
+                  2912
+                ],
+                [
+                  824,
+                  2903
+                ]
+              ],
+              "text": "FERRETERIA FINLAY"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395410",
+          "type": "TextRegion",
+          "points": [
+            [
+              996,
+              3102
+            ],
+            [
+              1484,
+              3102
+            ],
+            [
+              1484,
+              3190
+            ],
+            [
+              996,
+              3190
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395410_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1032,
+                  3119
+                ],
+                [
+                  1456,
+                  3119
+                ],
+                [
+                  1456,
+                  3169
+                ],
+                [
+                  1032,
+                  3169
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tileSources": [
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/12-1919/images/Heraldo_De_La_Mujer_12-1919_P16.jpg",
+      "buildPyramid": true
+    },
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/12-1919/images/Heraldo_De_La_Mujer_12-1919_P17.jpg",
+      "buildPyramid": true
+    }
+  ]
+}

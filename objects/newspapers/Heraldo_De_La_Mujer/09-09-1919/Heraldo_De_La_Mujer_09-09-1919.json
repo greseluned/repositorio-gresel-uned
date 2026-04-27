@@ -1,0 +1,2676 @@
+{
+  "id": "Heraldo_De_La_Mujer_09-09-1919",
+  "pages": [
+    {
+      "page": 5,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/09-09-1919/images/Heraldo_De_La_Mujer_09-09-1919_P05.jpg",
+      "textRegions": [
+        {
+          "id": "r_5",
+          "type": "TextRegion",
+          "points": [
+            [
+              1846,
+              584
+            ],
+            [
+              295,
+              584
+            ],
+            [
+              295,
+              537
+            ],
+            [
+              1846,
+              537
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_71",
+              "type": "TextLine",
+              "points": [
+                [
+                  1411,
+                  584
+                ],
+                [
+                  1406,
+                  584
+                ],
+                [
+                  1107,
+                  568
+                ],
+                [
+                  967,
+                  580
+                ],
+                [
+                  967,
+                  549
+                ],
+                [
+                  1023,
+                  537
+                ],
+                [
+                  1359,
+                  545
+                ],
+                [
+                  1411,
+                  550
+                ]
+              ],
+              "text": "HERALDO DE LA MUJER"
+            }
+          ]
+        },
+        {
+          "id": "r_3",
+          "type": "TextRegion",
+          "points": [
+            [
+              1846,
+              537
+            ],
+            [
+              2083,
+              537
+            ],
+            [
+              2083,
+              584
+            ],
+            [
+              1846,
+              584
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  2010,
+                  573
+                ],
+                [
+                  2031,
+                  576
+                ],
+                [
+                  2035,
+                  546
+                ],
+                [
+                  2014,
+                  543
+                ]
+              ],
+              "text": "5"
+            }
+          ]
+        },
+        {
+          "id": "r_2",
+          "type": "TextRegion",
+          "points": [
+            [
+              295,
+              792
+            ],
+            [
+              295,
+              584
+            ],
+            [
+              2083,
+              584
+            ],
+            [
+              2083,
+              792
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_70",
+              "type": "TextLine",
+              "points": [
+                [
+                  692,
+                  720
+                ],
+                [
+                  1686,
+                  732
+                ],
+                [
+                  1686,
+                  701
+                ],
+                [
+                  1586,
+                  689
+                ],
+                [
+                  692,
+                  689
+                ]
+              ],
+              "text": "¿Será? No será?"
+            }
+          ]
+        },
+        {
+          "id": "r",
+          "type": "TextRegion",
+          "points": [
+            [
+              295,
+              3069
+            ],
+            [
+              295,
+              792
+            ],
+            [
+              1178,
+              792
+            ],
+            [
+              1178,
+              3069
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  867
+                ],
+                [
+                  397,
+                  857
+                ],
+                [
+                  397,
+                  827
+                ],
+                [
+                  1178,
+                  837
+                ]
+              ],
+              "text": "Toda la isla está en espectación desde que"
+            },
+            {
+              "id": "l_23",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  911
+                ],
+                [
+                  316,
+                  899
+                ],
+                [
+                  316,
+                  869
+                ],
+                [
+                  1178,
+                  881
+                ]
+              ],
+              "text": "embarcaron nuestros políticos Barceló y Tous So-"
+            },
+            {
+              "id": "l_65",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  956
+                ],
+                [
+                  313,
+                  941
+                ],
+                [
+                  313,
+                  910
+                ],
+                [
+                  1178,
+                  925
+                ]
+              ],
+              "text": "to, en busca de una solución más satisfactoria para"
+            },
+            {
+              "id": "l_66",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  986
+                ],
+                [
+                  582,
+                  992
+                ],
+                [
+                  582,
+                  961
+                ],
+                [
+                  307,
+                  955
+                ]
+              ],
+              "text": "nuestro status."
+            },
+            {
+              "id": "l_72",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1041
+                ],
+                [
+                  385,
+                  1031
+                ],
+                [
+                  385,
+                  1001
+                ],
+                [
+                  1178,
+                  1011
+                ]
+              ],
+              "text": "Pero el desaliento cunde a veces en el país."
+            },
+            {
+              "id": "l_73",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1086
+                ],
+                [
+                  313,
+                  1072
+                ],
+                [
+                  313,
+                  1042
+                ],
+                [
+                  1178,
+                  1056
+                ]
+              ],
+              "text": "Quizás nada consigan. Los congresistas que tan-"
+            },
+            {
+              "id": "l_74",
+              "type": "TextLine",
+              "points": [
+                [
+                  313,
+                  1117
+                ],
+                [
+                  1170,
+                  1132
+                ],
+                [
+                  1170,
+                  1102
+                ],
+                [
+                  313,
+                  1087
+                ]
+              ],
+              "text": "tos asuntos complejos encuentran en su tierra, no"
+            },
+            {
+              "id": "l_75",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1177
+                ],
+                [
+                  316,
+                  1162
+                ],
+                [
+                  316,
+                  1132
+                ],
+                [
+                  1178,
+                  1147
+                ]
+              ],
+              "text": "tienen prisa ninguna en dedicar un momento de su"
+            },
+            {
+              "id": "l_76",
+              "type": "TextLine",
+              "points": [
+                [
+                  310,
+                  1207
+                ],
+                [
+                  1161,
+                  1216
+                ],
+                [
+                  1161,
+                  1186
+                ],
+                [
+                  310,
+                  1177
+                ]
+              ],
+              "text": "atención, para escuchar el grito de angustia que"
+            },
+            {
+              "id": "l_77",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1270
+                ],
+                [
+                  304,
+                  1248
+                ],
+                [
+                  304,
+                  1218
+                ],
+                [
+                  1178,
+                  1240
+                ]
+              ],
+              "text": "un pueblo pequeño sí, (pero en el cual, un millón"
+            },
+            {
+              "id": "l_78",
+              "type": "TextLine",
+              "points": [
+                [
+                  310,
+                  1296
+                ],
+                [
+                  1161,
+                  1302
+                ],
+                [
+                  1161,
+                  1272
+                ],
+                [
+                  310,
+                  1266
+                ]
+              ],
+              "text": "y medio casi, de seres humanos, se debaten lu-"
+            },
+            {
+              "id": "l_79",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1359
+                ],
+                [
+                  307,
+                  1338
+                ],
+                [
+                  307,
+                  1308
+                ],
+                [
+                  1178,
+                  1329
+                ]
+              ],
+              "text": "chando por la vida en una cárcel estrecha, insufi-"
+            },
+            {
+              "id": "l_80",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1401
+                ],
+                [
+                  304,
+                  1380
+                ],
+                [
+                  304,
+                  1350
+                ],
+                [
+                  1178,
+                  1371
+                ]
+              ],
+              "text": "ciente para contenerlos a todos, y en condiciones"
+            },
+            {
+              "id": "l_81",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1439
+                ],
+                [
+                  304,
+                  1425
+                ],
+                [
+                  304,
+                  1395
+                ],
+                [
+                  1178,
+                  1409
+                ]
+              ],
+              "text": "anormales para cumpiir los fines de la existencia)"
+            },
+            {
+              "id": "l_82",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1486
+                ],
+                [
+                  307,
+                  1466
+                ],
+                [
+                  307,
+                  1436
+                ],
+                [
+                  1178,
+                  1456
+                ]
+              ],
+              "text": "eleva uno y otro dia, pidiendo un poco de justicia,"
+            },
+            {
+              "id": "l_83",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  1511
+                ],
+                [
+                  1173,
+                  1523
+                ],
+                [
+                  1173,
+                  1493
+                ],
+                [
+                  307,
+                  1481
+                ]
+              ],
+              "text": "un poco de ecuanimidad a ese pueblo que se ha"
+            },
+            {
+              "id": "l_84",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1568
+                ],
+                [
+                  298,
+                  1556
+                ],
+                [
+                  298,
+                  1526
+                ],
+                [
+                  1178,
+                  1538
+                ]
+              ],
+              "text": "erigido en defensor de los oprimidos, campeón de"
+            },
+            {
+              "id": "l_85",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1617
+                ],
+                [
+                  313,
+                  1601
+                ],
+                [
+                  313,
+                  1571
+                ],
+                [
+                  1178,
+                  1587
+                ]
+              ],
+              "text": "los débiles, y si se nos permite la frase, endereza-"
+            },
+            {
+              "id": "l_86",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  1646
+                ],
+                [
+                  1030,
+                  1655
+                ],
+                [
+                  1030,
+                  1625
+                ],
+                [
+                  993,
+                  1623
+                ],
+                [
+                  307,
+                  1616
+                ]
+              ],
+              "text": "dor de los entuertos europeos o mundiales."
+            },
+            {
+              "id": "l_87",
+              "type": "TextLine",
+              "points": [
+                [
+                  373,
+                  1690
+                ],
+                [
+                  1176,
+                  1699
+                ],
+                [
+                  1176,
+                  1669
+                ],
+                [
+                  1135,
+                  1666
+                ],
+                [
+                  373,
+                  1660
+                ]
+              ],
+              "text": "Aquí hay un entuerto muy torcido, gran Wil-"
+            },
+            {
+              "id": "l_88",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1728
+                ],
+                [
+                  316,
+                  1729
+                ],
+                [
+                  316,
+                  1699
+                ],
+                [
+                  1178,
+                  1698
+                ]
+              ],
+              "text": "son. Aquí la vida se hace ya imposible con el al-"
+            },
+            {
+              "id": "l_89",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  1777
+                ],
+                [
+                  815,
+                  1780
+                ],
+                [
+                  815,
+                  1750
+                ],
+                [
+                  307,
+                  1747
+                ]
+              ],
+              "text": "to precio de las subsistencias."
+            },
+            {
+              "id": "l_90",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1820
+                ],
+                [
+                  376,
+                  1819
+                ],
+                [
+                  376,
+                  1789
+                ],
+                [
+                  1178,
+                  1790
+                ]
+              ],
+              "text": "El comercio americano, (su comercio), aprieta"
+            },
+            {
+              "id": "l_91",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1866
+                ],
+                [
+                  304,
+                  1864
+                ],
+                [
+                  304,
+                  1834
+                ],
+                [
+                  1178,
+                  1836
+                ]
+              ],
+              "text": "el torniquete de los precios especiales que tiene"
+            },
+            {
+              "id": "l_92",
+              "type": "TextLine",
+              "points": [
+                [
+                  310,
+                  1908
+                ],
+                [
+                  1161,
+                  1917
+                ],
+                [
+                  1161,
+                  1887
+                ],
+                [
+                  310,
+                  1878
+                ]
+              ],
+              "text": "para esta infeliz isla, que no teniendo nada más"
+            },
+            {
+              "id": "l_93",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1957
+                ],
+                [
+                  310,
+                  1953
+                ],
+                [
+                  310,
+                  1922
+                ],
+                [
+                  1178,
+                  1926
+                ]
+              ],
+              "text": "que un solo mercado, sucumbe, ante esa esclavitud"
+            },
+            {
+              "id": "l_94",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1999
+                ],
+                [
+                  307,
+                  1995
+                ],
+                [
+                  307,
+                  1965
+                ],
+                [
+                  1178,
+                  1969
+                ]
+              ],
+              "text": "económica, como sucumbiria, si tuviera un gobier-"
+            },
+            {
+              "id": "l_95",
+              "type": "TextLine",
+              "points": [
+                [
+                  304,
+                  2037
+                ],
+                [
+                  832,
+                  2043
+                ],
+                [
+                  832,
+                  2013
+                ],
+                [
+                  304,
+                  2007
+                ]
+              ],
+              "text": "no despótico que lo tiranizase."
+            },
+            {
+              "id": "l_97",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2084
+                ],
+                [
+                  373,
+                  2081
+                ],
+                [
+                  373,
+                  2051
+                ],
+                [
+                  1178,
+                  2054
+                ]
+              ],
+              "text": "¿De qué nos vale tener libertad de hablar, o"
+            },
+            {
+              "id": "l_96",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  2126
+                ],
+                [
+                  1161,
+                  2132
+                ],
+                [
+                  1161,
+                  2102
+                ],
+                [
+                  307,
+                  2096
+                ]
+              ],
+              "text": "de decir la verdad, aún al mismo gobierno, si éste"
+            },
+            {
+              "id": "l_98",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2179
+                ],
+                [
+                  307,
+                  2168
+                ],
+                [
+                  307,
+                  2138
+                ],
+                [
+                  1178,
+                  2149
+                ]
+              ],
+              "text": "hace oidos de mercader, y deja que su comercio"
+            },
+            {
+              "id": "l_99",
+              "type": "TextLine",
+              "points": [
+                [
+                  310,
+                  2216
+                ],
+                [
+                  886,
+                  2219
+                ],
+                [
+                  886,
+                  2189
+                ],
+                [
+                  310,
+                  2186
+                ]
+              ],
+              "text": "nos oprima hasta extrangularnos?"
+            },
+            {
+              "id": "l_100",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2264
+                ],
+                [
+                  367,
+                  2255
+                ],
+                [
+                  367,
+                  2225
+                ],
+                [
+                  1178,
+                  2234
+                ]
+              ],
+              "text": "¿De qué nos vale llamarnos, americanos, con"
+            },
+            {
+              "id": "l_101",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2311
+                ],
+                [
+                  307,
+                  2299
+                ],
+                [
+                  307,
+                  2269
+                ],
+                [
+                  1178,
+                  2281
+                ]
+              ],
+              "text": "un 66% de analfabetas, como si perteneciéramos"
+            },
+            {
+              "id": "l_102",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2353
+                ],
+                [
+                  304,
+                  2344
+                ],
+                [
+                  304,
+                  2314
+                ],
+                [
+                  1178,
+                  2323
+                ]
+              ],
+              "text": "al despótico gobierno de Marroecos o de Turquía?"
+            },
+            {
+              "id": "l_103",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2402
+                ],
+                [
+                  310,
+                  2389
+                ],
+                [
+                  310,
+                  2359
+                ],
+                [
+                  1178,
+                  2372
+                ]
+              ],
+              "text": "¿Y teniendo tanto niño abandonado que pulula por"
+            },
+            {
+              "id": "l_104",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2443
+                ],
+                [
+                  301,
+                  2431
+                ],
+                [
+                  301,
+                  2401
+                ],
+                [
+                  1178,
+                  2413
+                ]
+              ],
+              "text": "las calles sin pan ni abrigo, cometiendo crimenes"
+            },
+            {
+              "id": "l_105",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2487
+                ],
+                [
+                  301,
+                  2476
+                ],
+                [
+                  301,
+                  2446
+                ],
+                [
+                  1178,
+                  2457
+                ]
+              ],
+              "text": "á una edad temprana, por el desamparo en que"
+            },
+            {
+              "id": "l_106",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  2517
+                ],
+                [
+                  357,
+                  2520
+                ],
+                [
+                  432,
+                  2517
+                ],
+                [
+                  432,
+                  2487
+                ],
+                [
+                  382,
+                  2490
+                ],
+                [
+                  307,
+                  2487
+                ]
+              ],
+              "text": "viven?"
+            },
+            {
+              "id": "l_107",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2573
+                ],
+                [
+                  379,
+                  2562
+                ],
+                [
+                  379,
+                  2532
+                ],
+                [
+                  1178,
+                  2543
+                ]
+              ],
+              "text": "Y en tanto el oro americano acapara las tie-"
+            },
+            {
+              "id": "l_108",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2619
+                ],
+                [
+                  304,
+                  2607
+                ],
+                [
+                  304,
+                  2577
+                ],
+                [
+                  1178,
+                  2589
+                ]
+              ],
+              "text": "rras y siembra el país entero de cañas, no dejando"
+            },
+            {
+              "id": "l_109",
+              "type": "TextLine",
+              "points": [
+                [
+                  307,
+                  2652
+                ],
+                [
+                  1158,
+                  2661
+                ],
+                [
+                  1158,
+                  2631
+                ],
+                [
+                  307,
+                  2622
+                ]
+              ],
+              "text": "lugar para los frutos menores que es el alimento"
+            },
+            {
+              "id": "l_110",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2710
+                ],
+                [
+                  301,
+                  2693
+                ],
+                [
+                  301,
+                  2663
+                ],
+                [
+                  1178,
+                  2680
+                ]
+              ],
+              "text": "de este pobre pueblo, que muere de hambre y des-"
+            },
+            {
+              "id": "l_111",
+              "type": "TextLine",
+              "points": [
+                [
+                  301,
+                  2738
+                ],
+                [
+                  1167,
+                  2747
+                ],
+                [
+                  1167,
+                  2717
+                ],
+                [
+                  301,
+                  2708
+                ]
+              ],
+              "text": "nudez, en la más crasa ignorancia, como los anti-"
+            },
+            {
+              "id": "l_112",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2799
+                ],
+                [
+                  304,
+                  2786
+                ],
+                [
+                  304,
+                  2756
+                ],
+                [
+                  409,
+                  2751
+                ],
+                [
+                  1178,
+                  2769
+                ]
+              ],
+              "text": "guos ilotas de la India, sin que haya compasión pa-"
+            },
+            {
+              "id": "l_113",
+              "type": "TextLine",
+              "points": [
+                [
+                  301,
+                  2825
+                ],
+                [
+                  1149,
+                  2834
+                ],
+                [
+                  1149,
+                  2804
+                ],
+                [
+                  301,
+                  2795
+                ]
+              ],
+              "text": "ra él, mientras corre el oro que produce la dulce"
+            },
+            {
+              "id": "l_114",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2887
+                ],
+                [
+                  304,
+                  2873
+                ],
+                [
+                  304,
+                  2843
+                ],
+                [
+                  392,
+                  2840
+                ],
+                [
+                  1178,
+                  2857
+                ]
+              ],
+              "text": "gramínea, como un Mississippi tropical, por encima"
+            },
+            {
+              "id": "l_115",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2915
+                ],
+                [
+                  295,
+                  2911
+                ],
+                [
+                  295,
+                  2881
+                ],
+                [
+                  1178,
+                  2885
+                ]
+              ],
+              "text": "de los mares, y va a formar palacios y tiendas ma-"
+            }
+          ]
+        },
+        {
+          "id": "r_4",
+          "type": "TextRegion",
+          "points": [
+            [
+              1178,
+              3068
+            ],
+            [
+              1178,
+              792
+            ],
+            [
+              2083,
+              792
+            ],
+            [
+              2083,
+              3068
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  837
+                ],
+                [
+                  2077,
+                  848
+                ],
+                [
+                  2077,
+                  878
+                ],
+                [
+                  1178,
+                  867
+                ]
+              ],
+              "text": "ravillosas en la ciudad egregia, que todo lo absor-"
+            },
+            {
+              "id": "l_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  881
+                ],
+                [
+                  2068,
+                  896
+                ],
+                [
+                  2068,
+                  926
+                ],
+                [
+                  1178,
+                  911
+                ]
+              ],
+              "text": "be, y cuyo gobierno se enorgullece en proclamar"
+            },
+            {
+              "id": "l_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  925
+                ],
+                [
+                  2018,
+                  934
+                ],
+                [
+                  2018,
+                  965
+                ],
+                [
+                  1178,
+                  956
+                ]
+              ],
+              "text": "¡LA GRAN PROSPERIDAD DE PUERTO RICO......!"
+            },
+            {
+              "id": "l_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  1292,
+                  1001
+                ],
+                [
+                  2060,
+                  1010
+                ],
+                [
+                  2060,
+                  980
+                ],
+                [
+                  1292,
+                  971
+                ]
+              ],
+              "text": "¡Ah, mentiras convencionales! ¡Ah. espejis-"
+            },
+            {
+              "id": "l_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1011
+                ],
+                [
+                  2060,
+                  1030
+                ],
+                [
+                  2060,
+                  1060
+                ],
+                [
+                  1178,
+                  1041
+                ]
+              ],
+              "text": "mos de la imaginación! ¡Y cuán dura, amarga y"
+            },
+            {
+              "id": "l_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1056
+                ],
+                [
+                  1803,
+                  1063
+                ],
+                [
+                  1803,
+                  1093
+                ],
+                [
+                  1178,
+                  1086
+                ]
+              ],
+              "text": "sombría es la horrible realidad....!"
+            },
+            {
+              "id": "l_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  1289,
+                  1141
+                ],
+                [
+                  2068,
+                  1150
+                ],
+                [
+                  2068,
+                  1120
+                ],
+                [
+                  1289,
+                  1111
+                ]
+              ],
+              "text": "Por eso Puerto Rico necesita despejar esa obs-"
+            },
+            {
+              "id": "l_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1147
+                ],
+                [
+                  1501,
+                  1153
+                ],
+                [
+                  1501,
+                  1183
+                ],
+                [
+                  1178,
+                  1177
+                ]
+              ],
+              "text": "cura incógnita."
+            },
+            {
+              "id": "l_20",
+              "type": "TextLine",
+              "points": [
+                [
+                  1286,
+                  1234
+                ],
+                [
+                  2063,
+                  1246
+                ],
+                [
+                  2063,
+                  1216
+                ],
+                [
+                  1286,
+                  1204
+                ]
+              ],
+              "text": "Por eso necesita definir su status, para saber"
+            },
+            {
+              "id": "l_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1240
+                ],
+                [
+                  2060,
+                  1257
+                ],
+                [
+                  2060,
+                  1287
+                ],
+                [
+                  1178,
+                  1270
+                ]
+              ],
+              "text": "cuál ha de ser su solución definitiva, y poder en-"
+            },
+            {
+              "id": "l_26",
+              "type": "TextLine",
+              "points": [
+                [
+                  1188,
+                  1320
+                ],
+                [
+                  2074,
+                  1332
+                ],
+                [
+                  2074,
+                  1302
+                ],
+                [
+                  1188,
+                  1290
+                ]
+              ],
+              "text": "tónces buscar un remedio á la condición misera de"
+            },
+            {
+              "id": "l_22",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1329
+                ],
+                [
+                  2063,
+                  1344
+                ],
+                [
+                  2063,
+                  1374
+                ],
+                [
+                  1178,
+                  1359
+                ]
+              ],
+              "text": "nuestro pueblo; si no fuere ya demasiado tarde pa-"
+            },
+            {
+              "id": "l_24",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1371
+                ],
+                [
+                  2063,
+                  1392
+                ],
+                [
+                  2063,
+                  1422
+                ],
+                [
+                  1178,
+                  1401
+                ]
+              ],
+              "text": "ra salvarlo de la horrible miseria en que vive, y de"
+            },
+            {
+              "id": "l_28",
+              "type": "TextLine",
+              "points": [
+                [
+                  1221,
+                  1449
+                ],
+                [
+                  2065,
+                  1463
+                ],
+                [
+                  2065,
+                  1433
+                ],
+                [
+                  1221,
+                  1419
+                ]
+              ],
+              "text": "la degradación y desamparo en que se revuelve"
+            },
+            {
+              "id": "l_32",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1456
+                ],
+                [
+                  2077,
+                  1478
+                ],
+                [
+                  2077,
+                  1508
+                ],
+                [
+                  1178,
+                  1486
+                ]
+              ],
+              "text": "impotente, ante la esclavitud sui generis del plato"
+            },
+            {
+              "id": "l_30",
+              "type": "TextLine",
+              "points": [
+                [
+                  1206,
+                  1541
+                ],
+                [
+                  1430,
+                  1541
+                ],
+                [
+                  1430,
+                  1510
+                ],
+                [
+                  1206,
+                  1510
+                ]
+              ],
+              "text": "de lentejas."
+            },
+            {
+              "id": "l_36",
+              "type": "TextLine",
+              "points": [
+                [
+                  1286,
+                  1583
+                ],
+                [
+                  2074,
+                  1598
+                ],
+                [
+                  2074,
+                  1568
+                ],
+                [
+                  2034,
+                  1565
+                ],
+                [
+                  1286,
+                  1553
+                ]
+              ],
+              "text": "Nuestro pueblo en su desesperación, pide la"
+            },
+            {
+              "id": "l_34",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1587
+                ],
+                [
+                  1483,
+                  1604
+                ],
+                [
+                  1483,
+                  1634
+                ],
+                [
+                  1178,
+                  1617
+                ]
+              ],
+              "text": "independencia."
+            },
+            {
+              "id": "l_40",
+              "type": "TextLine",
+              "points": [
+                [
+                  1298,
+                  1678
+                ],
+                [
+                  2063,
+                  1690
+                ],
+                [
+                  2063,
+                  1660
+                ],
+                [
+                  1298,
+                  1648
+                ]
+              ],
+              "text": "Y bien, qué hombre y qué pueblo digno no"
+            },
+            {
+              "id": "l_38",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1698
+                ],
+                [
+                  1689,
+                  1699
+                ],
+                [
+                  1689,
+                  1729
+                ],
+                [
+                  1178,
+                  1728
+                ]
+              ],
+              "text": "aspira á su independencia?"
+            },
+            {
+              "id": "l_46",
+              "type": "TextLine",
+              "points": [
+                [
+                  1289,
+                  1768
+                ],
+                [
+                  2063,
+                  1774
+                ],
+                [
+                  2063,
+                  1743
+                ],
+                [
+                  1289,
+                  1737
+                ]
+              ],
+              "text": "Pero ¿tenemos nosotros dinero suficiente para"
+            },
+            {
+              "id": "l_44",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1790
+                ],
+                [
+                  2063,
+                  1792
+                ],
+                [
+                  2063,
+                  1822
+                ],
+                [
+                  1178,
+                  1820
+                ]
+              ],
+              "text": "hacer frente á las responsabilidades y desembolsos"
+            },
+            {
+              "id": "l_42",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1836
+                ],
+                [
+                  1904,
+                  1831
+                ],
+                [
+                  1904,
+                  1861
+                ],
+                [
+                  1178,
+                  1866
+                ]
+              ],
+              "text": "que esa clase de gobierno lleva consigo?"
+            },
+            {
+              "id": "l_50",
+              "type": "TextLine",
+              "points": [
+                [
+                  1283,
+                  1902
+                ],
+                [
+                  2057,
+                  1914
+                ],
+                [
+                  2057,
+                  1883
+                ],
+                [
+                  1283,
+                  1871
+                ]
+              ],
+              "text": "¡No seamos niños! Pensemos con sensatez."
+            },
+            {
+              "id": "l_48",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1926
+                ],
+                [
+                  2065,
+                  1928
+                ],
+                [
+                  2065,
+                  1959
+                ],
+                [
+                  1178,
+                  1957
+                ]
+              ],
+              "text": "Somos pobres, muy pobres, y el actual gobierno"
+            },
+            {
+              "id": "l_52",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  1969
+                ],
+                [
+                  2063,
+                  1974
+                ],
+                [
+                  2063,
+                  2004
+                ],
+                [
+                  1178,
+                  1999
+                ]
+              ],
+              "text": "nos ha acostumbrado á tener un presupuesto de"
+            },
+            {
+              "id": "l_56",
+              "type": "TextLine",
+              "points": [
+                [
+                  1224,
+                  2034
+                ],
+                [
+                  2036,
+                  2046
+                ],
+                [
+                  2036,
+                  2016
+                ],
+                [
+                  1224,
+                  2004
+                ]
+              ],
+              "text": "millonarios, que sube, que se infla cada año y..."
+            },
+            {
+              "id": "l_54",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2054
+                ],
+                [
+                  2003,
+                  2054
+                ],
+                [
+                  2003,
+                  2084
+                ],
+                [
+                  1178,
+                  2084
+                ]
+              ],
+              "text": "¿qué sucederá? Responda quien pueda....."
+            },
+            {
+              "id": "l_58",
+              "type": "TextLine",
+              "points": [
+                [
+                  1280,
+                  2123
+                ],
+                [
+                  2060,
+                  2135
+                ],
+                [
+                  2060,
+                  2105
+                ],
+                [
+                  2021,
+                  2101
+                ],
+                [
+                  1280,
+                  2093
+                ]
+              ],
+              "text": "Otros, tan ilusos como los independentistas,"
+            },
+            {
+              "id": "l_60",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2149
+                ],
+                [
+                  2054,
+                  2153
+                ],
+                [
+                  2054,
+                  2183
+                ],
+                [
+                  1178,
+                  2179
+                ]
+              ],
+              "text": "piden el estado. Otro gobierno de millonarios."
+            },
+            {
+              "id": "l_64",
+              "type": "TextLine",
+              "points": [
+                [
+                  1212,
+                  2219
+                ],
+                [
+                  2048,
+                  2225
+                ],
+                [
+                  2048,
+                  2195
+                ],
+                [
+                  1212,
+                  2189
+                ]
+              ],
+              "text": "¿Podríamos nosotros acaso alternar con los flaman-"
+            },
+            {
+              "id": "l_62",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2234
+                ],
+                [
+                  1943,
+                  2237
+                ],
+                [
+                  1943,
+                  2267
+                ],
+                [
+                  1178,
+                  2264
+                ]
+              ],
+              "text": "tes estados americanos en fuerza y poderío?"
+            },
+            {
+              "id": "l_119",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  2305
+                ],
+                [
+                  2057,
+                  2323
+                ],
+                [
+                  2057,
+                  2293
+                ],
+                [
+                  2017,
+                  2290
+                ],
+                [
+                  1262,
+                  2275
+                ]
+              ],
+              "text": "No es preparación cívica ni intelectual lo que"
+            },
+            {
+              "id": "l_69",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2323
+                ],
+                [
+                  2065,
+                  2332
+                ],
+                [
+                  2065,
+                  2362
+                ],
+                [
+                  1178,
+                  2353
+                ]
+              ],
+              "text": "nos falta para que pudiera ser Puerto Rico una re-"
+            },
+            {
+              "id": "l_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  2049,
+                  2413
+                ],
+                [
+                  1178,
+                  2402
+                ],
+                [
+                  1178,
+                  2372
+                ],
+                [
+                  2049,
+                  2383
+                ]
+              ],
+              "text": "pública protegida como Cuba o Panamá: ni un es-"
+            },
+            {
+              "id": "l_117",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2413
+                ],
+                [
+                  2057,
+                  2422
+                ],
+                [
+                  2057,
+                  2452
+                ],
+                [
+                  1178,
+                  2443
+                ]
+              ],
+              "text": "tado como Tejas o Nuevo Méjico. Lo que nos"
+            },
+            {
+              "id": "l_118",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2457
+                ],
+                [
+                  2065,
+                  2466
+                ],
+                [
+                  2065,
+                  2496
+                ],
+                [
+                  1178,
+                  2487
+                ]
+              ],
+              "text": "falta es dinero y voluntad para hacer producir á"
+            },
+            {
+              "id": "l_120",
+              "type": "TextLine",
+              "points": [
+                [
+                  1203,
+                  2532
+                ],
+                [
+                  2051,
+                  2538
+                ],
+                [
+                  2051,
+                  2508
+                ],
+                [
+                  1203,
+                  2502
+                ]
+              ],
+              "text": "nuestra fértil isla lo que sea indispensable para"
+            },
+            {
+              "id": "l_121",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2543
+                ],
+                [
+                  2051,
+                  2550
+                ],
+                [
+                  2051,
+                  2580
+                ],
+                [
+                  1967,
+                  2583
+                ],
+                [
+                  1178,
+                  2573
+                ]
+              ],
+              "text": "nuestras necesidades, y desechar de nuestras cos-"
+            },
+            {
+              "id": "l_122",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2589
+                ],
+                [
+                  1970,
+                  2595
+                ],
+                [
+                  1970,
+                  2625
+                ],
+                [
+                  1178,
+                  2619
+                ]
+              ],
+              "text": "tumbres esos lujos que no podemos soportar."
+            },
+            {
+              "id": "l_124",
+              "type": "TextLine",
+              "points": [
+                [
+                  1271,
+                  2676
+                ],
+                [
+                  2057,
+                  2682
+                ],
+                [
+                  2057,
+                  2652
+                ],
+                [
+                  1271,
+                  2646
+                ]
+              ],
+              "text": "Esos presupuestos escandalosos que van a lle-"
+            },
+            {
+              "id": "l_123",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2680
+                ],
+                [
+                  2054,
+                  2696
+                ],
+                [
+                  2054,
+                  2726
+                ],
+                [
+                  1178,
+                  2710
+                ]
+              ],
+              "text": "nar el bolsillo de tanto carpet bagger, que nos ase-"
+            },
+            {
+              "id": "l_126",
+              "type": "TextLine",
+              "points": [
+                [
+                  1200,
+                  2759
+                ],
+                [
+                  2060,
+                  2771
+                ],
+                [
+                  2060,
+                  2740
+                ],
+                [
+                  1200,
+                  2728
+                ]
+              ],
+              "text": "dia; y emanciparnos de ese mercado único que nos"
+            },
+            {
+              "id": "l_125",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2769
+                ],
+                [
+                  1255,
+                  2779
+                ],
+                [
+                  1361,
+                  2777
+                ],
+                [
+                  1361,
+                  2807
+                ],
+                [
+                  1255,
+                  2809
+                ],
+                [
+                  1178,
+                  2799
+                ]
+              ],
+              "text": "tritura."
+            },
+            {
+              "id": "l_129",
+              "type": "TextLine",
+              "points": [
+                [
+                  1286,
+                  2864
+                ],
+                [
+                  2054,
+                  2873
+                ],
+                [
+                  2054,
+                  2843
+                ],
+                [
+                  1286,
+                  2834
+                ]
+              ],
+              "text": "Y tratar de vivir con lo que tenemos, sin con-"
+            },
+            {
+              "id": "l_128",
+              "type": "TextLine",
+              "points": [
+                [
+                  1178,
+                  2885
+                ],
+                [
+                  2051,
+                  2890
+                ],
+                [
+                  2051,
+                  2920
+                ],
+                [
+                  1178,
+                  2915
+                ]
+              ],
+              "text": "contraer deudas, en la honrosa mediania de las per-"
+            }
+          ]
+        },
+        {
+          "id": "r_1",
+          "type": "TextRegion",
+          "points": [
+            [
+              1039,
+              3070
+            ],
+            [
+              1457,
+              3070
+            ],
+            [
+              1457,
+              3135
+            ],
+            [
+              1039,
+              3135
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "l",
+              "type": "TextLine",
+              "points": [
+                [
+                  1050,
+                  3111
+                ],
+                [
+                  1073,
+                  3113
+                ],
+                [
+                  1090,
+                  3112
+                ],
+                [
+                  1107,
+                  3112
+                ],
+                [
+                  1125,
+                  3114
+                ],
+                [
+                  1139,
+                  3114
+                ],
+                [
+                  1155,
+                  3114
+                ],
+                [
+                  1167,
+                  3114
+                ],
+                [
+                  1189,
+                  3114
+                ],
+                [
+                  1198,
+                  3114
+                ],
+                [
+                  1215,
+                  3112
+                ],
+                [
+                  1233,
+                  3112
+                ],
+                [
+                  1247,
+                  3112
+                ],
+                [
+                  1265,
+                  3112
+                ],
+                [
+                  1286,
+                  3111
+                ],
+                [
+                  1300,
+                  3110
+                ],
+                [
+                  1318,
+                  3106
+                ],
+                [
+                  1335,
+                  3108
+                ],
+                [
+                  1362,
+                  3111
+                ],
+                [
+                  1370,
+                  3111
+                ],
+                [
+                  1395,
+                  3111
+                ],
+                [
+                  1414,
+                  3108
+                ],
+                [
+                  1423,
+                  3108
+                ],
+                [
+                  1444,
+                  3110
+                ],
+                [
+                  1444,
+                  3110
+                ],
+                [
+                  1444,
+                  3080
+                ],
+                [
+                  1445,
+                  3080
+                ],
+                [
+                  1424,
+                  3078
+                ],
+                [
+                  1412,
+                  3078
+                ],
+                [
+                  1393,
+                  3081
+                ],
+                [
+                  1370,
+                  3081
+                ],
+                [
+                  1364,
+                  3081
+                ],
+                [
+                  1338,
+                  3078
+                ],
+                [
+                  1316,
+                  3076
+                ],
+                [
+                  1296,
+                  3080
+                ],
+                [
+                  1284,
+                  3081
+                ],
+                [
+                  1264,
+                  3082
+                ],
+                [
+                  1247,
+                  3082
+                ],
+                [
+                  1233,
+                  3082
+                ],
+                [
+                  1213,
+                  3082
+                ],
+                [
+                  1196,
+                  3084
+                ],
+                [
+                  1189,
+                  3084
+                ],
+                [
+                  1167,
+                  3084
+                ],
+                [
+                  1155,
+                  3084
+                ],
+                [
+                  1139,
+                  3084
+                ],
+                [
+                  1127,
+                  3084
+                ],
+                [
+                  1109,
+                  3082
+                ],
+                [
+                  1089,
+                  3082
+                ],
+                [
+                  1073,
+                  3083
+                ],
+                [
+                  1053,
+                  3081
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tileSources": [
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/09-09-1919/images/Heraldo_De_La_Mujer_09-09-1919_P05.jpg",
+      "buildPyramid": true
+    }
+  ]
+}
