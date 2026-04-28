@@ -133,32 +133,32 @@ layout: page-full-width
       </div>
     </div>
  
-      <div class="mb-3">
-        <label class="form-label">Década</label>
-        <select class="form-select" id="searchDecade">
-          <option value="">Todas las décadas</option>
-          {% assign seen_decades = "" | split: "" %}
-          {% for item in meta %}
-            {% if item.date != "" and item.date != nil %}
-              {% assign parts = item.date | split: "-" %}
-              {% if parts[2].size == 4 %}
-                {% assign y = parts[2] | plus: 0 %}
-              {% else %}
-                {% assign y = parts[0] | plus: 0 %}
-              {% endif %}
-              {% assign dec = y | divided_by: 10 | times: 10 %}
-              {% assign dec_s = dec | append: "" %}
-              {% unless seen_decades contains dec_s %}
-                {% assign seen_decades = seen_decades | push: dec_s %}
-              {% endunless %}
+    <div class="mb-3">
+      <label class="form-label">Década</label>
+      <select class="form-select" id="searchDecade">
+        <option value="">Todas las décadas</option>
+        {% assign seen_decades = "" | split: "" %}
+        {% for item in meta %}
+          {% if item.date != "" and item.date != nil %}
+            {% assign parts = item.date | split: "-" %}
+            {% if parts[2].size == 4 %}
+              {% assign y = parts[2] | plus: 0 %}
+            {% else %}
+              {% assign y = parts[0] | plus: 0 %}
             {% endif %}
-          {% endfor %}
-          {% assign seen_decades = seen_decades | sort %}
-          {% for dec in seen_decades %}
-          <option value="{{ dec }}">{{ dec }}s</option>
-          {% endfor %}
-        </select>
-      </div>
+            {% assign dec = y | divided_by: 10 | times: 10 %}
+            {% assign dec_s = dec | append: "" %}
+            {% unless seen_decades contains dec_s %}
+              {% assign seen_decades = seen_decades | push: dec_s %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+        {% assign seen_decades = seen_decades | sort %}
+        {% for dec in seen_decades %}
+        <option value="{{ dec }}">{{ dec }}s</option>
+        {% endfor %}
+      </select>
+    </div>
  
       <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
  
