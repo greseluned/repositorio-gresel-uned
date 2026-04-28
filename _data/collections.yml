@@ -250,10 +250,10 @@
   date_start:
   date_end:
 
-  - id: la-vanguardia
+- id: la-vanguardia
   title: "La Vanguardia"
   description: 
-  #cover_image: "objects/la-vanguardia-cover.jpg"   # path to a representative image
+  #cover_image: "objects/la-vanguardia-cover.jpg"
   date_start:
   date_end:
 
