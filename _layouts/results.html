@@ -23,8 +23,6 @@ layout: page
   border-radius: 4px;
   font-size: 1rem;
 }
-
-/* Sidebar */
 .facet-sidebar { position: sticky; top: 1rem; }
 .facet-section { border-bottom: 1px solid #e9ecef; padding-bottom: 1rem; margin-bottom: 1rem; }
 .facet-section:last-child { border-bottom: none; }
@@ -46,11 +44,8 @@ layout: page
 .facet-list li label:hover { color: #7fc006; }
 .facet-count { background: #e9ecef; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; color: #666; }
 .facet-count.active-count { background: #7fc006; color: #000; font-weight: 700; }
-
 .btn-clear { font-size: 0.8rem; color: #666; text-decoration: none; }
 .btn-clear:hover { color: #c00; }
-
-/* Results list */
 .result-item {
   border: 1px solid #e9ecef;
   border-radius: 6px;
@@ -68,22 +63,14 @@ layout: page
 .result-meta { font-size: 0.78rem; color: #888; display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .result-meta span strong { color: #555; }
 .result-loading { font-size: 0.8rem; color: #aaa; font-style: italic; }
-
-/* Sort bar */
 .sort-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
 .sort-bar .result-count { font-size: 0.9rem; color: #555; }
 .sort-bar select { font-size: 0.875rem; padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid #ced4da; }
-
-/* Pagination */
 .pagination .page-link { color: #1a1a2e; }
 .pagination .page-item.active .page-link { background-color: #7fc006; border-color: #659a02; color: #000; }
 .pagination .page-link:hover { color: #7fc006; }
-
-/* Search within */
 .search-within { margin-bottom: 1rem; }
-.search-within .input-group { max-width: 100%; }
 .search-within .form-control { font-size: 0.875rem; }
-
 #loadingOverlay { text-align: center; padding: 3rem; color: #888; }
 </style>
 
@@ -94,7 +81,6 @@ layout: page
 </div>
 
 <div class="row g-3">
-  <!-- Sidebar -->
   <div class="col-lg-3">
     <div class="facet-sidebar">
       <div class="search-within mb-3">
@@ -105,47 +91,30 @@ layout: page
           </button>
         </div>
       </div>
-
       <a href="#" class="btn-clear" onclick="clearAll(); return false;">Limpiar selecciones</a>
-
       <div class="facet-section mt-2">
-        <div class="facet-title" onclick="toggleFacet('facetCollection')">
-          Cabecera <span id="facetCollectionArrow">▾</span>
-        </div>
+        <div class="facet-title" onclick="toggleFacet('facetCollection')">Cabecera <span id="facetCollectionArrow">▾</span></div>
         <ul class="facet-list" id="facetCollection"></ul>
       </div>
-
       <div class="facet-section">
-        <div class="facet-title" onclick="toggleFacet('facetLocation')">
-          Lugar <span id="facetLocationArrow">▾</span>
-        </div>
+        <div class="facet-title" onclick="toggleFacet('facetLocation')">Lugar <span id="facetLocationArrow">▾</span></div>
         <ul class="facet-list" id="facetLocation"></ul>
       </div>
-
       <div class="facet-section">
-        <div class="facet-title" onclick="toggleFacet('facetDecade')">
-          Década <span id="facetDecadeArrow">▾</span>
-        </div>
+        <div class="facet-title" onclick="toggleFacet('facetDecade')">Década <span id="facetDecadeArrow">▾</span></div>
         <ul class="facet-list" id="facetDecade"></ul>
       </div>
-
       <div class="facet-section">
-        <div class="facet-title" onclick="toggleFacet('facetYear')">
-          Año <span id="facetYearArrow">▾</span>
-        </div>
+        <div class="facet-title" onclick="toggleFacet('facetYear')">Año <span id="facetYearArrow">▾</span></div>
         <ul class="facet-list" id="facetYear"></ul>
       </div>
-
       <div class="facet-section">
-        <div class="facet-title" onclick="toggleFacet('facetLang')">
-          Idioma <span id="facetLangArrow">▾</span>
-        </div>
+        <div class="facet-title" onclick="toggleFacet('facetLang')">Idioma <span id="facetLangArrow">▾</span></div>
         <ul class="facet-list" id="facetLang"></ul>
       </div>
     </div>
   </div>
 
-  <!-- Results -->
   <div class="col-lg-9">
     <div class="sort-bar">
       <span class="result-count" id="resultCount"></span>
@@ -156,65 +125,46 @@ layout: page
         <option value="title">Título (A→Z)</option>
       </select>
     </div>
-
     <div id="loadingOverlay">
       <div class="spinner-border text-secondary" role="status"></div>
       <p class="mt-2">Cargando índice...</p>
     </div>
-
     <div id="resultsList"></div>
-
-    <nav>
-      <ul class="pagination justify-content-center" id="pagination"></ul>
-    </nav>
+    <nav><ul class="pagination justify-content-center" id="pagination"></ul></nav>
   </div>
 </div>
 
 <script>
-// ============================================================================
-// CONFIG
-// ============================================================================
 const RESULTS_PER_PAGE = 10;
-const KWIC_WINDOW = 120; // characters of context around the match
+const KWIC_WINDOW = 120;
 
-// ============================================================================
-// STATE
-// ============================================================================
 let allItems = [];
 let filteredItems = [];
-
-// Cache: object_location -> array of { page, regionId, text }
-// Stays undefined until fetched, then set to [] or populated array
-const enrichedItems = {};
+const enrichedItems = {}; // object_location -> [{ page, regionId, text }]
 
 let activeFacets = { collection: [], location: [], decade: [], year: [], lang: [] };
 let currentQuery = "";
-let currentPage = 1;
+let currentPage  = 1;
 
-// ============================================================================
-// URL PARAMS
-// ============================================================================
-const urlParams = new URLSearchParams(window.location.search);
-const initialQuery    = urlParams.get("q") || "";
+const urlParams         = new URLSearchParams(window.location.search);
+const initialQuery      = urlParams.get("q") || "";
 const initialCollection = urlParams.get("collection") || "";
-const initialFrom     = urlParams.get("from") ? parseInt(urlParams.get("from")) : null;
-const initialTo       = urlParams.get("to")   ? parseInt(urlParams.get("to"))   : null;
-const initialLang     = urlParams.get("lang") ? urlParams.get("lang").split(",") : [];
-const initialLocation = urlParams.get("location") || "";
+const initialFrom       = urlParams.get("from") ? parseInt(urlParams.get("from")) : null;
+const initialTo         = urlParams.get("to")   ? parseInt(urlParams.get("to"))   : null;
+const initialLang       = urlParams.get("lang") ? urlParams.get("lang").split(",") : [];
+const initialLocation   = urlParams.get("location") || "";
 
-// Collection id -> title map (from Jekyll)
+// Jekyll injects collection titles at build time so slug -> proper title always works
 const collectionTitles = {
   {% for coll in collections %}"{{ coll.id }}": {{ coll.title | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}
 };
 
-// ============================================================================
-// TEXT RECONSTRUCTION
-// Joins textLines, merging hyphenated line-breaks:
-//   "impe-" + "rialismo" -> "imperialismo"
-//   "la mujer" + "dominicana" -> "la mujer dominicana"
-// ============================================================================
+// Base URL — everything is relative to this
+const siteBase = "{{ site.baseurl }}/";
+
+// ── Text reconstruction ───────────────────────────────────────────────────────
 function reconstructRegionText(textLines) {
-  if (!textLines || textLines.length === 0) return "";
+  if (!textLines || !textLines.length) return "";
   return textLines.reduce((acc, line, i) => {
     if (i === 0) return line.text || "";
     const curr = line.text || "";
@@ -222,203 +172,146 @@ function reconstructRegionText(textLines) {
   }, "");
 }
 
-// ============================================================================
-// FETCH JSON MANIFEST
-// Returns flat array of { page, regionId, text } for every region in the issue
-// ============================================================================
+// ── Fetch JSON manifest ───────────────────────────────────────────────────────
 async function fetchManifestRegions(objectLocation) {
-  // Return cached result if already fetched
-  if (enrichedItems[objectLocation] !== undefined) {
-    return enrichedItems[objectLocation];
-  }
-
+  if (enrichedItems[objectLocation] !== undefined) return enrichedItems[objectLocation];
   try {
-    const resp = await fetch("{{ '/' | relative_url }}" + objectLocation.trim());
-    if (!resp.ok) {
-      enrichedItems[objectLocation] = [];
-      return [];
-    }
-
+    const url  = siteBase + objectLocation.trim();
+    const resp = await fetch(url);
+    if (!resp.ok) { enrichedItems[objectLocation] = []; return []; }
     const manifest = await resp.json();
-    const regions = [];
-
+    const regions  = [];
     manifest.pages.forEach(pageObj => {
       (pageObj.textRegions || []).forEach(region => {
         const text = reconstructRegionText(region.textLines);
-        if (text.trim()) {
-          regions.push({
-            page: pageObj.page,       // 1-indexed page number
-            regionId: region.id,      // e.g. "r_4", "r_5"
-            text: text
-          });
-        }
+        if (text.trim()) regions.push({ page: pageObj.page, regionId: region.id, text });
       });
     });
-
     enrichedItems[objectLocation] = regions;
     return regions;
-
   } catch(e) {
     enrichedItems[objectLocation] = [];
     return [];
   }
 }
 
-// ============================================================================
-// FIND FIRST MATCHING REGION
-// Returns { page, regionId, snippet } or null
-// ============================================================================
+// ── Find first matching region ────────────────────────────────────────────────
 function findMatch(regions, query) {
-  const lQuery = query.toLowerCase();
-
+  const lq = query.toLowerCase();
   for (const entry of regions) {
-    const lText = entry.text.toLowerCase();
-    const idx = lText.indexOf(lQuery);
-
+    const lt  = entry.text.toLowerCase();
+    const idx = lt.indexOf(lq);
     if (idx !== -1) {
-      // Build KWIC snippet
-      const start = Math.max(0, idx - KWIC_WINDOW / 2);
-      const end   = Math.min(entry.text.length, idx + query.length + KWIC_WINDOW / 2);
-      let snippet = (start > 0 ? "…" : "") +
-                    entry.text.slice(start, end) +
-                    (end < entry.text.length ? "…" : "");
-
-      // Highlight matched term
-      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-      snippet = snippet.replace(re, "<mark>$1</mark>");
-
-      return { page: entry.page, regionId: entry.regionId, snippet };
+      const s   = Math.max(0, idx - KWIC_WINDOW / 2);
+      const e   = Math.min(entry.text.length, idx + query.length + KWIC_WINDOW / 2);
+      let snip  = (s > 0 ? "…" : "") + entry.text.slice(s, e) + (e < entry.text.length ? "…" : "");
+      const re  = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+      snip      = snip.replace(re, "<mark>$1</mark>");
+      return { page: entry.page, regionId: entry.regionId, snippet: snip };
     }
   }
-
   return null;
 }
 
-// ============================================================================
-// LOAD INDEX
-// ============================================================================
+// ── Load index ────────────────────────────────────────────────────────────────
 async function loadIndex() {
-  const resp = await fetch("{{ '/assets/data/search-index.json' | relative_url }}");
-  allItems = await resp.json();
-
+  try {
+    const resp = await fetch(siteBase + "assets/data/search-index.json");
+    allItems   = await resp.json();
+  } catch(e) {
+    console.error("Could not load search index:", e);
+    allItems = [];
+  }
   document.getElementById("loadingOverlay").style.display = "none";
 
-  // Apply initial URL params
   currentQuery = initialQuery;
   if (initialCollection) activeFacets.collection = [initialCollection];
-  if (initialLang.length) activeFacets.lang = initialLang;
-  if (initialLocation)   activeFacets.location = [initialLocation];
+  if (initialLang.length) activeFacets.lang       = initialLang;
+  if (initialLocation)    activeFacets.location   = [initialLocation];
 
   applyFilters();
 }
 
-// ============================================================================
-// DATE HELPERS
-// ============================================================================
-function extractYear(dateStr) {
-  if (!dateStr) return 0;
-  const parts = dateStr.split("-");
-  // DD-MM-YYYY
-  if (parts.length === 3 && parts[2].length === 4) return parseInt(parts[2]);
-  // YYYY-MM-DD
-  if (parts[0].length === 4) return parseInt(parts[0]);
-  return parseInt(parts[parts.length - 1]) || 0;
+// ── Date helpers ──────────────────────────────────────────────────────────────
+function extractYear(d) {
+  if (!d) return 0;
+  const p = d.split("-");
+  if (p.length === 3 && p[2].length === 4) return parseInt(p[2]); // DD-MM-YYYY
+  if (p[0].length === 4) return parseInt(p[0]);                    // YYYY-MM-DD
+  return parseInt(p[p.length - 1]) || 0;
 }
-
-function extractMonth(dateStr) {
-  if (!dateStr) return 0;
-  const parts = dateStr.split("-");
-  if (parts.length === 3 && parts[2].length === 4) return parseInt(parts[1]);
+function extractMonth(d) {
+  if (!d) return 0;
+  const p = d.split("-");
+  if (p.length === 3 && p[2].length === 4) return parseInt(p[1]); // DD-MM-YYYY
+  if (p.length === 3 && p[0].length === 4) return parseInt(p[1]); // YYYY-MM-DD
   return 0;
 }
 
-// ============================================================================
-// FILTERS
-// ============================================================================
+// ── Filters ───────────────────────────────────────────────────────────────────
 function metadataMatch(item) {
   if (initialFrom || initialTo) {
-    const year = extractYear(item.date);
-    if (initialFrom && year < initialFrom) return false;
-    if (initialTo   && year > initialTo)   return false;
+    const y = extractYear(item.date);
+    if (initialFrom && y < initialFrom) return false;
+    if (initialTo   && y > initialTo)   return false;
   }
   return true;
 }
-
 function facetMatch(item) {
   if (activeFacets.collection.length && !activeFacets.collection.includes(item.collection)) return false;
   if (activeFacets.location.length   && !activeFacets.location.includes(item.location))     return false;
   if (activeFacets.lang.length       && !activeFacets.lang.includes(item.language))         return false;
   if (activeFacets.decade.length) {
-    const decade = Math.floor(extractYear(item.date) / 10) * 10;
-    if (!activeFacets.decade.includes(String(decade))) return false;
+    const dec = String(Math.floor(extractYear(item.date) / 10) * 10);
+    if (!activeFacets.decade.includes(dec)) return false;
   }
   if (activeFacets.year.length) {
-    const year = extractYear(item.date);
-    if (!activeFacets.year.includes(String(year))) return false;
+    if (!activeFacets.year.includes(String(extractYear(item.date)))) return false;
   }
   return true;
 }
-
 function titleMatch(item, query) {
   if (!query) return true;
   return item.title && item.title.toLowerCase().includes(query.toLowerCase());
 }
 
-// ============================================================================
-// APPLY FILTERS (two-pass: title first, then JSON manifests)
-// ============================================================================
+// ── Apply filters ─────────────────────────────────────────────────────────────
 function applyFilters() {
-  const query = currentQuery.trim();
-
-  // All items that pass metadata + facet filters
+  const query      = currentQuery.trim();
   const candidates = allItems.filter(item => metadataMatch(item) && facetMatch(item));
+  const titleHits  = candidates.filter(item => titleMatch(item, query));
 
-  // Pass 1: items whose title already matches — show immediately
-  const titleMatches = candidates.filter(item => titleMatch(item, query));
-
-  // Give title matches a snippet from the title itself
-  titleMatches.forEach(item => {
+  // Annotate title hits with a snippet from the title itself
+  titleHits.forEach(item => {
     if (query) {
-      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-      item._match = {
-        page: 1,
-        regionId: null,
-        snippet: item.title.replace(re, "<mark>$1</mark>")
-      };
+      const re  = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+      item._match = { page: 1, regionId: null, snippet: item.title.replace(re, "<mark>$1</mark>") };
     } else {
       item._match = null;
     }
   });
 
-  filteredItems = titleMatches;
+  filteredItems = titleHits;
   buildFacets(filteredItems);
   sortAndRender();
   updateHeader(query, filteredItems.length);
 
-  // Pass 2: fetch JSON manifests for remaining candidates and search inside
+  // Async: search inside JSON manifests for the rest
   if (query) {
     const needsManifest = candidates.filter(item => !titleMatch(item, query) && item.object_location);
-    if (needsManifest.length) {
-      fetchAndSearch(needsManifest, query);
-    }
+    if (needsManifest.length) fetchAndSearch(needsManifest, query);
   }
 }
 
-// ============================================================================
-// FETCH MANIFESTS AND SEARCH
-// ============================================================================
 async function fetchAndSearch(items, query) {
-  const promises = items.map(async item => {
-    const regions = await fetchManifestRegions(item.object_location);
-    const match   = findMatch(regions, query);
-    if (match) {
-      item._match = match;
-      return item;
-    }
-    return null;
-  });
-
-  const results = (await Promise.all(promises)).filter(Boolean);
+  const results = (await Promise.all(
+    items.map(async item => {
+      const regions = await fetchManifestRegions(item.object_location);
+      const match   = findMatch(regions, query);
+      if (match) { item._match = match; return item; }
+      return null;
+    })
+  )).filter(Boolean);
 
   if (results.length) {
     filteredItems = [...filteredItems, ...results];
@@ -428,43 +321,28 @@ async function fetchAndSearch(items, query) {
   }
 }
 
-// ============================================================================
-// HEADER
-// ============================================================================
+// ── Header ────────────────────────────────────────────────────────────────────
 function updateHeader(query, count) {
-  const qBadge  = document.getElementById("headerQuery");
-  const countEl = document.getElementById("headerCount");
-  if (query) {
-    qBadge.textContent = query;
-    qBadge.style.display = "";
-  }
-  countEl.textContent = count + (count === 1 ? " resultado" : " resultados");
+  const qEl = document.getElementById("headerQuery");
+  if (query) { qEl.textContent = query; qEl.style.display = ""; }
+  document.getElementById("headerCount").textContent =
+    count + (count === 1 ? " resultado" : " resultados");
 }
 
-// ============================================================================
-// SORT
-// ============================================================================
+// ── Sort ──────────────────────────────────────────────────────────────────────
 function getSortedItems() {
   const sort  = document.getElementById("sortSelect").value;
   const items = [...filteredItems];
-  if (sort === "date-asc") {
-    items.sort((a, b) => extractYear(a.date) - extractYear(b.date) || extractMonth(a.date) - extractMonth(b.date));
-  } else if (sort === "date-desc") {
-    items.sort((a, b) => extractYear(b.date) - extractYear(a.date) || extractMonth(b.date) - extractMonth(a.date));
-  } else if (sort === "title") {
-    items.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
-  }
-  // "score" keeps default order (title matches first, then transcript matches)
+  if      (sort === "date-asc")  items.sort((a,b) => extractYear(a.date)-extractYear(b.date) || extractMonth(a.date)-extractMonth(b.date));
+  else if (sort === "date-desc") items.sort((a,b) => extractYear(b.date)-extractYear(a.date) || extractMonth(b.date)-extractMonth(a.date));
+  else if (sort === "title")     items.sort((a,b) => (a.title||"").localeCompare(b.title||""));
   return items;
 }
-
 function sortAndRender() { renderPage(currentPage); }
 
-// ============================================================================
-// RENDER PAGE
-// ============================================================================
+// ── Render ────────────────────────────────────────────────────────────────────
 function renderPage(page) {
-  currentPage = page;
+  currentPage      = page;
   const sorted     = getSortedItems();
   const total      = sorted.length;
   const totalPages = Math.ceil(total / RESULTS_PER_PAGE);
@@ -472,21 +350,23 @@ function renderPage(page) {
   const pageItems  = sorted.slice(start, start + RESULTS_PER_PAGE);
 
   document.getElementById("resultCount").textContent =
-    "Mostrando " + (start + 1) + "–" + Math.min(start + RESULTS_PER_PAGE, total) + " de " + total + " resultados";
+    "Mostrando " + (start+1) + "–" + Math.min(start+RESULTS_PER_PAGE, total) + " de " + total + " resultados";
 
   const query = currentQuery.trim();
   let html = "";
 
   pageItems.forEach(item => {
     const collTitle = collectionTitles[item.collection] || item.collection;
+
+    // Thumbnail — stored in the index as a root-relative URL already built by Jekyll
     const thumbHtml = item.thumb
       ? `<img src="${item.thumb}" style="width:60px;height:60px;object-fit:cover;border-radius:4px;float:right;margin-left:1rem;" alt="">`
       : "";
 
-    // Build href — deep-link to page+region if we have a match with a regionId
-    let href = "{{ '/items/' | relative_url }}" + item.id + ".html";
+    // Deep-link to page + region when a transcript match exists
+    let href = siteBase + "items/" + item.id + ".html";
     if (item._match && item._match.regionId) {
-      href += `?page=${item._match.page}&region=${item._match.regionId}`;
+      href += "?page=" + item._match.page + "&region=" + item._match.regionId;
     }
 
     // Snippet
@@ -494,7 +374,6 @@ function renderPage(page) {
     if (item._match && item._match.snippet) {
       snippetHtml = `<div class="result-snippet">${item._match.snippet}</div>`;
     } else if (query && item.object_location && enrichedItems[item.object_location] === undefined) {
-      // Still being fetched
       snippetHtml = `<div class="result-loading">Cargando transcripción…</div>`;
     }
 
@@ -519,88 +398,71 @@ function renderPage(page) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// ============================================================================
-// PAGINATION
-// ============================================================================
+// ── Pagination ────────────────────────────────────────────────────────────────
 function renderPagination(current, total) {
   if (total <= 1) { document.getElementById("pagination").innerHTML = ""; return; }
   let html = "";
   if (current > 1)
     html += `<li class="page-item"><a class="page-link" href="#" onclick="renderPage(${current-1});return false;">‹</a></li>`;
-  for (let i = Math.max(1, current-2); i <= Math.min(total, current+2); i++) {
+  for (let i = Math.max(1,current-2); i <= Math.min(total,current+2); i++)
     html += `<li class="page-item ${i===current?'active':''}"><a class="page-link" href="#" onclick="renderPage(${i});return false;">${i}</a></li>`;
-  }
   if (current < total)
     html += `<li class="page-item"><a class="page-link" href="#" onclick="renderPage(${current+1});return false;">›</a></li>`;
   document.getElementById("pagination").innerHTML = html;
 }
 
-// ============================================================================
-// FACETS
-// ============================================================================
+// ── Facets ────────────────────────────────────────────────────────────────────
 function buildFacets(items) {
-  buildFacet("facetCollection", items, i => i.collection,  v => collectionTitles[v] || v, "collection");
-  buildFacet("facetLocation",   items, i => i.location,    v => v,                         "location");
-  buildFacet("facetDecade",     items, i => {
-    const y = extractYear(i.date); return y ? String(Math.floor(y/10)*10) : null;
-  }, v => v + "s", "decade");
-  buildFacet("facetYear",       items, i => {
-    const y = extractYear(i.date); return y ? String(y) : null;
-  }, v => v, "year");
-  buildFacet("facetLang",       items, i => i.language,    v => v,                         "lang");
+  buildFacet("facetCollection", items, i => i.collection, v => collectionTitles[v]||v, "collection", "count");
+  buildFacet("facetLocation",   items, i => i.location,   v => v,                      "location",   "count");
+  buildFacet("facetDecade",     items,
+    i => { const y=extractYear(i.date); return y ? String(Math.floor(y/10)*10) : null; },
+    v => v+"s", "decade", "numeric-asc");
+  buildFacet("facetYear",       items,
+    i => { const y=extractYear(i.date); return y ? String(y) : null; },
+    v => v, "year", "numeric-asc");
+  buildFacet("facetLang",       items, i => i.language,   v => v,                      "lang",       "count");
 }
 
-function buildFacet(elId, items, keyFn, labelFn, facetKey) {
+function buildFacet(elId, items, keyFn, labelFn, facetKey, sortMode) {
   const counts = {};
-  items.forEach(item => {
-    const v = keyFn(item);
-    if (v) counts[v] = (counts[v] || 0) + 1;
-  });
-  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  const el = document.getElementById(elId);
-  el.innerHTML = sorted.map(([val, count]) => {
-    const checked     = activeFacets[facetKey].includes(val) ? "checked" : "";
-    const activeClass = checked ? "active-count" : "";
+  items.forEach(item => { const v=keyFn(item); if(v) counts[v]=(counts[v]||0)+1; });
+
+  const sorted = sortMode === "numeric-asc"
+    ? Object.entries(counts).sort((a,b) => parseInt(a[0])-parseInt(b[0]))
+    : Object.entries(counts).sort((a,b) => b[1]-a[1]);
+
+  document.getElementById(elId).innerHTML = sorted.map(([val, count]) => {
+    const checked = activeFacets[facetKey].includes(val) ? "checked" : "";
     return `<li>
       <input type="checkbox" id="${elId}-${val}" ${checked} onchange="toggleFacetValue('${facetKey}','${val}')">
       <label for="${elId}-${val}">&nbsp;${labelFn(val)}</label>
-      <span class="facet-count ${activeClass}">${count}</span>
+      <span class="facet-count ${checked?'active-count':''}">${count}</span>
     </li>`;
   }).join("");
 }
 
 function toggleFacetValue(facetKey, val) {
-  const arr = activeFacets[facetKey];
-  const idx = arr.indexOf(val);
-  if (idx === -1) arr.push(val); else arr.splice(idx, 1);
+  const arr=activeFacets[facetKey], idx=arr.indexOf(val);
+  if (idx===-1) arr.push(val); else arr.splice(idx,1);
   applyFilters();
 }
-
 function toggleFacet(elId) {
-  const el    = document.getElementById(elId);
-  const arrow = document.getElementById(elId + "Arrow");
-  if (el.style.display === "none") { el.style.display = ""; arrow.textContent = "▾"; }
-  else                             { el.style.display = "none"; arrow.textContent = "▸"; }
+  const el=document.getElementById(elId), arrow=document.getElementById(elId+"Arrow");
+  if (el.style.display==="none") { el.style.display=""; arrow.textContent="▾"; }
+  else { el.style.display="none"; arrow.textContent="▸"; }
 }
-
 function clearAll() {
-  activeFacets = { collection: [], location: [], decade: [], year: [], lang: [] };
-  document.getElementById("refineQuery").value = "";
-  currentQuery = initialQuery;
+  activeFacets={collection:[],location:[],decade:[],year:[],lang:[]};
+  document.getElementById("refineQuery").value="";
+  currentQuery=initialQuery;
   applyFilters();
 }
-
 function refineSearch() {
-  currentQuery = document.getElementById("refineQuery").value || initialQuery;
+  currentQuery=document.getElementById("refineQuery").value||initialQuery;
   applyFilters();
 }
+document.getElementById("refineQuery").addEventListener("keydown", e => { if(e.key==="Enter") refineSearch(); });
 
-document.getElementById("refineQuery").addEventListener("keydown", function(e) {
-  if (e.key === "Enter") refineSearch();
-});
-
-// ============================================================================
-// BOOT
-// ============================================================================
 loadIndex();
 </script>
