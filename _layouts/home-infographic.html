@@ -128,7 +128,7 @@ layout: page-full-width
           <option value="">Todos los lugares</option>
           {% for loc in locations %}
           <option value="{{ loc.id }}">{{ loc.title }}</option>
-          {& endfor %}
+          {% endfor %}
         </select>
       </div>
     </div>
