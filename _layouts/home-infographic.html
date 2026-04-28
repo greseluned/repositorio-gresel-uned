@@ -1,28 +1,247 @@
 ---
-# Default home page with boxes providing collection stats
 layout: page-full-width
 ---
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
-<div class="row">
+{% assign meta = site.data[site.metadata] %}
+{% assign collections = site.data.collections %}
 
-  <div class="col-md-8">
+<style>
+/* ── Hero search ─────────────────────────────────────────────────────────── */
+.home-hero {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 3rem 2rem 2.5rem;
+  margin: -1.5rem -15px 2rem -15px;
+}
+.home-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.home-hero p  { color: #adb5bd; margin-bottom: 1.5rem; }
 
-    {% include index/description.html %}
-    {% include index/carousel.html title="Elementos de ejemplo" %}
-    
+.search-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  max-width: 860px;
+}
+.search-box .form-label { font-weight: 600; font-size: 0.875rem; color: #333; margin-bottom: 0.3rem; }
+.search-box .form-control,
+.search-box .form-select {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  font-size: 0.95rem;
+}
+.search-box .form-control:focus,
+.search-box .form-select:focus {
+  border-color: #7fc006;
+  box-shadow: 0 0 0 0.2rem rgba(127,192,6,0.2);
+}
+.btn-search {
+  background-color: #7fc006;
+  border-color: #659a02;
+  color: #000;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+.btn-search:hover { background-color: #6aaa00; border-color: #5a9000; color: #000; }
+
+/* ── Decade chart ────────────────────────────────────────────────────────── */
+.decade-chart-wrap {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem 1rem;
+  margin-bottom: 2rem;
+}
+.decade-chart-wrap h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.25rem;
+}
+.decade-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+}
+.decade-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+}
+.decade-bar-col:hover .decade-bar { background: #5a9000; }
+.decade-bar-col:hover .decade-label { color: #5a9000; }
+.decade-bar {
+  background: #7fc006;
+  border-radius: 3px 3px 0 0;
+  width: 100%;
+  transition: background 0.15s, height 0.3s;
+  min-height: 3px;
+}
+.decade-label {
+  font-size: 0.65rem;
+  color: #666;
+  margin-top: 4px;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+.decade-count {
+  font-size: 0.6rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+</style>
+
+<!-- ── Hero with search ──────────────────────────────────────────────────── -->
+<div class="home-hero">
+  <h1>{{ site.title }}</h1>
+  <p>Busca en el repositorio</p>
+
+  <div class="search-box">
+    <div class="row g-3 align-items-end">
+
+      <!-- Query -->
+      <div class="col-lg-5">
+        <label class="form-label">Búsqueda</label>
+        <input type="text" class="form-control form-control-lg" id="searchQuery"
+               placeholder="Buscar en títulos y transcripciones...">
+      </div>
+
+      <!-- Collection -->
+      <div class="col-lg-3">
+        <label class="form-label">Cabecera</label>
+        <select class="form-select" id="searchCollection">
+          <option value="">Todas las cabeceras</option>
+          {% for coll in collections %}
+          <option value="{{ coll.id }}">{{ coll.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Decade -->
+      <div class="col-lg-2">
+        <label class="form-label">Década</label>
+        <select class="form-select" id="searchDecade">
+          <option value="">Todas</option>
+          {% comment %}Build unique decade list from metadata{% endcomment %}
+          {% assign years = "" | split: "" %}
+          {% for item in meta %}
+            {% if item.date != "" and item.date != nil %}
+              {% assign parts = item.date | split: "-" %}
+              {% if parts[2].size == 4 %}
+                {% assign y = parts[2] | plus: 0 %}
+              {% else %}
+                {% assign y = parts[0] | plus: 0 %}
+              {% endif %}
+              {% assign dec = y | divided_by: 10 | times: 10 %}
+              {% assign dec_s = dec | append: "" %}
+              {% unless years contains dec_s %}
+                {% assign years = years | push: dec_s %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          {% assign years = years | sort %}
+          {% for dec in years %}
+          <option value="{{ dec }}">{{ dec }}s</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Button -->
+      <div class="col-lg-2">
+        <button class="btn btn-search w-100" onclick="doSearch()">Buscar</button>
+      </div>
+
+    </div>
   </div>
-  <div class="col-md-4">  
-
-    {% include index/time.html %}
-
-    {% include index/featured-terms.html field="subject" title="Temas principales" btn-color="primary" %}
-
-    {% include index/featured-terms.html field="location" title="Ubicaciones" btn-color="outline-secondary" %}
-    
-    {% include index/objects.html %}
-
-    {% include index/data-download.html %}
-
-
-
 </div>
+
+<!-- ── Decade distribution chart ─────────────────────────────────────────── -->
+<div class="decade-chart-wrap">
+  <h2>Distribución por décadas</h2>
+  <div class="decade-bars" id="decadeBars"></div>
+</div>
+
+<!-- ── Carousel ──────────────────────────────────────────────────────────── -->
+{% include index/carousel.html title="Elementos de ejemplo" height=420 btn-color="outline-light" btn-text="Ver elemento" %}
+
+<script>
+// ── Decade data (built by Jekyll at compile time) ─────────────────────────
+const decadeData = {
+  {% assign decade_map = "" | split: "" %}
+  {% for item in meta %}
+    {% if item.date != "" and item.date != nil %}
+      {% assign parts = item.date | split: "-" %}
+      {% if parts[2].size == 4 %}
+        {% assign y = parts[2] | plus: 0 %}
+      {% else %}
+        {% assign y = parts[0] | plus: 0 %}
+      {% endif %}
+      {% assign dec = y | divided_by: 10 | times: 10 %}
+    {% endif %}
+  {% endfor %}
+
+  // We'll compute counts client-side from the raw decade list
+};
+
+// Raw decade values for each item (compiled by Jekyll)
+const itemDecades = [{% for item in meta %}{% if item.date != "" and item.date != nil %}{% assign parts = item.date | split: "-" %}{% if parts[2].size == 4 %}{% assign y = parts[2] | plus: 0 %}{% else %}{% assign y = parts[0] | plus: 0 %}{% endif %}{% assign dec = y | divided_by: 10 | times: 10 %}{{ dec }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}];
+
+// Count per decade
+const counts = {};
+itemDecades.forEach(d => { if (d) counts[d] = (counts[d] || 0) + 1; });
+
+const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
+const maxCount = Math.max(...Object.values(counts));
+
+const barsEl = document.getElementById("decadeBars");
+decades.forEach(dec => {
+  const count  = counts[dec];
+  const pct    = Math.round((count / maxCount) * 100);
+
+  const col  = document.createElement("div");
+  col.className = "decade-bar-col";
+  col.title  = dec + "s: " + count + " número" + (count !== 1 ? "s" : "");
+  col.onclick = () => searchByDecade(dec);
+
+  col.innerHTML = `
+    <span class="decade-count">${count}</span>
+    <div class="decade-bar" style="height:${pct}%"></div>
+    <span class="decade-label">${dec}s</span>`;
+
+  barsEl.appendChild(col);
+});
+
+// ── Search ────────────────────────────────────────────────────────────────
+function doSearch() {
+  const query      = document.getElementById("searchQuery").value.trim();
+  const collection = document.getElementById("searchCollection").value;
+  const decade     = document.getElementById("searchDecade").value;
+
+  const params = new URLSearchParams();
+  if (query)      params.set("q", query);
+  if (collection) params.set("collection", collection);
+  if (decade) {
+    params.set("from", decade);
+    params.set("to",   parseInt(decade) + 9);
+  }
+
+  window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
+}
+
+function searchByDecade(dec) {
+  const params = new URLSearchParams();
+  params.set("from", dec);
+  params.set("to",   dec + 9);
+  window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
+}
+
+document.getElementById("searchQuery").addEventListener("keydown", e => {
+  if (e.key === "Enter") doSearch();
+});
+</script>
