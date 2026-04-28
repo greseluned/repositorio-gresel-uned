@@ -1,7 +1,7 @@
 ---
 permalink: /assets/data/search-index.json
 ---
-[{% for item in site.data[site.metadata] %}{% if item.objectid %}{
+[{% for item in site.data[site.metadata] %}{
   "id": {{ item.objectid | jsonify }},
   "title": {{ item.title | jsonify }},
   "date": {{ item.date | jsonify }},
@@ -9,4 +9,5 @@ permalink: /assets/data/search-index.json
   "location": {{ item.location | jsonify }},
   "language": {{ item.language | jsonify }},
   "thumb": {{ item.image_thumb | relative_url | jsonify }},
-}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}]
+}{% unless forloop.last %},{% endunless %}{% endfor %}]
+
