@@ -3,6 +3,7 @@ layout: page-full-width
 ---
 {% assign meta = site.data[site.metadata] %}
 {% assign collections = site.data.collections %}
+{% assign locations = site.data.location %}
 
 <style>
 /* ── Hero search ─────────────────────────────────────────────────────────── */
@@ -120,6 +121,16 @@ layout: page-full-width
           {% endfor %}
         </select>
       </div>
+
+      <div clss="mb-3">
+        <label class="form-label">Lugar de publicación</label>
+        <select class="form-select" id="searchLocation">
+          <option value="">Todos los lugares</option>
+          {% for loc in locations %}
+          <option value="{{ loc.id }}">{{ loc.title }}</option>
+          {& endfor %}
+        </select>
+      </div>
     </div>
  
       <div class="mb-3">
@@ -221,10 +232,12 @@ function doSearch() {
   const query      = document.getElementById("searchQuery").value.trim();
   const collection = document.getElementById("searchCollection").value;
   const decade     = document.getElementById("searchDecade").value;
+  const location   = document.getElementById("searchLocation").value;
 
   const params = new URLSearchParams();
   if (query)      params.set("q", query);
   if (collection) params.set("collection", collection);
+  if (location)   params.set("location", location);
   if (decade) {
     params.set("from", decade);
     params.set("to",   parseInt(decade) + 9);
