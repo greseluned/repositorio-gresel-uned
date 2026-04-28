@@ -122,42 +122,60 @@ layout: page-full-width
         </select>
       </div>
 
-      <div clss="mb-3">
+      <div class="mb-3">
         <label class="form-label">Lugar de publicación</label>
         <select class="form-select" id="searchLocation">
           <option value="">Todos los lugares</option>
-          {% for loc in locations %}
-          <option value="{{ loc.id }}">{{ loc.title }}</option>
+
+          {% assign seen_locations = "" | split: "" %}
+
+          {% for item in meta %}
+            {% if item.location != "" and item.location != nil %}
+              {% assign loc = item.location | strip %}
+              {% unless seen_locations contains loc %}
+                {% assign seen_locations = seen_locations | push: loc %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+
+          {% assign seen_locations = seen_locations | sort %}
+
+          {% for loc in seen_locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+          {% endfor %}
+
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Década</label>
+        <select class="form-select" id="searchDecade">
+          <option value="">Todas las décadas</option>
+          {% assign seen_decades = "" | split: "" %}
+          {% for item in meta %}
+            {% if item.date != "" and item.date != nil %}
+              {% assign parts = item.date | split: "-" %}
+              {% assign y = nil %}
+              {% for p in parts %}
+                {% if p.size == 4 %}
+                  {% assign y = p | plus: 0 %}
+                {% endif %}
+              {% endfor %}
+              {% if y %}
+                {% assign dec = y | divided_by: 10 | times: 10 %}
+                {% assign dec_s = dec | append: "" %}
+                {% unless seen_decades contains dec_s %}
+                  {% assign seen_decades = seen_decades | push: dec_s %}
+                {% endunless %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          {% assign seen_decades = seen_decades | sort %}
+          {% for dec in seen_decades %}
+          <option value="{{ dec }}">{{ dec }}s</option>
           {% endfor %}
         </select>
       </div>
-    </div>
- 
-    <div class="mb-3">
-      <label class="form-label">Década</label>
-      <select class="form-select" id="searchDecade">
-        <option value="">Todas las décadas</option>
-        {% assign seen_decades = "" | split: "" %}
-        {% for item in meta %}
-          {% if item.date != "" and item.date != nil %}
-            {% assign parts = item.date | split: "-" %}
-            {% if parts[2].size == 4 %}
-              {% assign y = parts[2] | plus: 0 %}
-            {% else %}
-              {% assign y = parts[0] | plus: 0 %}
-            {% endif %}
-            {% assign dec = y | divided_by: 10 | times: 10 %}
-            {% assign dec_s = dec | append: "" %}
-            {% unless seen_decades contains dec_s %}
-              {% assign seen_decades = seen_decades | push: dec_s %}
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
-        {% assign seen_decades = seen_decades | sort %}
-        {% for dec in seen_decades %}
-        <option value="{{ dec }}">{{ dec }}s</option>
-        {% endfor %}
-      </select>
     </div>
  
       <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
@@ -186,13 +204,21 @@ const decadeData = {
   {% assign decade_map = "" | split: "" %}
   {% for item in meta %}
     {% if item.date != "" and item.date != nil %}
+      
       {% assign parts = item.date | split: "-" %}
-      {% if parts[2].size == 4 %}
-        {% assign y = parts[2] | plus: 0 %}
-      {% else %}
-        {% assign y = parts[0] | plus: 0 %}
+      {% assign y = nil %}
+
+      {% for p in parts %}
+        {% if p.size == 4 %}
+          {% assign y = p | plus: 0 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if y %}
+        {% assign dec = y | divided_by: 10 | times: 10 %}
+        {{ dec }}{% unless forloop.last %},{% endunless %}
       {% endif %}
-      {% assign dec = y | divided_by: 10 | times: 10 %}
+
     {% endif %}
   {% endfor %}
 
@@ -200,7 +226,27 @@ const decadeData = {
 };
 
 // Raw decade values for each item (compiled by Jekyll)
-const itemDecades = [{% for item in meta %}{% if item.date != "" and item.date != nil %}{% assign parts = item.date | split: "-" %}{% if parts[2].size == 4 %}{% assign y = parts[2] | plus: 0 %}{% else %}{% assign y = parts[0] | plus: 0 %}{% endif %}{% assign dec = y | divided_by: 10 | times: 10 %}{{ dec }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}];
+const itemDecades = [
+{% for item in meta %}
+  {% if item.date != "" and item.date != nil %}
+    
+    {% assign parts = item.date | split: "-" %}
+    {% assign y = nil %}
+
+    {% for p in parts %}
+      {% if p.size == 4 %}
+        {% assign y = p | plus: 0 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if y %}
+      {% assign dec = y | divided_by: 10 | times: 10 %}
+      {{ dec }}{% unless forloop.last %},{% endunless %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+];
 
 // Count per decade
 const counts = {};
