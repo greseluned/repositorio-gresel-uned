@@ -2,12 +2,12 @@
 permalink: /assets/data/search-index.json
 ---
 [
-  {%- for item in site.data.gresel-metadata -%}
+  {%- for item in site.data.metadata -%}
   {
     "id": {{ item.objectid | jsonify }},
     "title": {{ item.title | jsonify }},
     "date": {{ item.date | jsonify }},
-    "collections": {{ item.header | jsonify }},
+    "collection": {{ item.header | jsonify }},
     "location": {{ item.location | jsonify }},
     "language": {{ item.language | jsonify }},
     "thumb": {{ item.image_thumb | jsonify }},
