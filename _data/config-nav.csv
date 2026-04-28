@@ -1,8 +1,5 @@
 display_name,stub,dropdown_parent
 Página principal,/,
-Buscar,/advanced/,
-Nube de palabras,/subjects.html,
-Lugares,/locations.html,
 Mapa,/map.html,
-Datos,/data.html,
+Descargar datos,/data.html,
 Sobre el repositorio,/about.html,
