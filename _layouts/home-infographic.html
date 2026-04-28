@@ -11,8 +11,9 @@ layout: page-full-width
   color: #000000;
   padding: 3rem 2rem 2.5rem;
   margin: -1.5rem -15px 2rem -15px;
+  border-radius: 8px;
 }
-.home-hero h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem; }
+.home-hero h1 { font-size: 32px; font-weight: 600; margin-bottom: 0.5rem; }
 
 .search-box {
   background: #fff;
@@ -108,22 +109,25 @@ layout: page-full-width
 }
 </style>
 
-<!-- ── Hero with search ──────────────────────────────────────────────────── -->
+<!-- ── Hero banner ───────────────────────────────────────────────────────── -->
 <div class="home-hero">
   <h1>Busca en el repositorio</h1>
-
-  <div class="search-box">
-    <div class="row g-3 align-items-end">
-
-      <!-- Query -->
-      <div class="col-lg-5">
+</div>
+ 
+<!-- ── Two-column layout ─────────────────────────────────────────────────── -->
+<div class="row g-4">
+ 
+  <!-- Left: search box -->
+  <div class="col-lg-6">
+    <div class="search-box">
+ 
+      <div class="mb-3">
         <label class="form-label">Búsqueda</label>
         <input type="text" class="form-control form-control-lg" id="searchQuery"
                placeholder="Buscar en títulos y transcripciones...">
       </div>
-
-      <!-- Collection -->
-      <div class="col-lg-3">
+ 
+      <div class="mb-3">
         <label class="form-label">Cabecera</label>
         <select class="form-select" id="searchCollection">
           <option value="">Todas las cabeceras</option>
@@ -132,14 +136,12 @@ layout: page-full-width
           {% endfor %}
         </select>
       </div>
-
-      <!-- Decade -->
-      <div class="col-lg-2">
+ 
+      <div class="mb-3">
         <label class="form-label">Década</label>
         <select class="form-select" id="searchDecade">
-          <option value="">Todas</option>
-          {% comment %}Build unique decade list from metadata{% endcomment %}
-          {% assign years = "" | split: "" %}
+          <option value="">Todas las décadas</option>
+          {% assign seen_decades = "" | split: "" %}
           {% for item in meta %}
             {% if item.date != "" and item.date != nil %}
               {% assign parts = item.date | split: "-" %}
@@ -150,28 +152,24 @@ layout: page-full-width
               {% endif %}
               {% assign dec = y | divided_by: 10 | times: 10 %}
               {% assign dec_s = dec | append: "" %}
-              {% unless years contains dec_s %}
-                {% assign years = years | push: dec_s %}
+              {% unless seen_decades contains dec_s %}
+                {% assign seen_decades = seen_decades | push: dec_s %}
               {% endunless %}
             {% endif %}
           {% endfor %}
-          {% assign years = years | sort %}
-          {% for dec in years %}
+          {% assign seen_decades = seen_decades | sort %}
+          {% for dec in seen_decades %}
           <option value="{{ dec }}">{{ dec }}s</option>
           {% endfor %}
         </select>
       </div>
-
-      <!-- Button -->
-      <div class="col-lg-2">
-        <button class="btn btn-search w-100" onclick="doSearch()">Buscar</button>
-      </div>
-
+ 
+      <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
+ 
     </div>
   </div>
-</div>
-
- <!-- Right: decade chart + carousel -->
+ 
+  <!-- Right: decade chart + carousel -->
   <div class="col-lg-6">
  
     <!-- Decade distribution chart -->
