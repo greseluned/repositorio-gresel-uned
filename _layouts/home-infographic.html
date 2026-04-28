@@ -170,13 +170,13 @@ layout: page
           {% endfor %}
           {% assign seen_decades = seen_decades | sort %}
           {% for dec in seen_decades %}
-          <option value="{{ dec }}">{{ dec }}s</option>
+          <option value="{{ dec }}">{{ dec }}</option>
           {% endfor %}
         </select>
       </div>
     </div>
  
-      <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
+    <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
  
     </div>
   </div>
@@ -197,9 +197,11 @@ layout: page
 </div>
 
 <script>
-// ── Decade data (built by Jekyll at compile time) ─────────────────────────
-const decadeData = {
-  {% assign decade_map = "" | split: "" %}
+
+// Raw decade values for each item (compiled by Jekyll)
+const itemDecades = [
+  {% assign decade_list = "" %}
+
   {% for item in meta %}
     {% if item.date != "" and item.date != nil %}
       
@@ -214,37 +216,13 @@ const decadeData = {
 
       {% if y %}
         {% assign dec = y | divided_by: 10 | times: 10 %}
-        {{ dec }}{% unless forloop.last %},{% endunless %}
+        {% assign decade_list = decade_list | append: dec | append: "," %}
       {% endif %}
 
     {% endif %}
   {% endfor %}
 
-  // We'll compute counts client-side from the raw decade list
-};
-
-// Raw decade values for each item (compiled by Jekyll)
-const itemDecades = [
-{% for item in meta %}
-  {% if item.date != "" and item.date != nil %}
-    
-    {% assign parts = item.date | split: "-" %}
-    {% assign y = nil %}
-
-    {% for p in parts %}
-      {% if p.size == 4 %}
-        {% assign y = p | plus: 0 %}
-      {% endif %}
-    {% endfor %}
-
-    {% if y %}
-      {% assign dec = y | divided_by: 10 | times: 10 %}
-      {{ dec }}{% unless forloop.last %},{% endunless %}
-    {% endif %}
-
-  {% endif %}
-{% endfor %}
-];
+const itemDecades = [{{ decade_list | remove_last: "," }}];
 
 // Count per decade
 const counts = {};
