@@ -100,10 +100,6 @@ layout: page
         <div class="facet-title" onclick="toggleFacet('facetLocation')">Lugar <span id="facetLocationArrow">▾</span></div>
         <ul class="facet-list" id="facetLocation"></ul>
       </div>
-      <!--<div class="facet-section">
-        <div class="facet-title" onclick="toggleFacet('facetDecade')">Década <span id="facetDecadeArrow">▾</span></div>
-        <ul class="facet-list" id="facetDecade"></ul>
-      </div>-->
       <div class="facet-section">
         <div class="facet-title" onclick="toggleFacet('facetYear')">Año <span id="facetYearArrow">▾</span></div>
         <ul class="facet-list" id="facetYear"></ul>
@@ -142,7 +138,7 @@ let allItems = [];
 let filteredItems = [];
 const enrichedItems = {}; // object_location -> [{ page, regionId, text }]
 
-let activeFacets = { collection: [], location: [], decade: [], year: [], lang: [] };
+let activeFacets = { collection: [], location: [], year: [], lang: [] };
 let currentQuery = "";
 let currentPage  = 1;
 
@@ -261,10 +257,6 @@ function facetMatch(item) {
   if (activeFacets.collection.length && !activeFacets.collection.includes(item.collection)) return false;
   if (activeFacets.location.length   && !activeFacets.location.includes(item.location))     return false;
   if (activeFacets.lang.length       && !activeFacets.lang.includes(item.language))         return false;
-  if (activeFacets.decade.length) {
-    const dec = String(Math.floor(extractYear(item.date) / 10) * 10);
-    if (!activeFacets.decade.includes(dec)) return false;
-  }
   if (activeFacets.year.length) {
     if (!activeFacets.year.includes(String(extractYear(item.date)))) return false;
   }
@@ -415,9 +407,6 @@ function renderPagination(current, total) {
 function buildFacets(items) {
   buildFacet("facetCollection", items, i => i.collection, v => collectionTitles[v]||v, "collection", "count");
   buildFacet("facetLocation",   items, i => i.location,   v => v,                      "location",   "count");
-  buildFacet("facetDecade",     items,
-    i => { const y=extractYear(i.date); return y ? String(Math.floor(y/10)*10) : null; },
-    v => v+"s", "decade", "numeric-asc");
   buildFacet("facetYear",       items,
     i => { const y=extractYear(i.date); return y ? String(y) : null; },
     v => v, "year", "numeric-asc");
@@ -453,7 +442,7 @@ function toggleFacet(elId) {
   else { el.style.display="none"; arrow.textContent="▸"; }
 }
 function clearAll() {
-  activeFacets={collection:[],location:[],decade:[],year:[],lang:[]};
+  activeFacets={collection:[],location:[],year:[],lang:[]};
   document.getElementById("refineQuery").value="";
   currentQuery=initialQuery;
   applyFilters();
