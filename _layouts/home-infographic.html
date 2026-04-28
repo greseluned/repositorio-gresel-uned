@@ -197,31 +197,30 @@ layout: page
 </div>
 
 <script>
+// Build decade list safely in Liquid
+{% assign decade_list = "" %}
+
+{% for item in meta %}
+  {% if item.date != "" and item.date != nil %}
+    
+    {% assign parts = item.date | split: "-" %}
+    {% assign y = nil %}
+
+    {% for p in parts %}
+      {% if p.size == 4 %}
+        {% assign y = p | plus: 0 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if y %}
+      {% assign dec = y | divided_by: 10 | times: 10 %}
+      {% assign decade_list = decade_list | append: dec | append: "," %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
 
 // Raw decade values for each item (compiled by Jekyll)
-const itemDecades = [
-  {% assign decade_list = "" %}
-
-  {% for item in meta %}
-    {% if item.date != "" and item.date != nil %}
-      
-      {% assign parts = item.date | split: "-" %}
-      {% assign y = nil %}
-
-      {% for p in parts %}
-        {% if p.size == 4 %}
-          {% assign y = p | plus: 0 %}
-        {% endif %}
-      {% endfor %}
-
-      {% if y %}
-        {% assign dec = y | divided_by: 10 | times: 10 %}
-        {% assign decade_list = decade_list | append: dec | append: "," %}
-      {% endif %}
-
-    {% endif %}
-  {% endfor %}
-
 const itemDecades = [{{ decade_list | remove_last: "," }}];
 
 // Count per decade
@@ -232,6 +231,7 @@ const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
 const maxCount = Math.max(...Object.values(counts));
 
 const barsEl = document.getElementById("decadeBars");
+
 decades.forEach(dec => {
   const count  = counts[dec];
   const pct    = Math.round((count / maxCount) * 100);
