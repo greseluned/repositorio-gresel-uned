@@ -31,11 +31,11 @@
     Set up carousel div
 {%- endcomment -%}
 <style>
-    #imageCarousel .carousel-item { height: {{ include.height | remove: 'px' | strip | default: '497' }}px; margin: 14px 0px 0px 0px}
+    #imageCarousel .carousel-item { height: {{ include.height | remove: 'px' | strip | default: '497' }}px; }
 </style>
 <div class="card mb-3">
     {% if include.header %}<h2 class="card-header h5">{{ include.header }}</h2>{% endif %}
-    <div class="card-body">
+    <div class="card-body" style="margin: 14px 0px 0px 0px">
         {% if include.title %}<h2 class="card-title h5">{{ include.title }}</h2>{% endif %}
         
         <div id="imageCarousel" class="carousel slide bg-dark rounded mb-3" data-bs-ride="carousel">
