@@ -11,9 +11,8 @@ layout: page-full-width
   color: #000000;
   padding: 3rem 2rem 2.5rem;
   margin: -1.5rem -15px 2rem -15px;
-  border-radius: 8px;
 }
-.home-hero h1 { font-size: 32px; font-weight: 600; margin-bottom: 0.5rem; }
+.home-hero h1 { font-size: 32px; font-weight: 600; margin-bottom: 0.25rem; }
 
 .search-box {
   background: #fff;
@@ -110,15 +109,14 @@ layout: page-full-width
 </style>
 
 <!-- ── Hero banner ───────────────────────────────────────────────────────── -->
-<div class="home-hero">
-  <h1>Busca en el repositorio</h1>
-</div>
- 
 <!-- ── Two-column layout ─────────────────────────────────────────────────── -->
 <div class="row g-4">
  
   <!-- Left: search box -->
   <div class="col-lg-6">
+    <div class="home-hero">
+      <h1>Busca en el repositorio</h1>
+
     <div class="search-box">
  
       <div class="mb-3">
@@ -136,6 +134,7 @@ layout: page-full-width
           {% endfor %}
         </select>
       </div>
+    </div>
  
       <div class="mb-3">
         <label class="form-label">Década</label>
