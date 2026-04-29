@@ -246,7 +246,6 @@ function findMatch(regions, query) {
         break;
       }
     }
-
     if (matchIndex !== -1) {
       const start = Math.max(0, matchIndex - KWIC_WINDOW / 2);
       const end   = Math.min(text.length, matchIndex + matchedTerm.length + KWIC_WINDOW / 2);
@@ -255,9 +254,13 @@ function findMatch(regions, query) {
                     text.slice(start, end) +
                     (end < text.length ? "…" : "");
 
-      // Highlight ALL terms, not just the first
-      const re = new RegExp("(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
-      snippet = snippet.replace(re, "<mark>$1</mark>");
+      if (terms.length > 0) {
+        const re = new RegExp(
+          "(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")",
+          "gi"
+        );
+        snippet = snippet.replace(re, "<mark>$1</mark>");
+      }
 
       return {
         page: entry.page,
@@ -336,13 +339,21 @@ function applyFilters() {
 
   titleHits.forEach(item => {
     const terms = query.split(/\s+/).filter(Boolean);
-    const re = new RegExp("(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
 
-    item._match = {
-      page: 1,
-      regionId: null,
-      snippet: item.title.replace(re, "<mark>$1</mark>")
-    };
+    if (terms.length > 0) {
+      const re = new RegExp(
+        "(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")",
+        "gi"
+      );
+
+      item._match = {
+        page: 1,
+        regionId: null,
+        snippet: item.title.replace(re, "<mark>$1</mark>")
+      };
+    } else {
+      item._match = null;
+    }
   });
 
   filteredItems = titleHits;
