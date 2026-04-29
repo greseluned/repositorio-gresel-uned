@@ -152,76 +152,48 @@ layout: page-full-width
 {% include index/carousel.html title="Elementos de ejemplo" height=420 btn-color="outline-light" btn-text="Ver elemento" %}
 
 <script>
-// ── Decade data (built by Jekyll at compile time) ─────────────────────────
-const decadeData = {
-  {% assign decade_map = "" | split: "" %}
-  {% for item in meta %}
-    {% if item.date != "" and item.date != nil %}
-      {% assign parts = item.date | split: "-" %}
-      {% if parts[2].size == 4 %}
-        {% assign y = parts[2] | plus: 0 %}
-      {% else %}
-        {% assign y = parts[0] | plus: 0 %}
-      {% endif %}
-      {% assign dec = y | divided_by: 10 | times: 10 %}
-    {% endif %}
-  {% endfor %}
-
-  // We'll compute counts client-side from the raw decade list
-};
-
-// Raw decade values for each item (compiled by Jekyll)
 const itemDecades = [{% for item in meta %}{% if item.date != "" and item.date != nil %}{% assign parts = item.date | split: "-" %}{% if parts[2].size == 4 %}{% assign y = parts[2] | plus: 0 %}{% else %}{% assign y = parts[0] | plus: 0 %}{% endif %}{% assign dec = y | divided_by: 10 | times: 10 %}{{ dec }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}];
-
-// Count per decade
-const counts = {};
+ 
+const counts   = {};
 itemDecades.forEach(d => { if (d) counts[d] = (counts[d] || 0) + 1; });
-
-const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
+const decades  = Object.keys(counts).map(Number).sort((a, b) => a - b);
 const maxCount = Math.max(...Object.values(counts));
-
-const barsEl = document.getElementById("decadeBars");
+const barsEl   = document.getElementById("decadeBars");
+ 
 decades.forEach(dec => {
-  const count  = counts[dec];
-  const pct    = Math.round((count / maxCount) * 100);
-
-  const col  = document.createElement("div");
+  const count = counts[dec];
+  const pct   = Math.round((count / maxCount) * 100);
+  const col   = document.createElement("div");
   col.className = "decade-bar-col";
-  col.title  = dec + ": " + count + " número" + (count !== 1 ? "s" : "");
+  col.title   = dec + "s: " + count + " número" + (count !== 1 ? "s" : "");
   col.onclick = () => searchByDecade(dec);
-
   col.innerHTML = `
     <span class="decade-count">${count}</span>
     <div class="decade-bar" style="height:${pct}%"></div>
     <span class="decade-label">${dec}</span>`;
-
   barsEl.appendChild(col);
 });
-
-// ── Search ────────────────────────────────────────────────────────────────
+ 
 function doSearch() {
   const query      = document.getElementById("searchQuery").value.trim();
   const collection = document.getElementById("searchCollection").value;
-  const decade     = document.getElementById("searchDecade").value;
-
-  const params = new URLSearchParams();
+  const yearFrom   = document.getElementById("yearFrom").value;
+  const yearTo     = document.getElementById("yearTo").value;
+  const params     = new URLSearchParams();
   if (query)      params.set("q", query);
   if (collection) params.set("collection", collection);
-  if (decade) {
-    params.set("from", decade);
-    params.set("to",   parseInt(decade) + 9);
-  }
-
+  if (yearFrom)   params.set("from", yearFrom);
+  if (yearTo)     params.set("to", yearTo);
   window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
 }
-
+ 
 function searchByDecade(dec) {
   const params = new URLSearchParams();
   params.set("from", dec);
   params.set("to",   dec + 9);
   window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
 }
-
+ 
 document.getElementById("searchQuery").addEventListener("keydown", e => {
   if (e.key === "Enter") doSearch();
 });
