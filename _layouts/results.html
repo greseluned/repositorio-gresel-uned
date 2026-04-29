@@ -190,10 +190,9 @@ function reconstructRegionText(textLines) {
   return textLines.reduce((acc, line, i) => {
     if (i === 0) return (line.text || "").replace(/¬$/, "");
     const curr = (line.text || "").replace(/¬$/, "");
-    // Both "-" and "¬" at end of previous line mean the word continues — join directly
-    return (acc.endsWith("-") || acc.endsWith("¬")) 
-      ? acc.slice(0, -1) + curr 
-      : acc + " " + curr;
+    const prevEndsWithBreak = acc.endsWith("-") || acc.endsWith("¬");
+    const joined = prevEndsWithBreak ? acc.slice(0, -1) + curr : acc + " " + curr;
+    return joined;
   }, "");
 }
 
