@@ -165,7 +165,7 @@ decades.forEach(dec => {
   const pct   = Math.round((count / maxCount) * 100);
   const col   = document.createElement("div");
   col.className = "decade-bar-col";
-  col.title   = dec + "s: " + count + " número" + (count !== 1 ? "s" : "");
+  col.title   = dec + ": " + count + " número" + (count !== 1 ? "s" : "");
   col.onclick = () => searchByDecade(dec);
   col.innerHTML = `
     <span class="decade-count">${count}</span>
