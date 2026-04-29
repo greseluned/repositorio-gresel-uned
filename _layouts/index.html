@@ -187,7 +187,7 @@ decades.forEach(dec => {
 
   const col  = document.createElement("div");
   col.className = "decade-bar-col";
-  col.title  = dec + "s: " + count + " número" + (count !== 1 ? "s" : "");
+  col.title  = dec + ": " + count + " número" + (count !== 1 ? "s" : "");
   col.onclick = () => searchByDecade(dec);
 
   col.innerHTML = `
