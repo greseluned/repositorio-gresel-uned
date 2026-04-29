@@ -239,7 +239,9 @@ function findMatch(regions, query) {
     let matchedTerm = "";
 
     for (const term of terms) {
-      const idx = lt.indexOf(term);
+      const regex = new RegExp("\\b" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+      const match = lt.match(regex);
+      const idx = match ? match.index : -1;
       if (idx !== -1) {
         matchIndex = idx;
         matchedTerm = term;
@@ -255,10 +257,11 @@ function findMatch(regions, query) {
                     (end < text.length ? "…" : "");
 
       if (terms.length > 0) {
-        const re = new RegExp(
-          "(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")",
-          "gi"
-        );
+        const pattern = terms
+          .map(t => "\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b")
+          .join("|");
+
+        const re = new RegExp("(" + pattern + ")", "gi");
         snippet = snippet.replace(re, "<mark>$1</mark>");
       }
 
@@ -328,7 +331,11 @@ function titleMatch(item, query) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
   const title = (item.title || "").toLowerCase();
 
-  return terms.some(term => title.includes(term));
+  return terms.some(term => {
+    const safe = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp("\\b" + safe + "\\b", "i");
+    return regex.test(title);
+  });
 }
 
 // ── Apply filters ─────────────────────────────────────────────────────────────
@@ -340,11 +347,14 @@ function applyFilters() {
   titleHits.forEach(item => {
     const terms = query.split(/\s+/).filter(Boolean);
 
-    if (terms.length > 0) {
-      const re = new RegExp(
-        "(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")",
-        "gi"
-      );
+  if (terms.length > 0) {
+    const pattern = terms
+      .map(t => "\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b")
+      .join("|");
+
+    const re = new RegExp("(" + pattern + ")", "gi");
+    snip = snip.replace(re, "<mark>$1</mark>");
+  }
 
       item._match = {
         page: 1,
