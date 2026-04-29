@@ -12,7 +12,8 @@ permalink: /assets/data/search-index.json
     "location": {{ item.location | jsonify }},
     "language": {{ item.language | jsonify }},
     "thumb": {{ item.image_thumb | relative_url | jsonify }},
-    "object_location": {{ item.object_location | jsonify }}
+    "object_location": {{ item.object_location | jsonify }},
+    "subcollection": {{ item.subcollection | jsonify }}
   }{%- unless forloop.last -%},{%- endunless -%}
   {%- endfor -%}
 ]
