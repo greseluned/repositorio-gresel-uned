@@ -60,12 +60,13 @@ layout: page-full-width
 .decade-bars {
   display: flex;
   align-items: flex-end;
-  gap: 6px;
+  gap: 2px;
   height: 120px;
 }
 .decade-bar-col {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: flex-end; /* keeps bars aligned at bottom */
   align-items: center;
   flex: 1;
   height: 100%;
@@ -76,9 +77,14 @@ layout: page-full-width
 .decade-bar {
   background: #7fc006;
   border-radius: 3px 3px 0 0;
-  width: 80%;
+  width: 95%;
   transition: background 0.15s, height 0.3s;
   min-height: 3px;
+}
+.decade-count {
+  font-size: 0.6rem;
+  color: #999;
+  margin-bottom: 2px;
 }
 .decade-label {
   font-size: 0.65rem;
@@ -88,11 +94,7 @@ layout: page-full-width
   writing-mode: horizontal-tb;
   line-height: 1;
 }
-.decade-count {
-  font-size: 0.6rem;
-  color: #999;
-  margin-bottom: 2px;
-}
+
 </style>
 
 <!-- ── Two-column layout ─────────────────────────────────────────────────── -->
@@ -239,7 +241,8 @@ decades.forEach(dec => {
 
   const col  = document.createElement("div");
   col.className = "decade-bar-col";
-  col.title  = count + "número" + (count !== 1 ? "s" : "") + dec;
+  col.title  = 
+  dec + "s: " + count + " número" + (count !== 1 ? "s" : "");
   col.onclick = () => searchByDecade(dec);
 
   col.innerHTML = `
