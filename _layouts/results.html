@@ -345,37 +345,24 @@ function applyFilters() {
   const titleHits  = candidates.filter(item => titleMatch(item, query));
 
   titleHits.forEach(item => {
-    const terms = query.split(/\s+/).filter(Boolean);
+  const terms = query.split(/\s+/).filter(Boolean);
 
   if (terms.length > 0) {
     const pattern = terms
-      .map(t => "\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b")
+      .map(t => "\\b" + t.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&") + "\\b")
       .join("|");
 
     const re = new RegExp("(" + pattern + ")", "gi");
-    snip = snip.replace(re, "<mark>$1</mark>");
+
+    item._match = {
+      page: 1,
+      regionId: null,
+      snippet: item.title.replace(re, "<mark>$1</mark>")
+    };
+  } else {
+    item._match = null;
   }
-
-      item._match = {
-        page: 1,
-        regionId: null,
-        snippet: item.title.replace(re, "<mark>$1</mark>")
-      };
-    } else {
-      item._match = null;
-    }
-  });
-
-  filteredItems = titleHits;
-  buildFacets(filteredItems);
-  sortAndRender();
-  updateHeader(query, filteredItems.length);
-
-  if (query) {
-    const needsManifest = candidates.filter(item => !titleMatch(item, query) && item.object_location);
-    if (needsManifest.length) fetchAndSearch(needsManifest, query);
-  }
-}
+});
 
 async function fetchAndSearch(items, query) {
   const results = (await Promise.all(
