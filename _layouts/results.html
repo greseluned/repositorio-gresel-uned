@@ -191,7 +191,7 @@ function reconstructRegionText(textLines) {
     if (i === 0) return (line.text || "").replace(/¬$/, "");
     const curr = (line.text || "").replace(/¬$/, "");
     const prevEndsWithBreak = acc.endsWith("-") || acc.endsWith("¬");
-    const joined = prevEndsWithBreak ? acc.slice(0, -1) + curr : acc + " " + curr;
+    const joined = prevEndsWithBreak ? acc.slice(0, -1) + curr : acc + "" + curr;
     return joined;
   }, "");
 }
