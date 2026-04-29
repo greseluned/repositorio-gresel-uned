@@ -241,9 +241,23 @@ decades.forEach(dec => {
 function doSearch() {
   const query      = document.getElementById("searchQuery").value.trim();
   const collection = document.getElementById("searchCollection").value;
-  const yearFrom   = document.getElementById("yearFrom").value;
-  const yearTo     = document.getElementById("yearTo").value;
-  const params     = new URLSearchParams();
+  let yearFrom     = document.getElementById("yearFrom").value;
+  let yearTo       = document.getElementById("yearTo").value;
+
+  const MIN = 1800;
+  const MAX = 1999;
+
+  // Convert to numbers
+  if (yearFrom) yearFrom = parseInt(yearFrom);
+  if (yearTo)   yearTo   = parseInt(yearTo);
+
+  // Clamp values to range
+  if (yearFrom && yearFrom < MIN) yearFrom = MIN;
+  if (yearFrom && yearFrom > MAX) yearFrom = MAX;
+  if (yearTo && yearTo < MIN) yearTo = MIN;
+  if (yearTo && yearTo > MAX) yearTo = MAX;
+
+  const params = new URLSearchParams();
 
   if (query)      params.set("q", query);
   if (collection) params.set("collection", collection);
@@ -262,5 +276,15 @@ function searchByDecade(dec) {
 
 document.getElementById("searchQuery").addEventListener("keydown", e => {
   if (e.key === "Enter") doSearch();
+});
+
+document.getElementById("yearFrom").addEventListener("input", e => {
+  if (e.target.value < 1800) e.target.value = 1800;
+  if (e.target.value > 2100) e.target.value = 2100;
+});
+
+document.getElementById("yearTo").addEventListener("input", e => {
+  if (e.target.value < 1800) e.target.value = 1800;
+  if (e.target.value > 2100) e.target.value = 2100;
 });
 </script>
