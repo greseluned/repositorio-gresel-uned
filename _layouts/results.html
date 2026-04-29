@@ -162,8 +162,6 @@ const siteBase = "{{ site.baseurl }}/";
 function reconstructRegionText(textLines) {
   if (!textLines || !textLines.length) return "";
   return textLines.reduce((acc, line, i) => {
-    if (i === 0) return (line.text || "").replace(/¬$/, "");
-    const curr = (line.text || "").replace(/¬$/, "");
     // Both "-" and "¬" at end of previous line mean the word continues — join directly
     return (acc.endsWith("-") || acc.endsWith("¬")) 
       ? acc.slice(0, -1) + curr 
