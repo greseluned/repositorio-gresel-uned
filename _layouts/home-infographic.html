@@ -39,7 +39,6 @@ layout: page-full-width
   font-weight: 600;
   padding: 0.5rem 2rem;
   white-space: nowrap;
-  margin: 1rem;
 }
 .btn-search:hover { background-color: #6aaa00; border-color: #5a9000; color: #000; }
 
@@ -177,7 +176,7 @@ layout: page-full-width
       </div>
     </div>
  
-      <button class="btn btn-search mt-1" onclick="doSearch()">Buscar</button>
+      <button class="btn btn-search mt-1" style="margin: 1rem" onclick="doSearch()">Buscar</button>
  
     </div>
   </div>
@@ -192,7 +191,7 @@ layout: page-full-width
     </div>
  
     <!-- Carousel -->
-    {% include index/carousel.html height=280 btn-color="outline-secondary" btn-text="Ver elemento" %}
+    {% include index/carousel.html height=280 %}
  
   </div>
 </div>
