@@ -32,6 +32,9 @@ layout: page-full-width
   border-color: #7fc006;
   box-shadow: 0 0 0 0.2rem rgba(127,192,6,0.2);
 }
+.year-range { display: flex; align-items: center; gap: 0.5rem; }
+.year-range .form-control { width: 90px; }
+.year-range span { color: #666; font-size: 0.85rem; white-space: nowrap; }
 .btn-search {
   background-color: #7fc006;
   border-color: #659a02;
@@ -147,35 +150,15 @@ layout: page-full-width
         </select>
       </div>
 
+      <!-- Years -->
       <div class="mb-3">
-        <label class="form-label">Década</label>
-        <select class="form-select" id="searchDecade">
-          <option value="">Todas las décadas</option>
-          {% assign seen_decades = "" | split: "" %}
-          {% for item in meta %}
-            {% if item.date != "" and item.date != nil %}
-              {% assign parts = item.date | split: "-" %}
-              {% assign y = nil %}
-              {% for p in parts %}
-                {% if p.size == 4 %}
-                  {% assign y = p | plus: 0 %}
-                {% endif %}
-              {% endfor %}
-              {% if y %}
-                {% assign dec = y | divided_by: 10 | times: 10 %}
-                {% assign dec_s = dec | append: "" %}
-                {% unless seen_decades contains dec_s %}
-                  {% assign seen_decades = seen_decades | push: dec_s %}
-                {% endunless %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-          {% assign seen_decades = seen_decades | sort %}
-          {% for dec in seen_decades %}
-          <option value="{{ dec }}">{{ dec }}</option>
-          {% endfor %}
-        </select>
-      </div>
+        <label class="form-label">Años</label>
+        <div class="year-range">
+          <input type="number" class="form-control" id="yearFrom" placeholder="Desde">
+          <span>—</span>
+          <input type="number" class="form-control" id="yearTo" placeholder="Hasta">
+        </div>
+      </div>>
     </div>
  
       <div class="mt-4">
@@ -201,85 +184,48 @@ layout: page-full-width
 </div>
 
 <script>
-// Build decade list safely in Liquid
-{% assign decade_list = "" %}
-
-{% for item in meta %}
-  {% if item.date != "" and item.date != nil %}
-    
-    {% assign parts = item.date | split: "-" %}
-    {% assign y = nil %}
-
-    {% for p in parts %}
-      {% if p.size == 4 %}
-        {% assign y = p | plus: 0 %}
-      {% endif %}
-    {% endfor %}
-
-    {% if y %}
-      {% assign dec = y | divided_by: 10 | times: 10 %}
-      {% assign decade_list = decade_list | append: dec | append: "," %}
-    {% endif %}
-
-  {% endif %}
-{% endfor %}
-
-// Raw decade values for each item (compiled by Jekyll)
-const itemDecades = [{{ decade_list | remove_last: "," }}];
-
-// Count per decade
-const counts = {};
+const itemDecades = [{% for item in meta %}{% if item.date != "" and item.date != nil %}{% assign parts = item.date | split: "-" %}{% if parts[2].size == 4 %}{% assign y = parts[2] | plus: 0 %}{% else %}{% assign y = parts[0] | plus: 0 %}{% endif %}{% assign dec = y | divided_by: 10 | times: 10 %}{{ dec }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}];
+ 
+const counts   = {};
 itemDecades.forEach(d => { if (d) counts[d] = (counts[d] || 0) + 1; });
-
-const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
+const decades  = Object.keys(counts).map(Number).sort((a, b) => a - b);
 const maxCount = Math.max(...Object.values(counts));
-
-const barsEl = document.getElementById("decadeBars");
-
+const barsEl   = document.getElementById("decadeBars");
+ 
 decades.forEach(dec => {
-  const count  = counts[dec];
-  const pct    = Math.round((count / maxCount) * 100);
-
-  const col  = document.createElement("div");
+  const count = counts[dec];
+  const pct   = Math.round((count / maxCount) * 100);
+  const col   = document.createElement("div");
   col.className = "decade-bar-col";
-  col.title  = 
-  dec + ":" + count + " número" + (count !== 1 ? "s" : "");
+  col.title   = dec + ": " + count + " número" + (count !== 1 ? "s" : "");
   col.onclick = () => searchByDecade(dec);
-
   col.innerHTML = `
     <span class="decade-count">${count}</span>
     <div class="decade-bar" style="height:${pct}%"></div>
-    <span class="decade-label">${dec}s</span>`;
-
+    <span class="decade-label">${dec}</span>`;
   barsEl.appendChild(col);
 });
-
-// ── Search ────────────────────────────────────────────────────────────────
+ 
 function doSearch() {
   const query      = document.getElementById("searchQuery").value.trim();
   const collection = document.getElementById("searchCollection").value;
-  const decade     = document.getElementById("searchDecade").value;
-  const location   = document.getElementById("searchLocation").value;
-
-  const params = new URLSearchParams();
+  const yearFrom   = document.getElementById("yearFrom").value;
+  const yearTo     = document.getElementById("yearTo").value;
+  const params     = new URLSearchParams();
   if (query)      params.set("q", query);
   if (collection) params.set("collection", collection);
-  if (location)   params.set("location", location);
-  if (decade) {
-    params.set("from", decade);
-    params.set("to",   parseInt(decade) + 9);
-  }
-
+  if (yearFrom)   params.set("from", yearFrom);
+  if (yearTo)     params.set("to", yearTo);
   window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
 }
-
+ 
 function searchByDecade(dec) {
   const params = new URLSearchParams();
   params.set("from", dec);
   params.set("to",   dec + 9);
   window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
 }
-
+ 
 document.getElementById("searchQuery").addEventListener("keydown", e => {
   if (e.key === "Enter") doSearch();
 });
