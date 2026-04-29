@@ -187,13 +187,24 @@ const siteBase = "{{ site.baseurl }}/";
 // ── Text reconstruction ───────────────────────────────────────────────────────
 function reconstructRegionText(textLines) {
   if (!textLines || !textLines.length) return "";
-  return textLines.reduce((acc, line, i) => {
-    if (i === 0) return (line.text || "").replace(/¬$/, "");
-    const curr = (line.text || "").replace(/¬$/, "");
-    const prevEndsWithBreak = acc.endsWith("-") || acc.endsWith("¬");
-    const joined = prevEndsWithBreak ? acc.slice(0, -1) + curr : acc + "" + curr;
-    return joined;
-  }, "");
+  let result = "";
+  textLines.forEach((line, i) => {
+    let text = line.text || "";
+    if (i === 0) {
+      result = text;
+      return;
+    }
+    // Check if previous line ends with hyphenation mark
+    const prevEndsWithBreak = result.endsWith("-") || result.endsWith("¬");
+    if (prevEndsWithBreak) {
+      // Remove the break character and join directly (no space)
+      result = result.slice(0, -1) + text;
+    } else {
+      // Normal case → add space
+      result += " " + text;
+    }
+  });
+  return result;
 }
 
 // ── Fetch JSON manifest ───────────────────────────────────────────────────────
