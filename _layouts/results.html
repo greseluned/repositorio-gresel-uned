@@ -165,7 +165,7 @@ function reconstructRegionText(textLines) {
     if (i === 0) return (line.text || "").replace(/¬/g, "");
     const curr = (line.text || "").replace(/¬/g, "");
     // Join without space if previous line ended with a hyphen (hard or soft)
-    return acc.endsWith("-") ? acc.slice(0, -1) + curr : acc + " " + curr;
+    return acc.endsWith("-") ? acc.slice(0, -1) + curr : acc + "" + curr;
   }, "");
 }
 
