@@ -188,9 +188,11 @@ const siteBase = "{{ site.baseurl }}/";
 function reconstructRegionText(textLines) {
   if (!textLines || !textLines.length) return "";
   return textLines.reduce((acc, line, i) => {
-    if (i === 0) return line.text || "";
-    const curr = line.text || "";
-    return acc.endsWith("-") ? acc.slice(0, -1) + curr : acc + " " + curr;
+    if (i === 0) return (line.text || "").replace(/¬$/, "");
+    const curr = (line.text || "").replace(/¬$/, "");
+    const prevEndsWithBreak = acc.endsWith("-") || acc.endsWith("¬");
+    const joined = prevEndsWithBreak ? acc.slice(0, -1) + curr : acc + " " + curr;
+    return joined;
   }, "");
 }
 
