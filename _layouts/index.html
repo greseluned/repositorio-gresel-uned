@@ -112,7 +112,7 @@ layout: page-full-width
                placeholder="Buscar en títulos y transcripciones...">
       </div>
 
-      <!-- Collection -->
+      <!-- Header -->
       <div class="col-lg-3">
         <label class="form-label">Cabecera</label>
         <select class="form-select" id="searchCollection">
@@ -123,33 +123,14 @@ layout: page-full-width
         </select>
       </div>
 
-      <!-- Decade -->
-      <div class="col-lg-2">
-        <label class="form-label">Década</label>
-        <select class="form-select" id="searchDecade">
-          <option value="">Todas</option>
-          {% comment %}Build unique decade list from metadata{% endcomment %}
-          {% assign years = "" | split: "" %}
-          {% for item in meta %}
-            {% if item.date != "" and item.date != nil %}
-              {% assign parts = item.date | split: "-" %}
-              {% if parts[2].size == 4 %}
-                {% assign y = parts[2] | plus: 0 %}
-              {% else %}
-                {% assign y = parts[0] | plus: 0 %}
-              {% endif %}
-              {% assign dec = y | divided_by: 10 | times: 10 %}
-              {% assign dec_s = dec | append: "" %}
-              {% unless years contains dec_s %}
-                {% assign years = years | push: dec_s %}
-              {% endunless %}
-            {% endif %}
-          {% endfor %}
-          {% assign years = years | sort %}
-          {% for dec in years %}
-          <option value="{{ dec }}">{{ dec }}s</option>
-          {% endfor %}
-        </select>
+      <!-- Years -->
+      <div class="mb-3">
+        <label class="form-label">Años</label>
+        <div class="year-range">
+          <input type="number" class="form-control" id="yearFrom" placeholder="Desde">
+          <span>—</span>
+          <input type="number" class="form-control" id="yearTo" placeholder="Hasta">
+        </div>
       </div>
 
       <!-- Button -->
