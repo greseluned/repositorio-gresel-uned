@@ -46,6 +46,32 @@ layout: page
 .facet-count.active-count { background: #7fc006; color: #000; font-weight: 700; }
 .btn-clear { font-size: 0.8rem; color: #666; text-decoration: none; }
 .btn-clear:hover { color: #c00; }
+
+/* Nested year tree */
+.decade-group { margin-bottom: 0.25rem; }
+.decade-group-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #495057;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0;
+  user-select: none;
+}
+.decade-group-label:hover { color: #7fc006; }
+.decade-group-label .facet-count { font-weight: 400; }
+.year-sublist {
+  list-style: none;
+  padding: 0 0 0 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+}
+.year-sublist li { display: flex; justify-content: space-between; align-items: center; padding: 0.15rem 0; }
+.year-sublist li label { cursor: pointer; color: #555; flex: 1; }
+.year-sublist li label:hover { color: #7fc006; }
+
 .result-item {
   border: 1px solid #e9ecef;
   border-radius: 6px;
@@ -92,6 +118,7 @@ layout: page
         </div>
       </div>
       <a href="#" class="btn-clear" onclick="clearAll(); return false;">Limpiar selecciones</a>
+
       <div class="facet-section mt-2">
         <div class="facet-title" onclick="toggleFacet('facetCollection')">Cabecera <span id="facetCollectionArrow">▾</span></div>
         <ul class="facet-list" id="facetCollection"></ul>
@@ -102,7 +129,8 @@ layout: page
       </div>
       <div class="facet-section">
         <div class="facet-title" onclick="toggleFacet('facetYear')">Año <span id="facetYearArrow">▾</span></div>
-        <ul class="facet-list" id="facetYear"></ul>
+        <!-- Nested decade→year tree rendered here -->
+        <div id="facetYear"></div>
       </div>
       <div class="facet-section">
         <div class="facet-title" onclick="toggleFacet('facetLang')">Idioma <span id="facetLangArrow">▾</span></div>
@@ -136,7 +164,7 @@ const KWIC_WINDOW = 120;
 
 let allItems = [];
 let filteredItems = [];
-const enrichedItems = {}; // object_location -> [{ page, regionId, text }]
+const enrichedItems = {};
 
 let activeFacets = { collection: [], location: [], year: [], lang: [] };
 let currentQuery = "";
@@ -150,24 +178,19 @@ const initialTo         = urlParams.get("to")   ? parseInt(urlParams.get("to")) 
 const initialLang       = urlParams.get("lang") ? urlParams.get("lang").split(",") : [];
 const initialLocation   = urlParams.get("location") || "";
 
-// Jekyll injects collection titles at build time so slug -> proper title always works
 const collectionTitles = {
   {% for coll in collections %}"{{ coll.id }}": {{ coll.title | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}
 };
 
-// Base URL — everything is relative to this
 const siteBase = "{{ site.baseurl }}/";
 
 // ── Text reconstruction ───────────────────────────────────────────────────────
 function reconstructRegionText(textLines) {
   if (!textLines || !textLines.length) return "";
   return textLines.reduce((acc, line, i) => {
-    if (i === 0) return (line.text || "");
-    const curr = (line.text || "");
-    // Both "-" and "¬" at end of previous line mean the word continues — join directly
-    return (acc.endsWith("-") || acc.endsWith("¬")) 
-      ? acc.slice(0, -1) + curr 
-      : acc + " " + curr;
+    if (i === 0) return line.text || "";
+    const curr = line.text || "";
+    return acc.endsWith("-") ? acc.slice(0, -1) + curr : acc + " " + curr;
   }, "");
 }
 
@@ -175,8 +198,7 @@ function reconstructRegionText(textLines) {
 async function fetchManifestRegions(objectLocation) {
   if (enrichedItems[objectLocation] !== undefined) return enrichedItems[objectLocation];
   try {
-    const url  = siteBase + objectLocation.trim();
-    const resp = await fetch(url);
+    const resp = await fetch(siteBase + objectLocation.trim());
     if (!resp.ok) { enrichedItems[objectLocation] = []; return []; }
     const manifest = await resp.json();
     const regions  = [];
@@ -188,10 +210,7 @@ async function fetchManifestRegions(objectLocation) {
     });
     enrichedItems[objectLocation] = regions;
     return regions;
-  } catch(e) {
-    enrichedItems[objectLocation] = [];
-    return [];
-  }
+  } catch(e) { enrichedItems[objectLocation] = []; return []; }
 }
 
 // ── Find first matching region ────────────────────────────────────────────────
@@ -201,11 +220,11 @@ function findMatch(regions, query) {
     const lt  = entry.text.toLowerCase();
     const idx = lt.indexOf(lq);
     if (idx !== -1) {
-      const s   = Math.max(0, idx - KWIC_WINDOW / 2);
-      const e   = Math.min(entry.text.length, idx + query.length + KWIC_WINDOW / 2);
-      let snip  = (s > 0 ? "…" : "") + entry.text.slice(s, e) + (e < entry.text.length ? "…" : "");
-      const re  = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-      snip      = snip.replace(re, "<mark>$1</mark>");
+      const s  = Math.max(0, idx - KWIC_WINDOW / 2);
+      const e  = Math.min(entry.text.length, idx + query.length + KWIC_WINDOW / 2);
+      let snip = (s > 0 ? "…" : "") + entry.text.slice(s, e) + (e < entry.text.length ? "…" : "");
+      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+      snip     = snip.replace(re, "<mark>$1</mark>");
       return { page: entry.page, regionId: entry.regionId, snippet: snip };
     }
   }
@@ -217,10 +236,8 @@ async function loadIndex() {
   try {
     const resp = await fetch(siteBase + "assets/data/search-index.json");
     allItems   = await resp.json();
-  } catch(e) {
-    console.error("Could not load search index:", e);
-    allItems = [];
-  }
+  } catch(e) { console.error("Could not load search index:", e); allItems = []; }
+
   document.getElementById("loadingOverlay").style.display = "none";
 
   currentQuery = initialQuery;
@@ -235,15 +252,15 @@ async function loadIndex() {
 function extractYear(d) {
   if (!d) return 0;
   const p = d.split("-");
-  if (p.length === 3 && p[2].length === 4) return parseInt(p[2]); // DD-MM-YYYY
-  if (p[0].length === 4) return parseInt(p[0]);                    // YYYY-MM-DD
+  if (p.length === 3 && p[2].length === 4) return parseInt(p[2]);
+  if (p[0].length === 4) return parseInt(p[0]);
   return parseInt(p[p.length - 1]) || 0;
 }
 function extractMonth(d) {
   if (!d) return 0;
   const p = d.split("-");
-  if (p.length === 3 && p[2].length === 4) return parseInt(p[1]); // DD-MM-YYYY
-  if (p.length === 3 && p[0].length === 4) return parseInt(p[1]); // YYYY-MM-DD
+  if (p.length === 3 && p[2].length === 4) return parseInt(p[1]);
+  if (p.length === 3 && p[0].length === 4) return parseInt(p[1]);
   return 0;
 }
 
@@ -260,9 +277,7 @@ function facetMatch(item) {
   if (activeFacets.collection.length && !activeFacets.collection.includes(item.collection)) return false;
   if (activeFacets.location.length   && !activeFacets.location.includes(item.location))     return false;
   if (activeFacets.lang.length       && !activeFacets.lang.includes(item.language))         return false;
-  if (activeFacets.year.length) {
-    if (!activeFacets.year.includes(String(extractYear(item.date)))) return false;
-  }
+  if (activeFacets.year.length && !activeFacets.year.includes(String(extractYear(item.date)))) return false;
   return true;
 }
 function titleMatch(item, query) {
@@ -276,10 +291,9 @@ function applyFilters() {
   const candidates = allItems.filter(item => metadataMatch(item) && facetMatch(item));
   const titleHits  = candidates.filter(item => titleMatch(item, query));
 
-  // Annotate title hits with a snippet from the title itself
   titleHits.forEach(item => {
     if (query) {
-      const re  = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
       item._match = { page: 1, regionId: null, snippet: item.title.replace(re, "<mark>$1</mark>") };
     } else {
       item._match = null;
@@ -291,7 +305,6 @@ function applyFilters() {
   sortAndRender();
   updateHeader(query, filteredItems.length);
 
-  // Async: search inside JSON manifests for the rest
   if (query) {
     const needsManifest = candidates.filter(item => !titleMatch(item, query) && item.object_location);
     if (needsManifest.length) fetchAndSearch(needsManifest, query);
@@ -352,19 +365,15 @@ function renderPage(page) {
 
   pageItems.forEach(item => {
     const collTitle = collectionTitles[item.collection] || item.collection;
-
-    // Thumbnail — stored in the index as a root-relative URL already built by Jekyll
     const thumbHtml = item.thumb
       ? `<img src="${item.thumb}" style="width:60px;height:60px;object-fit:cover;border-radius:4px;float:right;margin-left:1rem;" alt="">`
       : "";
 
-    // Deep-link to page + region when a transcript match exists
     let href = siteBase + "items/" + item.id + ".html";
     if (item._match && item._match.regionId) {
       href += "?page=" + item._match.page + "&region=" + item._match.regionId;
     }
 
-    // Snippet
     let snippetHtml = "";
     if (item._match && item._match.snippet) {
       snippetHtml = `<div class="result-snippet">${item._match.snippet}</div>`;
@@ -410,20 +419,65 @@ function renderPagination(current, total) {
 function buildFacets(items) {
   buildFacet("facetCollection", items, i => i.collection, v => collectionTitles[v]||v, "collection", "count");
   buildFacet("facetLocation",   items, i => i.location,   v => v,                      "location",   "count");
-  buildFacet("facetYear",       items,
-    i => { const y=extractYear(i.date); return y ? String(y) : null; },
-    v => v, "year", "numeric-asc");
   buildFacet("facetLang",       items, i => i.language,   v => v,                      "lang",       "count");
+  buildYearTree(items);
+}
+
+// ── Nested year tree (decade → years) ────────────────────────────────────────
+function buildYearTree(items) {
+  // Build decade -> { year -> count }
+  const tree = {};
+  items.forEach(item => {
+    const y = extractYear(item.date);
+    if (!y) return;
+    const dec = String(Math.floor(y / 10) * 10);
+    if (!tree[dec]) tree[dec] = {};
+    const ys = String(y);
+    tree[dec][ys] = (tree[dec][ys] || 0) + 1;
+  });
+
+  const decades = Object.keys(tree).sort((a, b) => parseInt(a) - parseInt(b));
+  const container = document.getElementById("facetYear");
+
+  container.innerHTML = decades.map(dec => {
+    const years     = Object.keys(tree[dec]).sort((a, b) => parseInt(a) - parseInt(b));
+    const decTotal  = years.reduce((sum, y) => sum + tree[dec][y], 0);
+    const sublistId = "yearSub-" + dec;
+
+    const yearRows = years.map(y => {
+      const count   = tree[dec][y];
+      const checked = activeFacets.year.includes(y) ? "checked" : "";
+      return `<li>
+        <input type="checkbox" id="year-${y}" ${checked} onchange="toggleFacetValue('year','${y}')">
+        <label for="year-${y}">&nbsp;${y}</label>
+        <span class="facet-count ${checked ? 'active-count' : ''}">${count}</span>
+      </li>`;
+    }).join("");
+
+    return `
+      <div class="decade-group">
+        <div class="decade-group-label" onclick="toggleDecadeGroup('${sublistId}')">
+          <span>${dec}s</span>
+          <span class="facet-count">${decTotal}</span>
+        </div>
+        <ul class="year-sublist" id="${sublistId}">
+          ${yearRows}
+        </ul>
+      </div>`;
+  }).join("");
+}
+
+function toggleDecadeGroup(sublistId) {
+  const el = document.getElementById(sublistId);
+  el.style.display = el.style.display === "none" ? "" : "none";
 }
 
 function buildFacet(elId, items, keyFn, labelFn, facetKey, sortMode) {
   const counts = {};
   items.forEach(item => { const v=keyFn(item); if(v) counts[v]=(counts[v]||0)+1; });
-
   const sorted = sortMode === "numeric-asc"
     ? Object.entries(counts).sort((a,b) => parseInt(a[0])-parseInt(b[0]))
     : Object.entries(counts).sort((a,b) => b[1]-a[1]);
-
   document.getElementById(elId).innerHTML = sorted.map(([val, count]) => {
     const checked = activeFacets[facetKey].includes(val) ? "checked" : "";
     return `<li>
