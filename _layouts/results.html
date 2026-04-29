@@ -228,19 +228,45 @@ async function fetchManifestRegions(objectLocation) {
 
 // ── Find first matching region ────────────────────────────────────────────────
 function findMatch(regions, query) {
-  const lq = query.toLowerCase();
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+
   for (const entry of regions) {
-    const lt  = entry.text.toLowerCase();
-    const idx = lt.indexOf(lq);
-    if (idx !== -1) {
-      const s  = Math.max(0, idx - KWIC_WINDOW / 2);
-      const e  = Math.min(entry.text.length, idx + query.length + KWIC_WINDOW / 2);
-      let snip = (s > 0 ? "…" : "") + entry.text.slice(s, e) + (e < entry.text.length ? "…" : "");
-      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-      snip     = snip.replace(re, "<mark>$1</mark>");
-      return { page: entry.page, regionId: entry.regionId, snippet: snip };
+    const text = entry.text;
+    const lt   = text.toLowerCase();
+
+    // Find first matching term
+    let matchIndex = -1;
+    let matchedTerm = "";
+
+    for (const term of terms) {
+      const idx = lt.indexOf(term);
+      if (idx !== -1) {
+        matchIndex = idx;
+        matchedTerm = term;
+        break;
+      }
+    }
+
+    if (matchIndex !== -1) {
+      const start = Math.max(0, matchIndex - KWIC_WINDOW / 2);
+      const end   = Math.min(text.length, matchIndex + matchedTerm.length + KWIC_WINDOW / 2);
+
+      let snippet = (start > 0 ? "…" : "") +
+                    text.slice(start, end) +
+                    (end < text.length ? "…" : "");
+
+      // Highlight ALL terms, not just the first
+      const re = new RegExp("(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
+      snippet = snippet.replace(re, "<mark>$1</mark>");
+
+      return {
+        page: entry.page,
+        regionId: entry.regionId,
+        snippet: snippet
+      };
     }
   }
+
   return null;
 }
 
@@ -295,7 +321,11 @@ function facetMatch(item) {
 }
 function titleMatch(item, query) {
   if (!query) return true;
-  return item.title && item.title.toLowerCase().includes(query.toLowerCase());
+
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const title = (item.title || "").toLowerCase();
+
+  return terms.some(term => title.includes(term));
 }
 
 // ── Apply filters ─────────────────────────────────────────────────────────────
@@ -305,12 +335,14 @@ function applyFilters() {
   const titleHits  = candidates.filter(item => titleMatch(item, query));
 
   titleHits.forEach(item => {
-    if (query) {
-      const re = new RegExp("(" + query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-      item._match = { page: 1, regionId: null, snippet: item.title.replace(re, "<mark>$1</mark>") };
-    } else {
-      item._match = null;
-    }
+    const terms = query.split(/\s+/).filter(Boolean);
+    const re = new RegExp("(" + terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")", "gi");
+
+    item._match = {
+      page: 1,
+      regionId: null,
+      snippet: item.title.replace(re, "<mark>$1</mark>")
+    };
   });
 
   filteredItems = titleHits;
