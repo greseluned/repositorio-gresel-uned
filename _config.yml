@@ -20,12 +20,12 @@ source-code: https://github.com/greseluned/repositorio-gresel-uned
 # title of site appears in banner
 title: GRESEL-UNED
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Narrativas poscoloniales en periódicos en español de Asia, España y el Caribe
+tagline: Repositorio de prensa histórica digitalizada y transcrita de Asia, España y el Caribe hispánico
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
 description: "Colección de periódicos poscoloniales digitalizados y transcritos."
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
-keywords: periódicos;artículos;imágenes;poscolonial;prensa histórica;gresel-uned;español;repositorio;
+keywords: periódicos;artículos;imágenes;poscolonial;prensa histórica;gresel-uned;español;repositorio;asia;españa;caribe hispánico;ocr;transcripción
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
 author: Nuria Lucía Pirvu Curtusan
 
