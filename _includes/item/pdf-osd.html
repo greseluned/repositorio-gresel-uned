@@ -102,6 +102,11 @@
     background: rgba(210, 220, 190, 0.9);
   }
 
+  .region-button.active {
+    background: rgba(210, 220, 190, 0.9);
+    outline: 2px solid #7fc006;
+  }
+
   .region-content {
     max-height: 0;
     overflow: hidden;
@@ -178,132 +183,136 @@ let pages = [];
 let currentPage = 0;
 
 // ================================
+// DEEP LINK PARSING
+// ================================
+let deepLinkParams = null;
+
+function parseDeepLink() {
+  const params = new URLSearchParams(window.location.search);
+  const page   = params.get('page');
+  const region = params.get('region');
+
+  if (page && region) {
+    deepLinkParams = {
+      page:     parseInt(page) - 1, // convert to 0-indexed
+      regionId: region               // this is region.id from the manifest
+    };
+  }
+}
+
+// ================================
 // INIT
 // ================================
 async function init() {
+  parseDeepLink();
+
   try {
     const response = await fetch(MANIFEST_URL);
-    if (!response.ok) {
-      throw new Error(`Failed to load manifest: ${response.status}`);
-    }
-    
+    if (!response.ok) throw new Error(`Failed to load manifest: ${response.status}`);
+
     const manifest = await response.json();
     pages = manifest.pages;
-    
-    console.log('Manifest loaded:', manifest);
-    console.log('Pages:', pages.length);
 
     viewer = OpenSeadragon({
       id: "osd",
       prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
       showNavigator: true,
       showRotationControl: true,
-      gestureSettingsMouse: {
-        clickToZoom: false
-      }
+      gestureSettingsMouse: { clickToZoom: false }
     });
 
     document.getElementById("prev-page").onclick = () => {
       if (currentPage > 0) loadPage(currentPage - 1);
     };
-
     document.getElementById("next-page").onclick = () => {
       if (currentPage < pages.length - 1) loadPage(currentPage + 1);
     };
 
-    loadPage(0);
+    const startPage = deepLinkParams ? deepLinkParams.page : 0;
+    loadPage(startPage);
+
   } catch (error) {
     console.error('Initialization error:', error);
-    document.getElementById('region-list').innerHTML = 
+    document.getElementById('region-list').innerHTML =
       `<p style="color: red;">Error loading manifest: ${error.message}</p>`;
   }
 }
 
 // ================================
-// CARGAR PÁGINA
+// LOAD PAGE
 // ================================
 function loadPage(index) {
   currentPage = index;
   const pageData = pages[index];
-  
-  console.log('Loading page:', index + 1, pageData);
-  
-  // Build tile source URL
+
   const tileSource = {
     type: "image",
     url: '{{ site.baseurl }}/' + pageData.image,
     buildPyramid: true
   };
-  
-  console.log('Tile source URL:', tileSource.url);
-  
+
   viewer.open(tileSource);
-  
+
   viewer.addOnceHandler('open', () => {
     viewer.clearOverlays();
-    renderRegions(viewer, pageData);
+
+    // renderRegions returns a map of manifest regionId → viewportRect
+    // so we can activate the deep-link region immediately after render
+    const regionRectMap = renderRegions(viewer, pageData);
     updatePageIndicator();
+
+    if (deepLinkParams && deepLinkParams.page === index) {
+      activateRegion(deepLinkParams.regionId, regionRectMap);
+      deepLinkParams = null; // clear after use
+    }
   });
 }
 
 // ================================
-// RENDERIZAR REGIONES
+// RENDER REGIONS
+// — Uses region.id from manifest as the canonical regionId throughout.
+// — Returns { manifestRegionId: viewportRect } for deep-link activation.
 // ================================
 function renderRegions(viewer, pageData) {
   const container = document.getElementById("region-list");
   container.innerHTML = "";
 
+  const regionRectMap = {};
+
   if (!pageData.textRegions || pageData.textRegions.length === 0) {
     container.innerHTML = '<p style="color: #999;">No hay regiones de texto en esta página.</p>';
-    return;
+    return regionRectMap;
   }
 
   const tiledImage = viewer.world.getItemAt(0);
-  if (!tiledImage) {
-    console.error('No tiled image loaded');
-    return;
-  }
-  
+  if (!tiledImage) { console.error('No tiled image loaded'); return regionRectMap; }
+
   pageData.textRegions.forEach((region, idx) => {
-    const regionId = `REGION-${idx + 1}`;
-    
-    // Create overlay on the viewer
+    // Use the manifest's own region.id as the canonical identifier.
+    // Fall back to an index-based id only if the manifest has none.
+    const regionId = region.id || `REGION-${idx + 1}`;
+
+    // ── Overlay ──
     const overlay = document.createElement("div");
     overlay.className = "text-region";
     overlay.dataset.region = regionId;
-    
-    const rect = calculateBoundingBox(region.points);
-    
-    // Convert pixel coordinates to viewport coordinates
-    const viewportRect = tiledImage.imageToViewportRectangle(
-      rect.x, rect.y, rect.width, rect.height
-    );
-    
-    viewer.addOverlay({
-      element: overlay,
-      location: viewportRect
-    });
 
-    // Hover effects
-    overlay.addEventListener("mouseenter", () => {
-      overlay.classList.add("hover");
-    });
-    
-    overlay.addEventListener("mouseleave", () => {
-      overlay.classList.remove("hover");
-    });
+    const rect         = calculateBoundingBox(region.points);
+    const viewportRect = tiledImage.imageToViewportRectangle(rect.x, rect.y, rect.width, rect.height);
 
-    // Click to zoom
+    regionRectMap[regionId] = viewportRect;
+
+    viewer.addOverlay({ element: overlay, location: viewportRect });
+
     new OpenSeadragon.MouseTracker({
       element: overlay,
       clickHandler: () => {
         zoomToRegion(viewer, viewportRect);
-        toggleRegionContent(regionId);
-        highlightOverlay(regionId);
+        activateRegion(regionId, regionRectMap);
       }
     });
 
-    // Create sidebar button and content
+    // ── Sidebar button + accordion ──
     const wrapper = document.createElement("div");
     wrapper.className = "region-wrapper";
 
@@ -314,24 +323,21 @@ function renderRegions(viewer, pageData) {
 
     btn.onclick = () => {
       zoomToRegion(viewer, viewportRect);
-      toggleRegionContent(regionId);
-      highlightOverlay(regionId);
+      activateRegion(regionId, regionRectMap);
     };
 
     const content = document.createElement("div");
     content.className = "region-content";
     content.dataset.region = regionId;
 
-    // Display text lines only
     if (region.textLines && region.textLines.length > 0) {
-      region.textLines.forEach((line, lineIdx) => {
+      region.textLines.forEach(line => {
         const lineDiv = document.createElement("div");
         lineDiv.className = "text-line";
         lineDiv.textContent = line.text || "(sin texto)";
         content.appendChild(lineDiv);
       });
     } else {
-      // If no text lines, show "(sin texto)"
       content.innerHTML = '<p style="color: #999;">(sin texto)</p>';
     }
 
@@ -339,200 +345,90 @@ function renderRegions(viewer, pageData) {
     wrapper.appendChild(content);
     container.appendChild(wrapper);
   });
+
+  return regionRectMap;
 }
 
 // ================================
-// CALCULAR CUADROS DELIMITADORES
+// ACTIVATE REGION
+// Single entry point that highlights the overlay, opens the accordion,
+// scrolls the sidebar button into view, and zooms to the region.
+// ================================
+function activateRegion(regionId, regionRectMap) {
+  // 1. Highlight overlay
+  document.querySelectorAll(".text-region").forEach(el => {
+    el.classList.toggle("active", el.dataset.region === regionId);
+  });
+
+  // 2. Highlight sidebar button
+  document.querySelectorAll(".region-button").forEach(el => {
+    el.classList.toggle("active", el.dataset.region === regionId);
+  });
+
+  // 3. Open accordion (close others)
+  document.querySelectorAll(".region-content").forEach(el => {
+    if (el.dataset.region === regionId) {
+      el.classList.add("open");
+    } else {
+      el.classList.remove("open");
+    }
+  });
+
+  // 4. Scroll sidebar button into view
+  const activeBtn = document.querySelector(`.region-button[data-region="${regionId}"]`);
+  if (activeBtn) {
+    const list      = document.getElementById("region-list");
+    const btnTop    = activeBtn.offsetTop;
+    const btnHeight = activeBtn.offsetHeight;
+    const listHeight = list.offsetHeight;
+    list.scrollTo({
+      top:      btnTop - (listHeight / 2) + (btnHeight / 2),
+      behavior: "smooth"
+    });
+  }
+
+  // 5. Zoom to region if rect is available
+  if (regionRectMap && regionRectMap[regionId]) {
+    zoomToRegion(viewer, regionRectMap[regionId]);
+  }
+}
+
+// ================================
+// CALCULATE BOUNDING BOX
 // ================================
 function calculateBoundingBox(points) {
   const xs = points.map(p => p[0]);
   const ys = points.map(p => p[1]);
-  
-  const minX = Math.min(...xs);
-  const minY = Math.min(...ys);
-  const maxX = Math.max(...xs);
-  const maxY = Math.max(...ys);
-  
   return {
-    x: minX,
-    y: minY,
-    width: maxX - minX,
-    height: maxY - minY
+    x:      Math.min(...xs),
+    y:      Math.min(...ys),
+    width:  Math.max(...xs) - Math.min(...xs),
+    height: Math.max(...ys) - Math.min(...ys)
   };
 }
 
 // ================================
-// ZOOM A LA REGIÓN
+// ZOOM TO REGION
 // ================================
 function zoomToRegion(viewer, viewportRect) {
-  const padding = 0.1; // increase for more context around the region
+  const padding    = 0.1;
   const paddedRect = new OpenSeadragon.Rect(
-    viewportRect.x - padding,
-    viewportRect.y - padding,
-    viewportRect.width + padding * 2,
+    viewportRect.x      - padding,
+    viewportRect.y      - padding,
+    viewportRect.width  + padding * 2,
     viewportRect.height + padding * 2
   );
   viewer.viewport.fitBounds(paddedRect, true);
 }
 
 // ================================
-// EXPANDIR/CONTRAER CONTENIDO
-// ================================
-function toggleRegionContent(regionId) {
-  document.querySelectorAll(".region-content").forEach(el => {
-    if (el.dataset.region === regionId) {
-      el.classList.toggle("open");
-    } else {
-      el.classList.remove("open");
-    }
-  });
-
-  // Scroll the active button into view within the sidebar
-  const activeBtn = document.querySelector(`.region-button[data-region="${regionId}"]`);
-  if (activeBtn) {
-    const list = document.getElementById("region-list");
-    const btnTop = activeBtn.offsetTop;
-    const btnHeight = activeBtn.offsetHeight;
-    const listHeight = list.offsetHeight;
-    list.scrollTo({
-      top: btnTop - (listHeight / 2) + (btnHeight / 2),
-      behavior: "smooth",
-      block: "start"
-    });
-  }
-}
-
-// ================================
-// RESALTAR SUPERPOSICIÓN
-// ================================
-function highlightOverlay(regionId) {
-  document.querySelectorAll(".text-region").forEach(el => {
-    if (el.dataset.region === regionId) {
-      el.classList.add("active");
-    } else {
-      el.classList.remove("active");
-    }
-  });
-}
-
-// ================================
-// ACTUALIZAR INDICADOR PÁGINA
+// PAGE INDICATOR
 // ================================
 function updatePageIndicator() {
-  const prevBtn = document.getElementById("prev-page");
-  const nextBtn = document.getElementById("next-page");
-  const indicator = document.getElementById("page-indicator");
-  
-  prevBtn.disabled = currentPage === 0;
-  nextBtn.disabled = currentPage === pages.length - 1;
-  
-  indicator.textContent = `Página ${currentPage + 1} / ${pages.length}`;
-}
-
-// ================================
-// DEEP LINKING SUPPORT
-// ================================
-let deepLinkParams = null;
-
-function parseDeepLink() {
-  const params = new URLSearchParams(window.location.search);
-  const page = params.get('page');
-  const region = params.get('region');
-  
-  if (page && region) {
-    deepLinkParams = {
-      page: parseInt(page) - 1, // Convert to 0-indexed
-      regionId: region
-    };
-  }
-}
-
-// ================================
-// APPLY DEEP LINK (after regions render)
-// ================================
-function applyDeepLink() {
-  if (!deepLinkParams) return;
-  
-  const { page, regionId } = deepLinkParams;
-  
-  // Load target page if different
-  if (page !== currentPage) {
-    loadPage(page);
-  }
-  
-  // Wait for regions to render, then activate
-  setTimeout(() => {
-    zoomToRegionById(regionId);
-    toggleRegionContent(regionId);
-    highlightOverlay(regionId);
-  }, 500);
-  
-  deepLinkParams = null; // Clear after applying
-}
-
-function zoomToRegionById(regionId) {
-  const pageData = pages[currentPage];
-  const region = pageData.textRegions.find(r => r.id === regionId);
-  
-  if (!region) return;
-  
-  const tiledImage = viewer.world.getItemAt(0);
-  if (!tiledImage) return;
-  
-  const rect = calculateBoundingBox(region.points);
-  const viewportRect = tiledImage.imageToViewportRectangle(
-    rect.x, rect.y, rect.width, rect.height
-  );
-  
-  zoomToRegion(viewer, viewportRect);
-}
-
-// ================================
-// UPDATE INIT
-// ================================
-async function init() {
-  parseDeepLink(); // Parse URL params first
-  
-  try {
-    const response = await fetch(MANIFEST_URL);
-    if (!response.ok) {
-      throw new Error(`Failed to load manifest: ${response.status}`);
-    }
-    
-    const manifest = await response.json();
-    pages = manifest.pages;
-    
-    viewer = OpenSeadragon({
-      id: "osd",
-      prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-      showNavigator: true,
-      showRotationControl: true,
-      gestureSettingsMouse: {
-        clickToZoom: false
-      }
-    });
-
-    document.getElementById("prev-page").onclick = () => {
-      if (currentPage > 0) loadPage(currentPage - 1);
-    };
-
-    document.getElementById("next-page").onclick = () => {
-      if (currentPage < pages.length - 1) loadPage(currentPage + 1);
-    };
-
-    loadPage(deepLinkParams ? deepLinkParams.page : 0);
-    
-    // Apply deep link after first page loads
-    if (deepLinkParams) {
-      viewer.addOnceHandler('open', () => {
-        applyDeepLink();
-      });
-    }
-  } catch (error) {
-    console.error('Initialization error:', error);
-    document.getElementById('region-list').innerHTML = 
-      `<p style="color: red;">Error loading manifest: ${error.message}</p>`;
-  }
+  document.getElementById("prev-page").disabled = currentPage === 0;
+  document.getElementById("next-page").disabled = currentPage === pages.length - 1;
+  document.getElementById("page-indicator").textContent =
+    `Página ${currentPage + 1} / ${pages.length}`;
 }
 
 // ================================
