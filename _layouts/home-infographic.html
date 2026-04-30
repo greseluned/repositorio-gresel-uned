@@ -278,13 +278,4 @@ document.getElementById("searchQuery").addEventListener("keydown", e => {
   if (e.key === "Enter") doSearch();
 });
 
-document.getElementById("yearFrom").addEventListener("input", e => {
-  if (e.target.value < 1800) e.target.value = 1800;
-  if (e.target.value > 2100) e.target.value = 1999;
-});
-
-document.getElementById("yearTo").addEventListener("input", e => {
-  if (e.target.value < 1800) e.target.value = 1800;
-  if (e.target.value > 2100) e.target.value = 1999;
-});
 </script>
