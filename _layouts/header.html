@@ -1,153 +1,429 @@
 ---
 layout: page
 ---
-{% assign coll = site.data.collections | where: "id", page.collection_id | first %}
-{% assign items = site.data[site.metadata] | where: "collection", page.collection_id %}
+{% assign meta = site.data[site.metadata] %}
 
-<div class="container-fluid py-4">
+<style>
+/* ── Search panel ──────────────────────────────────────────────────────── */
+.browse-search-panel {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.browse-search-panel .form-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+.browse-search-panel .form-control:focus,
+.browse-search-panel .form-select:focus {
+  border-color: #7fc006;
+  box-shadow: 0 0 0 0.2rem rgba(127,192,6,0.2);
+}
+.year-range { display: flex; align-items: center; gap: 0.5rem; }
+.year-range .form-control { width: 90px; }
+.year-range span { color: #666; font-size: 0.85rem; white-space: nowrap; }
+.btn-search {
+  background-color: #7fc006;
+  border-color: #659a02;
+  color: #000;
+  font-weight: 600;
+}
+.btn-search:hover { background-color: #6aaa00; border-color: #5a9000; color: #000; }
+.btn-reset {
+  background-color: #fff;
+  border-color: #ced4da;
+  color: #333;
+}
 
-  {{%-- Rich header --%}}
-  <div class="row mb-3 align-items-center">
-    {% if coll.cover_image %}
-    <div class="col-md-3">
-      <img src="{{ coll.cover_image | relative_url }}" class="img-fluid rounded shadow" alt="{{ coll.title }}">
-    </div>
-    {% endif %}
-    <div class="col">
-      <h1>{{ coll.title }}</h1>
-      {% if coll.date_start %}<p class="text-muted mb-1">{{ coll.date_start }}–{{ coll.date_end }}</p>{% endif %}
-      <p class="lead">{{ coll.description }}</p>
-    </div>
-  </div>
+/* ── Table controls ────────────────────────────────────────────────────── */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.show-entries { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
+.show-entries select { width: auto; display: inline-block; }
 
-  {{%-- Controls --%}}
-  <div class="row mb-3 g-2 align-items-center">
-    <div class="col-md-6">
-      <input type="text" class="form-control" id="itemFilter" placeholder="Filtrar...">
-    </div>
-    <div class="col-md-4">
-      <select class="form-select" id="itemSort">
-        <option value="default">Orden predeterminado</option>
-        <option value="alpha-asc">Nombre (A→Z)</option>
-        <option value="alpha-desc">Nombre (Z→A)</option>
-        <option value="date-asc">Fecha (más antigua primero)</option>
-        <option value="date-desc">Fecha (más reciente primero)</option>
-      </select>
-    </div>
-    <div class="col-md-2">
-      <button class="btn btn-outline-secondary w-100" style="background-color: #7fc006; border-color: #659a02; color: #000000" onclick="resetControls()">Restablecer</button>
-    </div>
-  </div>
+/* ── Browse table ──────────────────────────────────────────────────────── */
+#browseTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+#browseTable thead th {
+  background: #f1f3f5;
+  border-top: 2px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+#browseTable thead th.sort-asc::after  { content: " ▲"; font-size: 0.7em; }
+#browseTable thead th.sort-desc::after { content: " ▼"; font-size: 0.7em; }
+#browseTable thead th:last-child { text-align: right; width: 140px; }
 
-  <div class="text-muted small mb-2" id="itemCount"></div>
+#browseTable tbody tr:nth-child(even) { background: #f9f9f9; }
+#browseTable tbody tr:hover { background: #f0f7e0; }
+#browseTable tbody td { padding: 0.5rem 0.75rem; font-size: 0.9rem; border-bottom: 1px solid #e9ecef; }
+#browseTable tbody td a { color: #c0392b; text-decoration: none; }
+#browseTable tbody td a:hover { text-decoration: underline; }
+#browseTable tbody td:last-child { text-align: right; color: #888; }
 
-  <div id="loadingIcon" class="text-center">
-    <div class="spinner-border text-dark" role="status"><span class="visually-hidden">Cargando...</span></div>
-  </div>
+/* ── Pagination ────────────────────────────────────────────────────────── */
+.browse-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.browse-pagination .info { color: #666; }
+.page-btns { display: flex; gap: 4px; flex-wrap: wrap; }
+.page-btn {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #333;
+  min-width: 32px;
+  text-align: center;
+}
+.page-btn:hover:not(:disabled) { background: #f0f7e0; border-color: #7fc006; }
+.page-btn.active { background: #7fc006; border-color: #659a02; color: #000; font-weight: 700; }
+.page-btn:disabled { opacity: 0.4; cursor: default; }
+.page-btn.ellipsis { border: none; background: none; cursor: default; }
 
-  {{%-- Item grid --%}}
-  <div class="row justify-content-center" id="itemGrid">
-    {% for item in items %}
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-2 item-card"
-         data-title="{{ item.title | downcase }}"
-         data-date="{{ item.date }}"
-         data-transcript="{{ item.object_transcript }}"
-         data-transcript-text="">
-      <div class="card">
-        {% if item.image_thumb %}
-        <a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}">
-          <img src="{{ item.image_thumb | relative_url }}" class="card-img-top" alt="{{ item.title }}">
-        </a>
-        {% endif %}
-        <div class="card-body text-center p-2">
-          <h3 class="card-title h5">
-            <a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}" class="text-dark">{{ item.title }}</a>
-          </h3>
-          {% if item.date %}<p class="card-text">{{ item.date }}</p>{% endif %}
-          <hr>
-          <a href="{{ '/items/' | append: item.objectid | append: '.html' | relative_url }}" class="btn btn-sm btn-light">Ver entrada completa</a>
+#loadingIcon { margin: 1.5rem 0; }
+</style>
+
+<div class="container py-4">
+
+  <h1 class="mb-4" style="color:#7fc006; font-size:1.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px;">
+    Explorar por cabecera
+  </h1>
+
+  <!-- Search panel -->
+  <div class="browse-search-panel">
+    <div class="row g-3 align-items-end">
+
+      <div class="col-md-4">
+        <label class="form-label">Búsqueda</label>
+        <input type="text" class="form-control" id="collFilter"
+               placeholder="Buscar en títulos y transcripciones...">
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Lugar de publicación</label>
+        <select class="form-select" id="filterLocation">
+          <option value="">Todos los lugares</option>
+          {% assign seen_locations = "" | split: "" %}
+          {% for item in meta %}
+            {% if item.location != "" and item.location != nil %}
+              {% assign loc = item.location | strip %}
+              {% unless seen_locations contains loc %}
+                {% assign seen_locations = seen_locations | push: loc %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          {% assign seen_locations = seen_locations | sort %}
+          {% for loc in seen_locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Años</label>
+        <div class="year-range">
+          <input type="text" inputmode="numeric" class="form-control" id="yearFrom" placeholder="Desde">
+          <span>—</span>
+          <input type="text" inputmode="numeric" class="form-control" id="yearTo" placeholder="Hasta">
         </div>
       </div>
+
+      <div class="col-md-2 d-flex gap-2">
+        <button class="btn btn-search flex-fill" onclick="applyFilters()">Buscar</button>
+        <button class="btn btn-reset flex-fill" onclick="resetFilters()">✕</button>
+      </div>
+
     </div>
-    {% endfor %}
+  </div>
+
+  <!-- Loading spinner (shown while transcripts load) -->
+  <div id="loadingIcon" class="text-center d-none">
+    <div class="spinner-border text-dark" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="text-muted small mt-1">Cargando transcripciones…</div>
+  </div>
+
+  <!-- Table controls: show N entries -->
+  <div class="table-controls">
+    <div class="show-entries">
+      Mostrar
+      <select class="form-select form-select-sm" id="pageSizeSelect" onchange="changePageSize()">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      entradas
+    </div>
+    <div class="text-muted small" id="collCount"></div>
+  </div>
+
+  <!-- Table -->
+  <table id="browseTable">
+    <thead>
+      <tr>
+        <th id="thTitle" onclick="toggleSort('title')" class="sort-asc">Título</th>
+        <th id="thCount" onclick="toggleSort('count')">Número de ejemplares</th>
+      </tr>
+    </thead>
+    <tbody id="browseBody"></tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="browse-pagination">
+    <div class="info" id="pageInfo"></div>
+    <div class="page-btns" id="pageBtns"></div>
   </div>
 
 </div>
 
-<style>
-  .item-card.hidden { display: none !important; }
-</style>
-
+<!-- ── Data injected by Jekyll ──────────────────────────────────────────── -->
 <script>
-const grid = document.getElementById("itemGrid");
-const countEl = document.getElementById("itemCount");
-const filterInput = document.getElementById("itemFilter");
-const sortSelect = document.getElementById("itemSort");
-const loadingIcon = document.getElementById("loadingIcon");
+// Build collection data from Jekyll
+const COLLECTIONS = [
+  {% for coll in site.data.collections %}
+  {% assign items = meta | where: "collection", coll.id %}
+  {% assign loc_list = "" | split: "" %}
+  {% assign year_min = 9999 %}
+  {% assign year_max = 0 %}
+  {% assign transcripts_paths = "" %}
+  {% for item in items %}
+    {% if item.location != "" and item.location != nil %}
+      {% assign loc_list = loc_list | push: item.location %}
+    {% endif %}
+    {% if item.date != "" and item.date != nil %}
+      {% assign parts = item.date | split: "-" %}
+      {% for p in parts %}
+        {% if p.size == 4 %}
+          {% assign y = p | plus: 0 %}
+          {% if y < year_min %}{% assign year_min = y %}{% endif %}
+          {% if y > year_max %}{% assign year_max = y %}{% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if item.object_transcript %}
+      {% assign transcripts_paths = transcripts_paths | append: item.object_transcript | append: ";" %}
+    {% endif %}
+  {% endfor %}
+  {
+    id: {{ coll.id | jsonify }},
+    title: {{ coll.title | jsonify }},
+    count: {{ items.size }},
+    locations: {{ loc_list | uniq | jsonify }},
+    yearMin: {{ year_min }},
+    yearMax: {{ year_max }},
+    transcriptPaths: {{ transcripts_paths | split: ";" | jsonify }},
+    transcriptText: ""
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+];
 
-// Load transcripts
-async function loadTranscripts() {
-  loadingIcon.classList.remove("d-none");
-  const cards = Array.from(grid.querySelectorAll(".item-card"));
+// ── State ──────────────────────────────────────────────────────────────────
+let filtered   = [];
+let sortKey    = "title";
+let sortDir    = 1;          // 1 = asc, -1 = desc
+let pageSize   = 10;
+let currentPage = 1;
+let transcriptsLoaded = false;
 
-  await Promise.all(cards.map(async (card) => {
-    const path = card.dataset.transcript;
-    if (!path) return;
-    try {
-      const response = await fetch("{{ '/' | relative_url }}" + path.trim());
-      if (!response.ok) return;
-      card.dataset.transcriptText = (await response.text()).toLowerCase();
-    } catch (e) {}
+// ── Load transcripts ───────────────────────────────────────────────────────
+async function loadAllTranscripts() {
+  document.getElementById("loadingIcon").classList.remove("d-none");
+
+  await Promise.all(COLLECTIONS.map(async (coll) => {
+    if (!coll.transcriptPaths || coll.transcriptPaths.length === 0) return;
+    const texts = await Promise.all(coll.transcriptPaths.map(async (path) => {
+      if (!path || !path.trim()) return "";
+      try {
+        const r = await fetch("{{ '/' | relative_url }}" + path.trim());
+        return r.ok ? await r.text() : "";
+      } catch { return ""; }
+    }));
+    coll.transcriptText = texts.join(" ").toLowerCase();
   }));
 
-  loadingIcon.classList.add("d-none");
+  document.getElementById("loadingIcon").classList.add("d-none");
+  transcriptsLoaded = true;
 }
 
-function getCards() {
-  return Array.from(grid.querySelectorAll(".item-card"));
-}
+// ── Filter + sort ──────────────────────────────────────────────────────────
+function applyFilters() {
+  const query    = document.getElementById("collFilter").value.toLowerCase().trim();
+  const location = document.getElementById("filterLocation").value.trim();
+  const fromVal  = parseInt(document.getElementById("yearFrom").value) || null;
+  const toVal    = parseInt(document.getElementById("yearTo").value)   || null;
 
-function update() {
-  const query = filterInput.value.toLowerCase().trim();
-  const sort = sortSelect.value;
-  const cards = getCards();
-  const visible = [];
-
-  cards.forEach(card => {
-    const inTitle = card.dataset.title.includes(query);
-    const inTranscript = card.dataset.transcriptText && card.dataset.transcriptText.includes(query);
-    if (!query || inTitle || inTranscript) {
-      card.classList.remove("hidden");
-      visible.push(card);
-    } else {
-      card.classList.add("hidden");
+  filtered = COLLECTIONS.filter(coll => {
+    // Text: title or transcripts
+    if (query) {
+      const inTitle      = coll.title.toLowerCase().includes(query);
+      const inTranscript = coll.transcriptText && coll.transcriptText.includes(query);
+      if (!inTitle && !inTranscript) return false;
     }
+    // Location
+    if (location && !coll.locations.includes(location)) return false;
+    // Year range: collection must overlap the requested window
+    if (fromVal && coll.yearMax < fromVal) return false;
+    if (toVal   && coll.yearMin > toVal)   return false;
+    return true;
   });
 
-  // Sort
-  visible.sort((a, b) => {
-    switch (sort) {
-      case "alpha-asc":  return a.dataset.title.localeCompare(b.dataset.title);
-      case "alpha-desc": return b.dataset.title.localeCompare(a.dataset.title);
-      case "date-asc":   return a.dataset.date.localeCompare(b.dataset.date);
-      case "date-desc":  return b.dataset.date.localeCompare(a.dataset.date);
-      default:           return 0;
-    }
+  sortFiltered();
+  currentPage = 1;
+  render();
+}
+
+function sortFiltered() {
+  filtered.sort((a, b) => {
+    if (sortKey === "title") return sortDir * a.title.localeCompare(b.title);
+    if (sortKey === "count") return sortDir * (a.count - b.count);
+    return 0;
   });
-  visible.forEach(card => grid.appendChild(card));
-
-  // Count
-  countEl.textContent = visible.length === 1 ? "1 artículo" : visible.length + " artículos";
 }
 
-function resetControls() {
-  filterInput.value = "";
-  sortSelect.value = "default";
-  update();
+function toggleSort(key) {
+  if (sortKey === key) { sortDir *= -1; }
+  else { sortKey = key; sortDir = 1; }
+  updateSortHeaders();
+  sortFiltered();
+  render();
 }
 
-filterInput.addEventListener("input", update);
-sortSelect.addEventListener("change", update);
+function updateSortHeaders() {
+  document.getElementById("thTitle").className = "";
+  document.getElementById("thCount").className = "";
+  const th = sortKey === "title" ? "thTitle" : "thCount";
+  document.getElementById(th).className = sortDir === 1 ? "sort-asc" : "sort-desc";
+}
 
-loadTranscripts().then(() => update());
+// ── Render ─────────────────────────────────────────────────────────────────
+function render() {
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const start = (currentPage - 1) * pageSize;
+  const page  = filtered.slice(start, start + pageSize);
+
+  // Table body
+  const tbody = document.getElementById("browseBody");
+  tbody.innerHTML = page.map(coll => `
+    <tr>
+      <td><a href="{{ '/' | relative_url }}collections/${coll.id}/">${coll.title}</a></td>
+      <td>${coll.count}</td>
+    </tr>
+  `).join("");
+
+  // Count label
+  document.getElementById("collCount").textContent =
+    total === 1 ? "1 colección" : total + " colecciones";
+
+  // Page info
+  const endRow = Math.min(start + pageSize, total);
+  document.getElementById("pageInfo").textContent =
+    total === 0 ? "Sin resultados"
+    : `Mostrando ${start + 1}–${endRow} de ${total} entradas`;
+
+  // Pagination buttons
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const btns = document.getElementById("pageBtns");
+  btns.innerHTML = "";
+
+  const mkBtn = (label, page, cls = "") => {
+    const b = document.createElement("button");
+    b.className = "page-btn " + cls;
+    b.textContent = label;
+    if (page === null) { b.classList.add("ellipsis"); b.disabled = true; }
+    else {
+      b.onclick = () => { currentPage = page; render(); };
+      if (page === currentPage) b.classList.add("active");
+    }
+    btns.appendChild(b);
+  };
+
+  // Previous
+  const prev = document.createElement("button");
+  prev.className = "page-btn";
+  prev.textContent = "Anterior";
+  prev.disabled = currentPage === 1;
+  prev.onclick = () => { currentPage--; render(); };
+  btns.appendChild(prev);
+
+  // Page numbers with ellipsis
+  const pages = pageNumbers(currentPage, totalPages);
+  pages.forEach(p => mkBtn(p === "…" ? "…" : p, p === "…" ? null : p));
+
+  // Next
+  const next = document.createElement("button");
+  next.className = "page-btn";
+  next.textContent = "Siguiente";
+  next.disabled = currentPage === totalPages;
+  next.onclick = () => { currentPage++; render(); };
+  btns.appendChild(next);
+}
+
+function pageNumbers(cur, total) {
+  if (total <= 7) return Array.from({length: total}, (_, i) => i + 1);
+  const pages = [1];
+  if (cur > 3) pages.push("…");
+  for (let p = Math.max(2, cur - 1); p <= Math.min(total - 1, cur + 1); p++) pages.push(p);
+  if (cur < total - 2) pages.push("…");
+  pages.push(total);
+  return pages;
+}
+
+function changePageSize() {
+  pageSize = parseInt(document.getElementById("pageSizeSelect").value);
+  currentPage = 1;
+  render();
+}
+
+function resetFilters() {
+  document.getElementById("collFilter").value = "";
+  document.getElementById("filterLocation").value = "";
+  document.getElementById("yearFrom").value = "";
+  document.getElementById("yearTo").value = "";
+  applyFilters();
+}
+
+// ── Enter key on inputs ────────────────────────────────────────────────────
+["collFilter","filterLocation","yearFrom","yearTo"].forEach(id => {
+  document.getElementById(id).addEventListener("keydown", e => {
+    if (e.key === "Enter") applyFilters();
+  });
+});
+
+// ── Init ───────────────────────────────────────────────────────────────────
+loadAllTranscripts().then(() => applyFilters());
+applyFilters(); // initial render before transcripts finish
 </script>
