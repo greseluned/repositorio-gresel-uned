@@ -1,4 +1,185 @@
-/* 
-    Put your custom SCSS here! 
-    This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
-*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f1ea;
+    color: #1f2933;
+    line-height: 1.7;
+}
+
+h1,h2,h3,h4,h5,.navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.02em;
+}
+
+.archive-navbar {
+    background: rgba(250,248,244,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #d8d2c8;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.archive-brand {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2f3e46 !important;
+}
+
+.archive-navbar .nav-link {
+    color: #2f3e46 !important;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.archive-navbar .nav-link:hover,
+.archive-navbar .nav-link.active {
+    color: #b08968 !important;
+}
+
+.archive-search {
+    width: min(520px, 100%);
+}
+
+.archive-search .form-control {
+    border-radius: 999px;
+    border: 1px solid #d8d2c8;
+    background: white;
+    padding: 0.8rem 1.2rem;
+}
+
+.container-fluid,
+.container {
+    max-width: 1500px;
+}
+
+.card,
+.card-body,
+.content,
+.feature,
+.itembox {
+    border-radius: 22px;
+}
+
+.card {
+    border: 1px solid #ddd5ca;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.btn,
+button,
+input,
+select {
+    border-radius: 12px !important;
+}
+
+.btn-primary {
+    background: #2f3e46;
+    border-color: #2f3e46;
+}
+
+.btn-primary:hover {
+    background: #1f2933;
+    border-color: #1f2933;
+}
+
+footer,
+.site-footer {
+    background: #ece5da;
+    border-top: 1px solid #d8d2c8;
+    margin-top: 5rem;
+    padding-top: 3rem;
+}
+
+table {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+table th {
+    background: #f1ebe2;
+    border-bottom: none !important;
+}
+
+table td,
+table th {
+    padding: 1rem !important;
+}
+
+#browse-results .card,
+#search-results .card,
+.search-result,
+.browse-result {
+    margin-bottom: 1.5rem;
+}
+
+.metadata,
+.metadata-block {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #e5dfd5;
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.pagination .page-link {
+    border-radius: 10px;
+    margin: 0 0.2rem;
+    border: none;
+    color: #2f3e46;
+}
+
+.pagination .active .page-link {
+    background: #2f3e46;
+}
+
+#content,
+main {
+    padding-top: 2rem;
+}
+
+img {
+    border-radius: 12px;
+}
+
+.dropdown-menu {
+    border: 1px solid #ddd5ca;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    padding: 0.8rem;
+}
+
+.dropdown-item {
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+}
+
+.dropdown-item:hover {
+    background: #f1ebe2;
+}
+
+@media (max-width: 991px) {
+    .archive-search {
+        margin: 1.5rem 0;
+    }
+
+    .archive-navbar .nav-link {
+        margin-left: 0;
+    }
+
+    .archive-hero-card {
+        padding: 2rem;
+    }
+
+    #home-banner {
+        min-height: 60vh;
+    }
+}
