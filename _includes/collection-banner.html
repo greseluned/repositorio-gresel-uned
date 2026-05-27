@@ -144,16 +144,10 @@
 
     <!-- Left: large white search panel -->
     <div class="hero-main-panel">
-    <h1>
-        <a href="https://gresel-uned.hypotheses.org/" target="_blank" rel="noopener">
-        {{ site.title }}
-        </a>
-    </h1>
-
-    {% if site.tagline %}
-    <p class="hero-sub">{{ site.tagline }}</p>
-    {% endif %}
-    </div>
+      <h1>{{ site.title }}</h1>
+      {% if site.tagline %}
+      <p class="hero-sub">{{ site.tagline }}</p>
+      {% endif %}
 
       <div class="mb-3">
         <label class="form-label">Búsqueda</label>
