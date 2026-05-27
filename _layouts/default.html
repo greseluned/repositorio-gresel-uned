@@ -5,8 +5,11 @@
   </head>
   <body class="d-flex flex-column h-100">
     <div id="skip-to-content"><a href="#maincontent">Volver arriba</a></div>
+
         {% include collection-nav.html %}
         {% include collection-banner.html %}
+    <main id="maincontent" role="main" class="flex-shrink-0">
+      {{ content }}
     </main>
     {% include footer.html %}
     {% include foot.html %}
