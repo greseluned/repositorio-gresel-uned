@@ -7,9 +7,10 @@
 #home-banner {
   position: relative;
   width: 100vw;
+  height: 100vw;
   margin-left: calc(-50vw + 50%);
   background-image:
-    linear-gradient(to right, rgba(12,24,16,0.85) 0%, rgba(12,24,16,0.60) 55%, rgba(12,24,16,0.35) 100%),
+    linear-gradient(to right, rgba(12,24,16,0.60) 0%, rgba(12,24,16,0.60) 55%, rgba(12,24,16,0.60) 100%),
     url('{{ site.data.featured_item.src | relative_url }}');
   background-size: cover;
   background-position: center;
@@ -144,7 +145,7 @@
 
     <!-- Left: large white search panel -->
     <div class="hero-main-panel">
-      <h1>{{ site.title }}</h1>
+      <h1>{{ site.title }} <a href="https://gresel-uned.hypotheses.org/"></a></h1>
       {% if site.tagline %}
       <p class="hero-sub">{{ site.tagline }}</p>
       {% endif %}
@@ -206,7 +207,7 @@
       </div>
       <div class="hero-side-card">
         <h3>Galería de portadas</h3>
-        {% include index/carousel.html height=72 %}
+        {% include index/carousel.html height=185 %}
       </div>
     </div>
 
