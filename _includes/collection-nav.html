@@ -9,10 +9,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="page-nav">
-      <form class="d-flex archive-search mx-auto" action="{{ '/results/' | relative_url }}" method="get">
-        <input class="form-control" type="search" name="q"
-               placeholder="Buscar en el repositorio..." aria-label="Search">
-      </form>
       <ul class="navbar-nav ms-auto align-items-lg-center">
         {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
         {% for nav in navItems %}
