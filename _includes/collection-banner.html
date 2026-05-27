@@ -1,62 +1,365 @@
 {% if page.layout == "home-infographic" and site.data.theme.featured-image %}
+
+{% assign meta = site.data[site.metadata] %}
+{% assign collections = site.data.headers %}
+
 <style>
 #home-banner {
-    background-image:
-        linear-gradient(rgba(24,24,24,0.45), rgba(24,24,24,0.55)),
-        url('{{ site.data.featured_item.src | relative_url }}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 72vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-image:
+    linear-gradient(to bottom, rgba(15,30,22,0.72) 0%, rgba(15,30,22,0.52) 60%, rgba(15,30,22,0.72) 100%),
+    url('{{ site.data.featured_item.src | relative_url }}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
-#home-title-box {
-    max-width: 900px;
-    margin: auto;
-    padding: 4rem 2rem;
+/* ── Navbar inside banner ── */
+#banner-nav {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+#banner-nav .navbar-brand,
+#banner-nav .nav-link {
+  color: rgba(255,255,255,0.92) !important;
+}
+#banner-nav .nav-link:hover,
+#banner-nav .nav-link.active {
+  color: #fff !important;
+}
+#banner-nav .dropdown-menu {
+  background: rgba(21,46,32,0.97);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+#banner-nav .dropdown-item {
+  color: rgba(255,255,255,0.85);
+}
+#banner-nav .dropdown-item:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+#banner-nav .archive-search .form-control {
+  background: rgba(255,255,255,0.15) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: .45rem 1.2rem !important;
+}
+#banner-nav .archive-search .form-control::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+#banner-nav .navbar-toggler-icon {
+  filter: invert(1);
 }
 
-.archive-hero-card {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-radius: 28px;
-    padding: 3rem;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-    text-align: center;
+/* ── Hero content area ── */
+#banner-content {
+  padding: 3.5rem 4vw 4rem;
 }
 
-.archive-hero-card h1 {
-    margin-bottom: 1rem;
+.banner-hero-title {
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  margin-bottom: .35rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.banner-hero-tagline {
+  color: rgba(255,255,255,0.78);
+  font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
-.hero-search {
-    max-width: 650px;
-    margin: 2rem auto 0 auto;
+/* ── Search panel ── */
+.banner-search-panel {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 2rem 2.25rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+}
+.banner-search-panel .form-label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: #2f5d50;
+  margin-bottom: .3rem;
+}
+.banner-search-panel .form-control,
+.banner-search-panel .form-select {
+  border-radius: 10px !important;
+  border: 1px solid #d8e2d5 !important;
+  padding: .6rem 1rem !important;
+  font-size: .9rem;
+}
+.banner-search-panel .form-control:focus,
+.banner-search-panel .form-select:focus {
+  border-color: #2f5d50 !important;
+  box-shadow: 0 0 0 .15rem rgba(47,93,80,.18) !important;
+}
+.year-range { display: flex; align-items: center; gap: .5rem; }
+.year-range .form-control { width: 90px; }
+.year-range span { color: #666; font-size: .85rem; white-space: nowrap; }
+.btn-banner-search {
+  background: var(--gresel-primary, #2f5d50) !important;
+  border-color: var(--gresel-primary, #2f5d50) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: .65rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: .95rem;
+}
+.btn-banner-search:hover {
+  background: var(--gresel-primary-dark, #21463c) !important;
+  border-color: var(--gresel-primary-dark, #21463c) !important;
 }
 
-.hero-search input {
-    height: 60px;
-    border-radius: 999px;
-    border: 1px solid #d8d2c8;
-    padding: 0 1.5rem;
+/* ── Decade chart (right column) ── */
+.banner-decade-wrap {
+  background: rgba(255,255,255,0.88);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  margin-bottom: 1rem;
+}
+.banner-decade-wrap h3 {
+  font-size: .85rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+.decade-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 90px;
+}
+.decade-bar-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+}
+.decade-bar-col:hover .decade-bar { background: #21463c; }
+.decade-bar-col:hover .decade-label { color: #21463c; }
+.decade-bar {
+  background: #2f5d50;
+  border-radius: 3px 3px 0 0;
+  width: 95%;
+  transition: background .15s;
+  min-height: 3px;
+}
+.decade-count { font-size: .55rem; color: #999; margin-bottom: 2px; }
+.decade-label { font-size: .6rem; color: #666; margin-top: 3px; white-space: nowrap; line-height: 1; }
+
+/* ── Gallery strip ── */
+.banner-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.banner-gallery-strip img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
 }
 </style>
 
-<div id="home-banner" class="container-fluid p-0">
-    <div id="home-title-box">
-        <div class="archive-hero-card">
-            <h1 class="display-2">{{ site.title }}</h1>
-            {% if site.tagline %}
-            <p class="lead mb-0">{{ site.tagline }}</p>
-            {% endif %}
+<!-- ═══════════════════════════════════════════════════════ HOME BANNER -->
+<div id="home-banner">
 
-            <form class="hero-search" action="{{ '/results/' | relative_url }}" method="get">
-                <input class="form-control form-control-lg" type="search" name="q" placeholder="Buscar periódicos, documentos y colecciones...">
-            </form>
-        </div>
+  <!-- Navbar inside banner -->
+  <nav id="banner-nav" class="navbar navbar-expand-lg">
+    <div class="container-fluid px-lg-4">
+      <a class="navbar-brand archive-brand" href="{{ '/' | relative_url }}">
+        {% if site.data.theme.navbar-logo %}
+          <img src="{{ site.data.theme.navbar-logo | relative_url }}" class="gresel-logo" alt="{{ site.title }}">
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button"
+              data-bs-toggle="collapse" data-bs-target="#banner-page-nav"
+              aria-controls="banner-page-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="banner-page-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
+          {% for nav in navItems %}
+            {% if nav.stub %}
+            <li class="nav-item">
+              <a class="nav-link{% if page.url == nav.stub %} active{% endif %}"
+                 href="{{ nav.stub | relative_url }}">{{ nav.display_name }}</a>
+            </li>
+            {%- else -%}
+            <li class="nav-item dropdown">
+              {% assign navChildren = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nav.display_name' %}
+              <a class="nav-link dropdown-toggle" href="#"
+                 id="bannerDrop-{{ nav.display_name | slugify }}"
+                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ nav.display_name }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                {% for child in navChildren %}
+                <li><a class="dropdown-item" href="{{ child.stub | relative_url }}">{{ child.display_name }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <!-- Hero content -->
+  <div id="banner-content">
+    <div class="row g-4 align-items-start">
+
+      <!-- Left: title + search -->
+      <div class="col-lg-8">
+        <h1 class="banner-hero-title">{{ site.title }}</h1>
+        {% if site.tagline %}
+        <p class="banner-hero-tagline">{{ site.tagline }}</p>
+        {% endif %}
+
+        <div class="banner-search-panel">
+          <div class="mb-3">
+            <label class="form-label">Búsqueda</label>
+            <input type="text" class="form-control form-control-lg" id="searchQuery"
+                   placeholder="Buscar en títulos y transcripciones...">
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label class="form-label">Cabecera</label>
+              <select class="form-select" id="searchCollection">
+                <option value="">Todas las cabeceras</option>
+                {% for coll in collections %}
+                <option value="{{ coll.id }}">{{ coll.title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label">Lugar de publicación</label>
+              <select class="form-select" id="searchLocation">
+                <option value="">Todos los lugares</option>
+                {% assign seen_locations = "" | split: "" %}
+                {% for item in meta %}
+                  {% if item.location != "" and item.location != nil %}
+                    {% assign loc = item.location | strip %}
+                    {% unless seen_locations contains loc %}
+                      {% assign seen_locations = seen_locations | push: loc %}
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+                {% assign seen_locations = seen_locations | sort %}
+                {% for loc in seen_locations %}
+                  <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Años</label>
+            <div class="year-range">
+              <input type="text" inputmode="numeric" class="form-control" id="yearFrom" placeholder="Desde">
+              <span>—</span>
+              <input type="text" inputmode="numeric" class="form-control" id="yearTo" placeholder="Hasta">
+            </div>
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-banner-search" onclick="doSearch()">Buscar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: decade chart + gallery -->
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="banner-decade-wrap">
+          <h3>Distribución por décadas</h3>
+          <div class="decade-bars" id="decadeBars"></div>
+        </div>
+        {% include index/carousel.html height=82 %}
+      </div>
+
+    </div>
+  </div>
 </div>
+
+<script>
+{% assign decade_list = "" %}
+{% for item in meta %}
+  {% if item.date != "" and item.date != nil %}
+    {% assign parts = item.date | split: "-" %}
+    {% assign y = nil %}
+    {% for p in parts %}
+      {% if p.size == 4 %}{% assign y = p | plus: 0 %}{% endif %}
+    {% endfor %}
+    {% if y %}
+      {% assign dec = y | divided_by: 10 | times: 10 %}
+      {% assign decade_list = decade_list | append: dec | append: "," %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+const itemDecades = [{{ decade_list | remove_last: "," }}];
+const counts = {};
+itemDecades.forEach(d => { if (d) counts[d] = (counts[d] || 0) + 1; });
+const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
+const maxCount = Math.max(...Object.values(counts));
+const barsEl = document.getElementById("decadeBars");
+if (barsEl) {
+  decades.forEach(dec => {
+    const count = counts[dec];
+    const pct   = Math.round((count / maxCount) * 100);
+    const col   = document.createElement("div");
+    col.className = "decade-bar-col";
+    col.title = dec + ": " + count + " número" + (count !== 1 ? "s" : "");
+    col.onclick = () => searchByDecade(dec);
+    col.innerHTML =
+      '<span class="decade-count">' + count + '</span>' +
+      '<div class="decade-bar" style="height:' + pct + '%"></div>' +
+      '<span class="decade-label">' + dec + '</span>';
+    barsEl.appendChild(col);
+  });
+}
+
+function doSearch() {
+  const query      = document.getElementById("searchQuery").value.trim();
+  const collection = document.getElementById("searchCollection").value;
+  let yearFrom     = document.getElementById("yearFrom").value;
+  let yearTo       = document.getElementById("yearTo").value;
+  const MIN = 1800, MAX = 1999;
+  if (yearFrom) { yearFrom = parseInt(yearFrom); if (yearFrom < MIN) yearFrom = MIN; if (yearFrom > MAX) yearFrom = MAX; }
+  if (yearTo)   { yearTo   = parseInt(yearTo);   if (yearTo   < MIN) yearTo   = MIN; if (yearTo   > MAX) yearTo   = MAX; }
+  const params = new URLSearchParams();
+  if (query)      params.set("q", query);
+  if (collection) params.set("collection", collection);
+  if (yearFrom)   params.set("from", yearFrom);
+  if (yearTo)     params.set("to", yearTo);
+  window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
+}
+function searchByDecade(dec) {
+  const params = new URLSearchParams();
+  params.set("from", dec);
+  params.set("to", dec + 9);
+  window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
+}
+document.getElementById("searchQuery").addEventListener("keydown", e => {
+  if (e.key === "Enter") doSearch();
+});
+</script>
+
 {% endif %}

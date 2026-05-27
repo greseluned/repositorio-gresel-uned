@@ -129,8 +129,18 @@ a {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.container-fluid,
-.container {
-  max-width: 1600px;
+/* Replace footer rule with: */
+footer {
+  background: var(--gresel-primary-dark, #21463c) !important;
+  border-top: none;
+  color: rgba(255,255,255,0.85);
 }
-
+footer a, footer .nav-link {
+  color: rgba(255,255,255,0.75) !important;
+}
+footer a:hover, footer .nav-link:hover {
+  color: #fff !important;
+}
+footer h5, footer .h5 {
+  color: #fff;
+}
