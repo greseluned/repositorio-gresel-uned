@@ -1,226 +1,61 @@
-
 {% if page.layout == "home-infographic" and site.data.theme.featured-image %}
-{% assign meta = site.data[site.metadata] %}
-{% assign collections = site.data.headers %}
-
+<style>
 #home-banner {
-    background-image: url('{{ site.data.featured_item.src | relative_url }}');
+    background-image:
+        linear-gradient(rgba(24,24,24,0.45), rgba(24,24,24,0.55)),
+        url('{{ site.data.featured_item.src | relative_url }}');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-title-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+.archive-hero-card {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+.archive-hero-card h1 {
+    margin-bottom: 1rem;
+}
+
+.hero-search {
+    max-width: 650px;
+    margin: 2rem auto 0 auto;
+}
+
+.hero-search input {
+    height: 60px;
+    border-radius: 999px;
+    border: 1px solid #d8d2c8;
+    padding: 0 1.5rem;
 }
 </style>
 
 <div id="home-banner" class="container-fluid p-0">
-    <div class="hero-overlay">
-        <div class="container py-5">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-10">
-                    <div class="hero-panel">
-                        <div class="row align-items-center">
-                            <div class="col-lg-7">
-                                <h1 class="display-4 mb-3">{{ site.title }}</h1>
-                                {% if site.tagline %}
-                                <p class="lead mb-0">{{ site.tagline }}</p>
-                                {% endif %}
-                            </div>
+    <div id="home-title-box">
+        <div class="archive-hero-card">
+            <h1 class="display-2">{{ site.title }}</h1>
+            {% if site.tagline %}
+            <p class="lead mb-0">{{ site.tagline }}</p>
+            {% endif %}
 
-                            <div class="col-lg-5 mt-4 mt-lg-0">
-                                <div class="gallery-preview">
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <img src="{{ site.data.featured_item.src | relative_url }}" class="img-fluid">
-                                        </div>
-                                        <div class="col-6">
-                                            <img src="{{ site.data.featured_item.src | relative_url }}" class="img-fluid">
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-4">
-                                    
-                                    <!-- Left: search box -->
-                                    <div class="col-lg-9">
-                                        <div class="home-hero">
-                                        <h1>Busca en el repositorio</h1>
-
-                                        <div class="search-box">
-                                    
-                                        <div class="mb-3">
-                                            <label class="form-label" style="margin-bottom: 1rem">Búsqueda</label>
-                                            <input type="text" class="form-control form-control-lg" id="searchQuery"
-                                                placeholder="Buscar en títulos y transcripciones...">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label class="form-label">Cabecera</label>
-                                            <select class="form-select" id="searchCollection">
-                                            <option value="">Todas las cabeceras</option>
-                                            {% for coll in collections %}
-                                            <option value="{{ coll.id }}">{{ coll.title }}</option>
-                                            {% endfor %}
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label">Lugar de publicación</label>
-                                            <select class="form-select" id="searchLocation">
-                                            <option value="">Todos los lugares</option>
-
-                                            {% assign seen_locations = "" | split: "" %}
-
-                                            {% for item in meta %}
-                                                {% if item.location != "" and item.location != nil %}
-                                                {% assign loc = item.location | strip %}
-                                                {% unless seen_locations contains loc %}
-                                                    {% assign seen_locations = seen_locations | push: loc %}
-                                                {% endunless %}
-                                                {% endif %}
-                                            {% endfor %}
-
-                                            {% assign seen_locations = seen_locations | sort %}
-
-                                            {% for loc in seen_locations %}
-                                                <option value="{{ loc }}">{{ loc }}</option>
-                                            {% endfor %}
-
-                                            </select>
-                                        </div>
-
-                                        <!-- Years -->
-                                        <div class="mb-3">
-                                            <label class="form-label">Años</label>
-                                            <div class="year-range">
-                                            <input type="text" inputmode="numeric" min="1800" max="2000" class="form-control" id="yearFrom" placeholder="Desde">
-                                            <span>—</span>
-                                            <input type="text" inputmode="numeric" min="1800" max="2000" class="form-control" id="yearTo" placeholder="Hasta">
-                                            </div>
-                                        </div>
-                                        </div>
-                                    
-                                        <div class="mt-4">
-                                            <button class="btn btn-search" onclick="doSearch()">Buscar</button>
-                                        </div>
-                                    
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Right: decade chart + carousel -->
-                                    <div class="col-lg-3">
-                                    
-                                        <!-- Decade distribution chart -->
-                                        <div class="decade-chart-wrap">
-                                        <h2>Distribución por décadas</h2>
-                                        <div class="decade-bars" id="decadeBars"></div>
-                                        </div>
-                                    
-                                        <!-- Carousel -->
-                                        {% include index/carousel.html height=312 %}
-                                    
-                                    </div>
-                                    </div>
-
-                                    <script>
-                                    // Build decade list safely in Liquid
-                                    {% assign decade_list = "" %}
-
-                                    {% for item in meta %}
-                                    {% if item.date != "" and item.date != nil %}
-                                        
-                                        {% assign parts = item.date | split: "-" %}
-                                        {% assign y = nil %}
-
-                                        {% for p in parts %}
-                                        {% if p.size == 4 %}
-                                            {% assign y = p | plus: 0 %}
-                                        {% endif %}
-                                        {% endfor %}
-
-                                        {% if y %}
-                                        {% assign dec = y | divided_by: 10 | times: 10 %}
-                                        {% assign decade_list = decade_list | append: dec | append: "," %}
-                                        {% endif %}
-
-                                    {% endif %}
-                                    {% endfor %}
-
-                                    // Raw decade values for each item (compiled by Jekyll)
-                                    const itemDecades = [{{ decade_list | remove_last: "," }}];
-
-                                    // Count per decade
-                                    const counts = {};
-                                    itemDecades.forEach(d => { if (d) counts[d] = (counts[d] || 0) + 1; });
-
-                                    const decades = Object.keys(counts).map(Number).sort((a,b) => a - b);
-                                    const maxCount = Math.max(...Object.values(counts));
-
-                                    const barsEl = document.getElementById("decadeBars");
-
-                                    decades.forEach(dec => {
-                                    const count  = counts[dec];
-                                    const pct    = Math.round((count / maxCount) * 100);
-
-                                    const col  = document.createElement("div");
-                                    col.className = "decade-bar-col";
-                                    col.title  = 
-                                    dec + ":" + count + " número" + (count !== 1 ? "s" : "");
-                                    col.onclick = () => searchByDecade(dec);
-
-                                    col.innerHTML = `
-                                        <span class="decade-count">${count}</span>
-                                        <div class="decade-bar" style="height:${pct}%"></div>
-                                        <span class="decade-label">${dec}</span>`;
-
-                                    barsEl.appendChild(col);
-                                    });
-
-                                    // ── Search ────────────────────────────────────────────────────────────────
-                                    function doSearch() {
-                                    const query      = document.getElementById("searchQuery").value.trim();
-                                    const collection = document.getElementById("searchCollection").value;
-                                    let yearFrom     = document.getElementById("yearFrom").value;
-                                    let yearTo       = document.getElementById("yearTo").value;
-
-                                    const MIN = 1800;
-                                    const MAX = 1999;
-
-                                    // Convert to numbers
-                                    if (yearFrom) yearFrom = parseInt(yearFrom);
-                                    if (yearTo)   yearTo   = parseInt(yearTo);
-
-                                    // Clamp values to range
-                                    if (yearFrom && yearFrom < MIN) yearFrom = MIN;
-                                    if (yearFrom && yearFrom > MAX) yearFrom = MAX;
-                                    if (yearTo && yearTo < MIN) yearTo = MIN;
-                                    if (yearTo && yearTo > MAX) yearTo = MAX;
-
-                                    const params = new URLSearchParams();
-
-                                    if (query)      params.set("q", query);
-                                    if (collection) params.set("collection", collection);
-                                    if (yearFrom)   params.set("from", yearFrom);
-                                    if (yearTo)     params.set("to", yearTo);
-
-                                    window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
-                                    }
-
-                                    function searchByDecade(dec) {
-                                    const params = new URLSearchParams();
-                                    params.set("from", dec);
-                                    params.set("to",   dec + 9);
-                                    window.location.href = "{{ '/results/' | relative_url }}?" + params.toString();
-                                    }
-
-                                    document.getElementById("searchQuery").addEventListener("keydown", e => {
-                                    if (e.key === "Enter") doSearch();
-                                    });
-
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <form class="hero-search" action="{{ '/results/' | relative_url }}" method="get">
+                <input class="form-control form-control-lg" type="search" name="q" placeholder="Buscar periódicos, documentos y colecciones...">
+            </form>
         </div>
     </div>
 </div>
