@@ -129,18 +129,22 @@ a {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* Replace footer rule with: */
 footer {
-  background: var(--gresel-primary-dark, #21463c) !important;
+  background: #081b00 !important;
   border-top: none;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.82);
 }
-footer a, footer .nav-link {
-  color: rgba(255,255,255,0.75) !important;
+footer a,
+footer .nav-link {
+  color: rgba(255,255,255,0.7) !important;
 }
-footer a:hover, footer .nav-link:hover {
+footer a:hover,
+footer .nav-link:hover {
   color: #fff !important;
 }
-footer h5, footer .h5 {
+footer h5,
+footer .h5,
+footer strong {
   color: #fff;
 }
+
