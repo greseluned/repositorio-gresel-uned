@@ -1,7 +1,7 @@
 color_class,color,background-color,border-color
-primary,#ace600,,
-outline-primary,,,
-secondary,,,
+primary,#2f5d31,,
+outline-primary,#2f5d31,,
+secondary,#7ca152,,
 outline-secondary,,,
 success,#7fc006,,
 info,,,
