@@ -119,4 +119,18 @@ a {
 }
 
 
-body { overflow-x:hidden; }
+#home-banner-logo {
+  height: 72px;
+}
+
+.dropdown-menu {
+  border-radius: 14px;
+  border: 1px solid #d8e2d5;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.container-fluid,
+.container {
+  max-width: 1600px;
+}
+

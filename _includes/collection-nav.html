@@ -1,21 +1,17 @@
-<nav class="navbar navbar-expand-lg archive-navbar sticky-top">
-    <div class="container-fluid px-lg-5">
-        <a class="navbar-brand archive-brand" href="{{ '/' | relative_url }}">
-            {{ site.title }}
+
+<nav class="navbar navbar-expand-lg sticky-top py-3 px-lg-5 px-3">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="https://gresel-uned.hypotheses.org/" target="_blank" rel="noopener">
+            <img class="gresel-logo" src="{{ site.organization-logo-nav | relative_url }}" alt="GRESEL-UNED logo">
         </a>
 
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#page-nav" aria-controls="page-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="page-nav">
-
-            <form class="d-flex archive-search mx-auto" action="{{ '/results/' | relative_url }}" method="get">
-                <input class="form-control" type="search" name="q" placeholder="Buscar en el repositorio..." aria-label="Search">
-            </form>
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-                {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%}
+        <div class="collapse navbar-collapse justify-content-end" id="page-nav">
+            <ul class="navbar-nav align-items-lg-center">
+                {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%} 
                 {% for nav in navItems %}
                 {% if nav.stub %}
                 <li class="nav-item">
@@ -24,16 +20,13 @@
                 {%- else -%}
                 <li class="nav-item dropdown">
                     {% assign navChildren = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nav.display_name' %}
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-{{ nav.display_name | slugify }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ nav.display_name }}
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        {% for child in navChildren %}
-                        <li>
-                            <a class="dropdown-item" href="{{ child.stub | relative_url }}">{{ child.display_name }}</a>
-                        </li>
+                    {%- assign childStubs = navChildren | map: 'stub' -%}
+                    <a class="nav-link dropdown-toggle{% if childStubs contains page.url %} active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.display_name }}</a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        {% for c in navChildren %}
+                        <a class="dropdown-item{% if page.url == c.stub %} active{% endif %}" href="{{ c.stub | relative_url }}">{{ c.display_name }}</a>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </li>
                 {% endif %}
                 {% endfor %}

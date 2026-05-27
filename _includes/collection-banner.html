@@ -1,61 +1,54 @@
+
 {% if page.layout == "home-infographic" and site.data.theme.featured-image %}
 <style>
 #home-banner {
-    background-image:
-        linear-gradient(rgba(24,24,24,0.45), rgba(24,24,24,0.55)),
-        url('{{ site.data.featured_item.src | relative_url }}');
+    background-image: url('{{ site.data.featured_item.src | relative_url }}');
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    min-height: 72vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#home-title-box {
-    max-width: 900px;
-    margin: auto;
-    padding: 4rem 2rem;
-}
-
-.archive-hero-card {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-radius: 28px;
-    padding: 3rem;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-    text-align: center;
-}
-
-.archive-hero-card h1 {
-    margin-bottom: 1rem;
-}
-
-.hero-search {
-    max-width: 650px;
-    margin: 2rem auto 0 auto;
-}
-
-.hero-search input {
-    height: 60px;
-    border-radius: 999px;
-    border: 1px solid #d8d2c8;
-    padding: 0 1.5rem;
+    background-repeat: no-repeat;
 }
 </style>
 
 <div id="home-banner" class="container-fluid p-0">
-    <div id="home-title-box">
-        <div class="archive-hero-card">
-            <h1 class="display-2">{{ site.title }}</h1>
-            {% if site.tagline %}
-            <p class="lead mb-0">{{ site.tagline }}</p>
-            {% endif %}
+    <div class="hero-overlay">
+        <div class="container py-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-10">
+                    <div class="hero-panel">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <h1 class="display-4 mb-3">{{ site.title }}</h1>
+                                {% if site.tagline %}
+                                <p class="lead mb-0">{{ site.tagline }}</p>
+                                {% endif %}
+                            </div>
 
-            <form class="hero-search" action="{{ '/results/' | relative_url }}" method="get">
-                <input class="form-control form-control-lg" type="search" name="q" placeholder="Buscar periódicos, documentos y colecciones...">
-            </form>
+                            <div class="col-lg-5 mt-4 mt-lg-0">
+                                <div class="gallery-preview">
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <img src="{{ site.data.featured_item.src | relative_url }}" class="img-fluid">
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{ site.data.featured_item.src | relative_url }}" class="img-fluid">
+                                        </div>
+                                    </div>
+
+                                    <div class="decade-chart-wrap mt-3 mb-0">
+                                        <h2>Distribución</h2>
+                                        <p class="mb-0 small text-muted">Explora las colecciones y materiales digitalizados del repositorio.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            {% include advanced-search.html %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
