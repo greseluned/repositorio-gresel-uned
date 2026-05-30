@@ -208,8 +208,8 @@ layout: page
 <script>
 // Build collection data from Jekyll
 const COLLECTIONS = [
-  {% for coll in site.data.collections %}
-  {% assign items = meta | where: "collection", coll.id %}
+  {% for coll in site.data.headers %}
+  {% assign items = meta | where: "cabecera", coll.id %}
   {% assign loc_list = "" | split: "" %}
   {% assign year_min = 9999 %}
   {% assign year_max = 0 %}
@@ -343,7 +343,7 @@ function render() {
 
   // Count label
   document.getElementById("collCount").textContent =
-    total === 1 ? "1 colección" : total + " colecciones";
+    total === 1 ? "1 cabecera" : total + " cabeceras";
 
   // Page info
   const endRow = Math.min(start + pageSize, total);
