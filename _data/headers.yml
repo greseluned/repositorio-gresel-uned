@@ -1,182 +1,229 @@
-- id: "Acción Consciente"
-  title: "Acción Consciente"
-  description: ""
+- id: Acción Consciente
+  title: Acción Consciente
+  description: ''
+  slug: accion-consciente
+  
+- id: Acción Libertaria
+  title: Acción Libertaria
+  description: ''
+  slug: accion-libertaria
 
-- id: "Acción Libertaria"
-  title: "Acción Libertaria"
-  description: ""
+- id: Arriba España
+  title: Arriba España
+  description: ''
+  slug: arriba-espana
 
-- id: "Arriba España"
-  title: "Arriba España"
-  description: ""
+- id: Avant Sempre-Sempre Avant
+  title: Avant Sempre-Sempre Avant
+  description: ''
+  slug: avant-sempre-sempre-avant
 
-- id: "Avant Sempre-Sempre Avant"
-  title: "Avant Sempre-Sempre Avant"
-  description: ""
+- id: Boletín Oficial de la Cámara de Comercio Española en Filipinas
+  title: Boletín Oficial de la Cámara de Comercio Española en Filipinas
+  description: ''
+  slug: boletin-oficial-de-la-camara-de-comercio-espanola-en-filipinas
 
-- id: "Boletín Oficial de la Cámara de Comercio Española en Filipinas"
-  title: "Boletín Oficial de la Cámara de Comercio Española en Filipinas"
-  description: ""
+- id: Diario de la Marina
+  title: Diario de la Marina
+  description: ''
+  slug: diario-de-la-marina
 
-- id: "Diario de la Marina"
-  title: "Diario de la Marina"
-  description: ""
+- id: Domus Aurea
+  title: Domus Aurea
+  description: ''
+  slug: domus-aurea
 
-- id: "Domus Aurea"
-  title: "Domus Aurea"
-  description: ""
+- id: El Arte Taquigráfico
+  title: El Arte Taquigráfico
+  description: ''
+  slug: el-arte-taquigrafico
 
-- id: "El Arte Taquigráfico"
-  title: "El Arte Taquigráfico"
-  description: ""
+- id: El Bello Sexo
+  title: El Bello Sexo
+  description: ''
+  slug: el-bello-sexo
 
-- id: "El Bello Sexo"
-  title: "El Bello Sexo"
-  description: ""
+- id: El Diablillo Suelto
+  title: El Diablillo Suelto
+  description: ''
+  slug: el-diablillo-suelto
 
-- id: "El Diablillo Suelto"
-  title: "El Diablillo Suelto"
-  description: ""
+- id: El Heraldo de la Revolución
+  title: El Heraldo de la Revolución
+  description: ''
+  slug: el-heraldo-de-la-revolucion
 
-- id: "El Heraldo de la Revolución"
-  title: "El Heraldo de la Revolución"
-  description: ""
-- id: "El Mensajero"
-  title: "El Mensajero"
-  description: ""
+- id: El Mensajero
+  title: El Mensajero
+  description: ''
+  slug: el-mensajero
 
-- id: "El Mercurio"
-  title: "El Mercurio"
-  description: ""
+- id: El Mercurio
+  title: El Mercurio
+  description: ''
+  slug: el-mercurio
 
-- id: "El Oriente"
-  title: "El Oriente"
-  description: ""
+- id: El Oriente
+  title: El Oriente
+  description: ''
+  slug: el-oriente
 
-- id: "El Progreso"
-  title: "El Progreso"
-  description: ""
+- id: El Progreso
+  title: El Progreso
+  description: ''
+  slug: el-progreso
 
-- id: "El Sol"
-  title: "El Sol"
-  description: ""
+- id: El Sol
+  title: El Sol
+  description: ''
+  slug: el-sol
 
-- id: "El Sport Ilustrado"
-  title: "El Sport Ilustrado"
-  description: ""
+- id: El Sport Ilustrado
+  title: El Sport Ilustrado
+  description: ''
+  slug: el-sport-ilustrado
 
-- id: "Estudio"
-  title: "Estudio"
-  description: ""
+- id: Estudio
+  title: Estudio
+  description: ''
+  slug: estudio
 
-- id: "Excelsior"
-  title: "Excelsior"
-  description: "Revista sobre la vida social en Filipinas."
+- id: Excelsior
+  title: Excelsior
+  description: Revista sobre la vida social en Filipinas.
+  slug: excelsior
 
-- id: "Fémina"
-  title: "Fémina"
-  description: "Revista de literatura, ciencias y artes consagrada a la mujer."
+- id: Fémina
+  title: Fémina
+  description: Revista de literatura, ciencias y artes consagrada a la mujer.
+  slug: femina
 
-- id: "Filipinas"
-  title: "Filipinas"
-  description: ""
+- id: Filipinas
+  title: Filipinas
+  description: ''
+  slug: filipinas
 
-- id: "Filipinas ante Europa"
-  title: "Filipinas ante Europa"
-  description: ""
+- id: Filipinas ante Europa
+  title: Filipinas ante Europa
+  description: ''
+  slug: filipinas-ante-europa
 
-- id: "Heraldo de la Mujer"
-  title: "Heraldo de la Mujer"
-  description: "Revista mensual defensora de los derechos de la mujer."
+- id: Heraldo de la Mujer
+  title: Heraldo de la Mujer
+  description: Revista mensual defensora de los derechos de la mujer.
+  slug: heraldo-de-la-mujer
 
-- id: "Hispanidad"
-  title: "Hispanidad"
-  description: ""
+- id: Hispanidad
+  title: Hispanidad
+  description: ''
+  slug: hispanidad
 
-- id: "Montserrat en Filipinas"
-  title: "Montserrat en Filipinas"
-  description: ""
+- id: Montserrat en Filipinas
+  title: Montserrat en Filipinas
+  description: ''
+  slug: montserrat-en-filipinas
 
-- id: "Labor Nueva"
-  title: "Labor Nueva"
-  description: ""
+- id: Labor Nueva
+  title: Labor Nueva
+  description: ''
+  slug: labor-nueva
 
-- id: "La Ilustración del Oriente"
-  title: "La Ilustración del Oriente"
-  description: ""
+- id: La Ilustración del Oriente
+  title: La Ilustración del Oriente
+  description: ''
+  slug: la-ilustracion-del-oriente
 
-- id: "La Jurisprudencia"
-  title: "La Jurisprudencia"
-  description: ""
+- id: La Jurisprudencia
+  title: La Jurisprudencia
+  description: ''
+  slug: la-jurisprudencia
 
-- id: "La Juventud"
-  title: "La Juventud"
-  description: ""
+- id: La Juventud
+  title: La Juventud
+  description: ''
+  slug: la-juventud
 
-- id: "La Malasia"
-  title: "La Malasia"
-  description: ""
+- id: La Malasia
+  title: La Malasia
+  description: ''
+  slug: la-malasia
 
-- id: "La Mosca"
-  title: "La Mosca"
-  description: ""
+- id: La Mosca
+  title: La Mosca
+  description: ''
+  slug: la-mosca
 
-- id: "La Patria"
-  title: "La Patria"
-  description: ""
+- id: La Patria
+  title: La Patria
+  description: ''
+  slug: la-patria
 
-- id: "La Pavera"
-  title: "La Pavera"
-  description: ""
+- id: La Pavera
+  title: La Pavera
+  description: ''
+  slug: la-pavera
 
-- id: "La Puya"
-  title: "La Puya"
-  description: ""
+- id: La Puya
+  title: La Puya
+  description: ''
+  slug: la-puya
 
-- id: "Las Noticias"
-  title: "Las Noticias"
-  description: ""
+- id: Las Noticias
+  title: Las Noticias
+  description: ''
+  slug: las-noticias
 
-- id: "La Solidaridad"
-  title: "La Solidaridad"
-  description: ""
+- id: La Solidaridad
+  title: La Solidaridad
+  description: ''
+  slug: la-solidaridad
 
-- id: "La Vanguardia"
-  title: "La Vanguardia"
-  description: "Diario filipino independendiente."
+- id: La Vanguardia
+  title: La Vanguardia
+  description: Diario filipino independendiente.
+  slug: la-vanguardia
 
-- id: "La Verdad"
-  title: "La Verdad"
-  description: ""
+- id: La Verdad
+  title: La Verdad
+  description: ''
+  slug: la-verdad
 
-- id: "La Vida Industrial"
-  title: "La Vida Industrial"
-  description: ""
+- id: La Vida Industrial
+  title: La Vida Industrial
+  description: ''
+  slug: la-vida-industrial
 
-- id: "Revista de la Aso Femenina Camagüey"
-  title: "Revista de la Aso Femenina Camagüey"
-  description: ""
+- id: Revista de la Aso Femenina Camagüey
+  title: Revista de la Aso Femenina Camagüey
+  description: ''
+  slug: revista-de-la-aso-femenina-camaguey
 
-- id: "Revista del Liceo Científico, Artístico y Literario de Manila"
-  title: "Revista del Liceo Científico, Artístico y Literario de Manila"
-  description: ""
+- id: Revista del Liceo Científico, Artístico y Literario de Manila
+  title: Revista del Liceo Científico, Artístico y Literario de Manila
+  description: ''
+  slug: revista-del-liceo-cientifico-artistico-y-literario-de-manila
 
-- id: "Revista Histórica"
-  title: "Revista Histórica"
-  description: ""
+- id: Revista Histórica
+  title: Revista Histórica
+  description: ''
+  slug: revista-historica
 
-- id: "Revista Popular de Filipinas"
-  title: "Revista Popular de Filipinas"
-  description: ""
+- id: Revista Popular de Filipinas
+  title: Revista Popular de Filipinas
+  description: ''
+  slug: revista-popular-de-filipinas
 
-- id: "Semana"
-  title: "Semana"
-  description: ""
+- id: Semana
+  title: Semana
+  description: ''
+  slug: semana
 
-- id: "Sorpresas Chicago"
-  title: "Sorpresas Chicago"
-  description: ""
+- id: Sorpresas Chicago
+  title: Sorpresas Chicago
+  description: ''
+  slug: sorpresas-chicago
 
-- id: "Yugo"
-  title: "Yugo"
-  description: ""
+- id: Yugo
+  title: Yugo
+  description: ''
+  slug: yugo

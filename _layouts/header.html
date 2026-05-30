@@ -1,10 +1,11 @@
 
+
 ---
 layout: page
 ---
 
 {% assign meta = site.data[site.metadata] %}
-{% assign items = meta | where: "cabecera", page.header_id %}
+{% assign items = meta | where: "header", page.title %}
 
 <style>
 .header-title {
