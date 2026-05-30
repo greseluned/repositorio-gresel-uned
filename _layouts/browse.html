@@ -234,7 +234,7 @@ const COLLECTIONS = [
   {% endfor %}
   {
     id: {{ coll.id | jsonify }},
-    slug: {{coll.slug | jsonify }},
+    slug: {{ coll.slug | jsonify }},
     title: {{ coll.title | jsonify }},
     count: {{ items.size }},
     locations: {{ loc_list | uniq | jsonify }},
