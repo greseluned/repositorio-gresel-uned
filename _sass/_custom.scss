@@ -23,10 +23,10 @@ h1,h2,h3,h4,h5,.navbar-brand {
 }
 
 .navbar {
-  background: rgba(255,255,255,0.96)!important;
+  background: #fffffff5!important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--gresel-border);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 18px #0000000d;
 }
 
 .navbar .nav-link {
@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,.navbar-brand {
 }
 
 .gresel-logo {
-  height: 58px;
+  height: 60px;
   width: auto;
 }
 
@@ -57,11 +57,11 @@ h1,h2,h3,h4,h5,.navbar-brand {
 }
 
 .hero-panel {
-  background: rgba(255,255,255,0.92);
+  background: #ffffffeb;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 10px 30px #0000001f;
+  border: 1px solid #ffffff66;
 }
 
 .hero-panel h2 {
@@ -86,7 +86,7 @@ h1,h2,h3,h4,h5,.navbar-brand {
 .form-control:focus,
 .form-select:focus {
   border-color: var(--gresel-primary)!important;
-  box-shadow: 0 0 0 0.15rem rgba(47,93,80,0.15)!important;
+  box-shadow: 0 0 0 0.15rem #2f5d5026!important;
 }
 
 .btn-search,
@@ -113,7 +113,7 @@ h1,h2,h3,h4,h5,.navbar-brand {
 .browse-card {
   border-radius: 18px;
   border: 1px solid var(--gresel-border);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  box-shadow: 0 6px 20px #0000000a;
 }
 
 footer {
