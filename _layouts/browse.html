@@ -1,6 +1,5 @@
-
 ---
-layout: page-full-width
+layout: page
 ---
 {% assign meta = site.data[site.metadata] %}
 
@@ -209,8 +208,8 @@ layout: page-full-width
 <script>
 // Build collection data from Jekyll
 const COLLECTIONS = [
-  {% for header in site.data.headers %}
-  {% assign items = meta | where: "cabecera", header.id %}
+  {% for coll in site.data.collections %}
+  {% assign items = meta | where: "collection", coll.id %}
   {% assign loc_list = "" | split: "" %}
   {% assign year_min = 9999 %}
   {% assign year_max = 0 %}
@@ -234,8 +233,8 @@ const COLLECTIONS = [
     {% endif %}
   {% endfor %}
   {
-    id: {{ header.id | jsonify }},
-    title: {{ header.title | jsonify }},
+    id: {{ coll.id | jsonify }},
+    title: {{ coll.title | jsonify }},
     count: {{ items.size }},
     locations: {{ loc_list | uniq | jsonify }},
     yearMin: {{ year_min }},
@@ -344,7 +343,7 @@ function render() {
 
   // Count label
   document.getElementById("collCount").textContent =
-    total === 1 ? "1 cabecera" : total + " cabeceras";
+    total === 1 ? "1 colección" : total + " colecciones";
 
   // Page info
   const endRow = Math.min(start + pageSize, total);
