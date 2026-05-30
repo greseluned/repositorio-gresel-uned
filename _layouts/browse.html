@@ -209,7 +209,7 @@ layout: page
 // Build collection data from Jekyll
 const COLLECTIONS = [
   {% for coll in site.data.headers %}
-  {% assign items = meta | where: "cabecera", coll.id %}
+  {% assign items = meta | where: "headers", coll.id %}
   {% assign loc_list = "" | split: "" %}
   {% assign year_min = 9999 %}
   {% assign year_max = 0 %}
