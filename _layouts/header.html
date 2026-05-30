@@ -1,6 +1,11 @@
+---
+layout: default
+---
+
 {% assign meta = site.data[site.metadata] %}
 {% assign items = meta | where: "header", page.title %}
 
+<div class="container my-4 px-1 py-2">
 <style>
 .results-header {
   background: #e9eedf;
