@@ -1,17 +1,16 @@
 {% comment %}
     Adds Bootstrap styled breadcrumbs to page.
-    By default the crumbs are: Home / Explorar / [Collection] / current page title.
+    By default the crumbs are: Home / [Cabecera] / current page title.
 {% endcomment %}
 
 {% assign item = site.data[site.metadata] | where: "objectid", page.objectid | first %}
-{% if item.collection %}
-  {% assign coll = site.data.collections | where: "id", item.collection | first %}
+{% if item.header %}
+  {% assign coll = site.data.headers | where: "id", item.header | first %}
 {% endif %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a class="text-dark" href="{{ '/results/' | relative_url }}">Resultados</a></li>
     {% if coll %}
-    <li class="breadcrumb-item"><a class="text-dark" href="{{ '/header/' | append: coll.slug | append: '/' | relative_url }}">{{ coll.title }}</a></li>
+    <li class="breadcrumb-item"><a class="text-dark" href="{{ '/headers/' | append: coll.slug | append: '/' | relative_url }}">{{ coll.title }}</a></li>
     {% endif %}
     <li class="breadcrumb-item active text-dark" aria-current="page">{{ page.title | truncatewords: 10 }}</li>
 </ol>
