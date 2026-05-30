@@ -336,7 +336,7 @@ function render() {
   const tbody = document.getElementById("browseBody");
   tbody.innerHTML = page.map(coll => `
     <tr>
-      <td><a href="{{ '/' | relative_url }}collections/${coll.id}/">${coll.title}</a></td>
+      <td><a href="{{ '/' | relative_url }}headers/${coll.id}/">${coll.title}</a></td>
       <td>${coll.count}</td>
     </tr>
   `).join("");
