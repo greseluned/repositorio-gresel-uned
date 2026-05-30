@@ -1,3 +1,4 @@
+
 {% comment %}
 
     Adds metadata to item pages in a description list element.
@@ -18,7 +19,19 @@
             {% elsif f.external_link == "true" %}
             <a href="{{ page[f.field] }}" target="_blank" rel="noopener">{{ page[f.field] }}</a>
             {% else %}
-            {{ page[f.field] | replace: '""','"' }}{% endif %}
+            {% if f.field == "cabecera" %}
+                {% assign header = site.data.headers | where: "id", page[f.field] | first %}
+                {% if header %}
+                    <a href="{{ '/headers/' | relative_url }}{{ header.id }}/">
+                        {{ header.title }}
+                    </a>
+                {% else %}
+                    {{ page[f.field] | replace: '""','"' }}
+                {% endif %}
+            {% else %}
+                {{ page[f.field] | replace: '""','"' }}
+            {% endif %}
+            {% endif %}
         </dd>
         {% endif %}{% endfor %}
     </dl>
