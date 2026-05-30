@@ -3,6 +3,7 @@ primary,#224621,,
 outline-primary,#224621,,
 secondary,#7ca152,,
 outline-secondary,,,
+outline-dark,,#224621,#224621
 success,#7fc006,,
 info,,,
 outline-info,,,
