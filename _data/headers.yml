@@ -1,182 +1,182 @@
-- id: accion-consciente
+- id: "Acción Consciente"
   title: "Acción Consciente"
   description: ""
 
-- id: accion-libertaria
+- id: "Acción Libertaria"
   title: "Acción Libertaria"
   description: ""
 
-- id: arriba-españa
+- id: "Arriba España"
   title: "Arriba España"
   description: ""
 
-- id: avant-sempre-sempre-avant
+- id: "Avant Sempre-Sempre Avant"
   title: "Avant Sempre-Sempre Avant"
   description: ""
 
-- id: boletin-oficial-camara-comercio-española-filipinas
+- id: "Boletín Oficial de la Cámara de Comercio Española en Filipinas"
   title: "Boletín Oficial de la Cámara de Comercio Española en Filipinas"
   description: ""
 
-- id: diario-de-la-marina
+- id: "Diario de la Marina"
   title: "Diario de la Marina"
   description: ""
 
-- id: domus-aurea
+- id: "Domus Aurea"
   title: "Domus Aurea"
   description: ""
 
-- id: el-arte-taquigráfico
+- id: "El Arte Taquigráfico"
   title: "El Arte Taquigráfico"
   description: ""
 
-- id: el-bello-sexo
+- id: "El Bello Sexo"
   title: "El Bello Sexo"
   description: ""
 
-- id: el-diablillo-suelto
+- id: "El Diablillo Suelto"
   title: "El Diablillo Suelto"
   description: ""
 
-- id: el-heraldo-de-la-revolución
+- id: "El Heraldo de la Revolución"
   title: "El Heraldo de la Revolución"
   description: ""
-- id: el-mensajero
+- id: "El Mensajero"
   title: "El Mensajero"
   description: ""
 
-- id: el-mercurio
+- id: "El Mercurio"
   title: "El Mercurio"
   description: ""
 
-- id: el-oriente
+- id: "El Oriente"
   title: "El Oriente"
   description: ""
 
-- id: el-progreso
+- id: "El Progreso"
   title: "El Progreso"
   description: ""
 
-- id: el-sol
+- id: "El Sol"
   title: "El Sol"
   description: ""
 
-- id: el-sport-ilustrado
+- id: "El Sport Ilustrado"
   title: "El Sport Ilustrado"
   description: ""
 
-- id: estudio
+- id: "Estudio"
   title: "Estudio"
   description: ""
 
-- id: excelsior
+- id: "Excelsior"
   title: "Excelsior"
   description: "Revista sobre la vida social en Filipinas."
 
-- id: femina
+- id: "Fémina"
   title: "Fémina"
   description: "Revista de literatura, ciencias y artes consagrada a la mujer."
 
-- id: filipinas
+- id: "Filipinas"
   title: "Filipinas"
   description: ""
 
-- id: filipinas-ante-europa
+- id: "Filipinas ante Europa"
   title: "Filipinas ante Europa"
   description: ""
 
-- id: heraldo-de-la-mujer
+- id: "Heraldo de la Mujer"
   title: "Heraldo de la Mujer"
   description: "Revista mensual defensora de los derechos de la mujer."
 
-- id: hispanidad
+- id: "Hispanidad"
   title: "Hispanidad"
   description: ""
 
-- id: montserrat-en-filipinas
+- id: "Montserrat en Filipinas"
   title: "Montserrat en Filipinas"
   description: ""
 
-- id: labor-nueva
+- id: "Labor Nueva"
   title: "Labor Nueva"
   description: ""
 
-- id: la-ilustracion-del-oriente
+- id: "La Ilustración del Oriente"
   title: "La Ilustración del Oriente"
   description: ""
 
-- id: la-jurisprudencia
+- id: "La Jurisprudencia"
   title: "La Jurisprudencia"
   description: ""
 
-- id: la-juventud
+- id: "La Juventud"
   title: "La Juventud"
   description: ""
 
-- id: la-malasia
+- id: "La Malasia"
   title: "La Malasia"
   description: ""
 
-- id: la-mosca
+- id: "La Mosca"
   title: "La Mosca"
   description: ""
 
-- id: la-patria
+- id: "La Patria"
   title: "La Patria"
   description: ""
 
-- id: la-pavera
+- id: "La Pavera"
   title: "La Pavera"
   description: ""
 
-- id: la-puya
+- id: "La Puya"
   title: "La Puya"
   description: ""
 
-- id: las-noticias
+- id: "Las Noticias"
   title: "Las Noticias"
   description: ""
 
-- id: la-solidaridad
+- id: "La Solidaridad"
   title: "La Solidaridad"
   description: ""
 
-- id: la-vanguardia
+- id: "La Vanguardia"
   title: "La Vanguardia"
   description: "Diario filipino independendiente."
 
-- id: la-verdad
+- id: "La Verdad"
   title: "La Verdad"
   description: ""
 
-- id: la-vida-industrial
+- id: "La Vida Industrial"
   title: "La Vida Industrial"
   description: ""
 
-- id: revista-de-la-aso-femenina-camaguey
+- id: "Revista de la Aso Femenina Camagüey"
   title: "Revista de la Aso Femenina Camagüey"
   description: ""
 
-- id: revista-liceo-cientifico-artistico-literario-manila
+- id: "Revista del Liceo Científico, Artístico y Literario de Manila"
   title: "Revista del Liceo Científico, Artístico y Literario de Manila"
   description: ""
 
-- id: revista-historica
+- id: "Revista Histórica"
   title: "Revista Histórica"
   description: ""
 
-- id: revista-popular-de-filipinas
+- id: "Revista Popular de Filipinas"
   title: "Revista Popular de Filipinas"
   description: ""
 
-- id: semana
+- id: "Semana"
   title: "Semana"
   description: ""
 
-- id: sopresas-chicago
+- id: "Sorpresas Chicago"
   title: "Sorpresas Chicago"
   description: ""
 
-- id: yugo
+- id: "Yugo"
   title: "Yugo"
   description: ""
