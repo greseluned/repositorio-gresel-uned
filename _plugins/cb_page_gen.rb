@@ -209,37 +209,4 @@ module CollectionBuilderPageGenerator
     end
   end
 
-    class HeaderPageGenerator < Jekyll::Generator
-    safe true
-
-    def generate(site)
-      if site.data['headers']
-        site.data['headers'].each do |header|
-          site.pages << HeaderPage.new(site, site.source, header)
-        end
-      end
-    end
-  end
-
-  class HeaderPage < Jekyll::Page
-    def initialize(site, base, header)
-      @site = site
-      @base = base
-      @dir  = "headers/#{header['id']}"
-
-      @basename = 'index'
-      @ext      = '.html'
-      @name     = 'index.html'
-
-      self.process(@name)
-
-      self.data = {
-        'layout' => 'header',
-        'title' => header['title'],
-        'header_id' => header['id'],
-        'description' => header['description']
-      }
-    end
-  end
-
 end
