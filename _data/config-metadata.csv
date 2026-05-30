@@ -5,7 +5,7 @@ date,Fecha de publicación,,,DCTERMS.date,dateCreated
 header,Cabecera,,,,
 description,Descripción,,,DCTERMS.description,description
 subject,Temas,true,,DCTERMS.subject,keywords
-location,Lugar,,,,contentLocation
+location,Lugar de publicación,,,,contentLocation
 source,Fuente de origen,,,,
 internet_archive_link,Fuente,,,,
 identifier,Identificador de la fuente,,,,
