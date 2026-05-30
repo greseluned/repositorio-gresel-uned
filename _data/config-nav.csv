@@ -1,5 +1,6 @@
 display_name,stub,dropdown_parent
 Página principal,/,
+Explorar,/browse.html
 Mapa,/map.html,
 Descargar datos,/data.html,
 Sobre el repositorio,/about.html,
