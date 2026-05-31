@@ -1,9 +1,9 @@
 color_class,color,background-color,border-color
-primary,#648f63,,
-outline-primary,#648f63,,
-secondary,#648f63,,
+primary,#5f8b60,,
+outline-primary,#5f8b60,,
+secondary,#5f8b60,,
 outline-secondary,,,
-success,#648f63,,
+success,#5f8b60,,
 info,,,
 outline-info,,,
 warning,,,
