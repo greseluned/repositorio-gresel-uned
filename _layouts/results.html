@@ -381,6 +381,7 @@ async function fetchAndSearch(items, query) {
 function updateHeader(query, count) {
   const qEl = document.getElementById("headerQuery");
   if (query) { qEl.textContent = query; qEl.style.display = ""; }
+  else { qEl.textContent = ""; qEl.style.display = "none"; }
   document.getElementById("headerCount").textContent =
     count + (count === 1 ? " resultado" : " resultados");
 }
