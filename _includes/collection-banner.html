@@ -1,3 +1,4 @@
+
 {% if page.layout == "home-infographic" and site.data.theme.featured-image %}
 
 {% assign meta = site.data[site.metadata] %}
@@ -107,6 +108,58 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.hero-top-row {
+  display: flex;
+  gap: 1rem;
+}
+.hero-top-row .hero-side-card {
+  flex: 1;
+}
+/* Header selector */
+.header-selector-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 155px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #477d49 #e9ecef;
+}
+.header-selector-list li a {
+  display: block;
+  padding: .3rem .5rem;
+  border-radius: 6px;
+  font-size: .8rem;
+  color: #1a2e22;
+  text-decoration: none;
+  transition: background .12s;
+}
+.header-selector-list li a:hover {
+  background: #e4f0e0;
+  color: #2f5d31;
+}
+.header-selector-list li a .badge-count {
+  float: right;
+  background: #d8e8d4;
+  color: #3a6b3c;
+  border-radius: 10px;
+  padding: .1rem .45rem;
+  font-size: .72rem;
+  font-weight: 600;
+}
+.header-search-input {
+  width: 100%;
+  border: 1px solid #d8e2d5;
+  border-radius: 8px;
+  padding: .4rem .7rem;
+  font-size: .8rem;
+  margin-bottom: .6rem;
+  outline: none;
+}
+.header-search-input:focus {
+  border-color: #477d49;
+  box-shadow: 0 0 0 .1rem rgba(71,125,73,.2);
 }
 .hero-side-card {
   background: rgba(255,255,255,0.93);
@@ -222,12 +275,40 @@
       <button class="btn btn-hero-search" onclick="doSearch()">Buscar</button>
     </div>
 
-    <!-- Right: decade chart + photo gallery -->
+    <!-- Right: header selector + decade chart + carousel -->
     <div class="hero-right d-none d-lg-flex">
-      <div class="hero-side-card">
-        <h3>Distribución por décadas</h3>
-        <div class="decade-bars" id="decadeBars"></div>
+      <div class="hero-top-row">
+
+        <!-- Header selector -->
+        <div class="hero-side-card">
+          <h3>Explorar por cabecera</h3>
+          <input class="header-search-input" id="headerFilterInput" type="text" placeholder="Filtrar cabeceras...">
+          <ul class="header-selector-list" id="headerSelectorList">
+            {% assign meta = site.data[site.metadata] %}
+            {% for coll in collections %}
+              {% assign coll_items = meta | where: "header", coll.id %}
+              {% assign coll_count = coll_items | size %}
+              {% if coll_count > 0 %}
+              <li data-title="{{ coll.title | downcase }}">
+                <a href="{{ '/headers/' | append: coll.slug | append: '/' | relative_url }}">
+                  {{ coll.title }}
+                  <span class="badge-count">{{ coll_count }}</span>
+                </a>
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Decade chart -->
+        <div class="hero-side-card">
+          <h3>Distribución por décadas</h3>
+          <div class="decade-bars" id="decadeBars"></div>
+        </div>
+
       </div>
+
+      <!-- Carousel: full width -->
       <div class="hero-side-card">
         <h3>Galería de portadas</h3>
         {% include index/carousel.html height=211 %}
@@ -297,6 +378,16 @@ function searchByDecade(dec) {
 document.getElementById("searchQuery").addEventListener("keydown", e => {
   if (e.key === "Enter") doSearch();
 });
+// Header selector filter
+const headerInput = document.getElementById("headerFilterInput");
+if (headerInput) {
+  headerInput.addEventListener("input", function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll("#headerSelectorList li").forEach(li => {
+      li.style.display = li.dataset.title.includes(q) ? "" : "none";
+    });
+  });
+}
 </script>
 
 {% endif %}
