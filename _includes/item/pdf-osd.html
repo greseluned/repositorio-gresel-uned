@@ -257,15 +257,12 @@ function loadPage(index) {
 
   viewer.addOnceHandler('open', () => {
     viewer.clearOverlays();
-
-    // renderRegions returns a map of manifest regionId → viewportRect
-    // so we can activate the deep-link region immediately after render
     const regionRectMap = renderRegions(viewer, pageData);
     updatePageIndicator();
 
-    if (deepLinkParams && deepLinkParams.page === index) {
+    if (deepLinkParams && deepLinkParams.page === pageData.page) {
       activateRegion(deepLinkParams.regionId, regionRectMap);
-      deepLinkParams = null; // clear after use
+      deepLinkParams = null;
     }
   });
 }
