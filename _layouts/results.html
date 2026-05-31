@@ -349,14 +349,10 @@ function applyFilters() {
   sortAndRender();
   updateHeader(query, filteredItems.length);
   if (query) {
-    const needsManifest = candidates.filter(item =>
-      !titleMatch(item, query) && item.object_location
-    );
-    if (needsManifest.length) {
-      fetchAndSearch(needsManifest, query);
+      const needsManifest = candidates.filter(item => !titleMatch(item, query) && item.object_location);
+      if (needsManifest.length) fetchAndSearch(needsManifest, query);
     }
   }
-}
 
 async function fetchAndSearch(items, query) {
   const expanded = (await Promise.all(
@@ -375,9 +371,10 @@ async function fetchAndSearch(items, query) {
     filteredItems = [...filteredItems, ...expanded];
     buildFacets(filteredItems);
     sortAndRender();
-    updateHeader(filteredItems.length);
+    updateHeader(query, filteredItems.length);
   }
 }
+
 // ── Header ────────────────────────────────────────────────────────────────────
 function updateHeader(query, count) {
   const qEl = document.getElementById("headerQuery");

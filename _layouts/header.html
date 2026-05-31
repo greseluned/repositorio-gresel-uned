@@ -304,14 +304,18 @@ async function fetchAndSearch(items, query) {
       const regions = await fetchManifestRegions(item.object_location);
       const matches = findAllMatches(regions, query);
       if (!matches.length) return [];
-      return matches.map((match, i) => {
-        if (i === 0) { item._match = match; return item; }
-        return Object.assign({}, item, { _match: match, _clone: true });
-      });
+      return matches.map(match =>
+        Object.assign({}, item, { _match: match, _clone: true })
+      );
     })
   )).flat().filter(Boolean);
 
   if (expanded.length) {
+    // Remove any existing entry for these items (title hits) to avoid duplicates
+    const expandedIds = new Set(expanded.map(i => i.id + (i._match.regionId || "")));
+    filteredItems = filteredItems.filter(i =>
+      !expanded.some(e => e.id === i.id)
+    );
     filteredItems = [...filteredItems, ...expanded];
     buildFacets(filteredItems);
     sortAndRender();
