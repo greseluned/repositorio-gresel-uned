@@ -433,8 +433,8 @@ function renderPage(page) {
         <div class="result-title"><a href="${href}">${item.title || item.id}</a></div>
         ${snippetHtml}
         <div class="result-meta">
-          <span><strong>Cabecera:</strong> ${collTitle}</span>
           <span><strong>Fecha:</strong> ${item.date || "—"}</span>
+          ${item._match && item._match.page ? `<span><strong>Página:</strong> ${item._match.page}</span>` : ""}
           ${item.location ? `<span><strong>Lugar:</strong> ${item.location}</span>` : ""}
           ${item.language ? `<span><strong>Idioma:</strong> ${item.language}</span>` : ""}
         </div>
