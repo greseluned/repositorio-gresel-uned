@@ -30,7 +30,7 @@ credits: true
 .about-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(12,24,16,0.68);
+  background: rgba(12,24,16,0.81);
 }
 .about-image-caption {
   position: absolute;
@@ -40,17 +40,17 @@ credits: true
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem
 }
 .about-image-caption h1 {
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: 2rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: .5rem;
   text-align: center;
 }
 .about-image-caption p {
-  font-size: .85rem;
+  font-size: 1rem;
   color: rgba(255,255,255,0.75);
   margin-bottom: 1rem;
   line-height: 1.5;
@@ -61,7 +61,7 @@ credits: true
   color: #fff;
   border-radius: 999px;
   padding: .45rem 1.1rem;
-  font-size: .82rem;
+  font-size: .90rem;
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
