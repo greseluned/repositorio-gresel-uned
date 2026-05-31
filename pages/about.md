@@ -90,16 +90,18 @@ credits: true
 
 <div class="about-body">
 
-## Sobre el repositorio
+<div class="about-body">
 
-Este repositorio contiene el desarrollo de una plataforma digital para la consulta de prensa histórica dentro del marco del proyecto GRESEL-UNED, construida a partir de la plantilla de CollectionBuilder.
+<h2>Sobre el repositorio</h2>
 
-El objetivo del proyecto es integrar imágenes digitalizadas de periódicos con sus transcripciones generadas mediante OCR, permitiendo una exploración más accesible e interactiva del contenido. Para ello, se ha personalizado la interfaz mediante HTML y se ha incorporado OpenSeadragon como visor, lo que permite visualizar las páginas en alta resolución y superponer regiones que delimitan los distintos artículos.
+<p>Este repositorio contiene el desarrollo de una plataforma digital para la consulta de prensa histórica dentro del marco del proyecto GRESEL-UNED, construida a partir de la plantilla de CollectionBuilder.</p>
 
-Estas regiones han sido anotadas previamente en Transkribus y transformadas de XML a JSON mediante un script en Python, de forma que puedan ser utilizadas en la web. Cada región está conectada con su transcripción, lo que permite al usuario seleccionar una zona concreta de la página y consultar directamente su contenido textual.
+<p>El objetivo del proyecto es integrar imágenes digitalizadas de periódicos con sus transcripciones generadas mediante OCR, permitiendo una exploración más accesible e interactiva del contenido. Para ello, se ha personalizado la interfaz mediante HTML y se ha incorporado OpenSeadragon como visor, lo que permite visualizar las páginas en alta resolución y superponer regiones que delimitan los distintos artículos.</p>
 
-Además, se ha implementado un sistema de búsqueda basado en las transcripciones. Para ello, el texto se extrae y se procesa para reconstruir palabras y párrafos afectados por el formato en columnas, generando archivos que permiten localizar términos dentro del corpus.
+<p>Estas regiones han sido anotadas previamente en Transkribus y transformadas de XML a JSON mediante un script en Python, de forma que puedan ser utilizadas en la web. Cada región está conectada con su transcripción, lo que permite al usuario seleccionar una zona concreta de la página y consultar directamente su contenido textual.</p>
 
-El repositorio se organiza por periódicos y fechas de publicación, combinando imágenes, datos estructurados y metadatos en un mismo entorno. En conjunto, la plataforma facilita la navegación, la consulta y el análisis de la prensa histórica mediante herramientas de código abierto y de bajo coste de mantenimiento.
+<p>Además, se ha implementado un sistema de búsqueda basado en las transcripciones. Para ello, el texto se extrae y se procesa para reconstruir palabras y párrafos afectados por el formato en columnas, generando archivos que permiten localizar términos dentro del corpus.</p>
+
+<p>El repositorio se organiza por periódicos y fechas de publicación, combinando imágenes, datos estructurados y metadatos en un mismo entorno. En conjunto, la plataforma facilita la navegación, la consulta y el análisis de la prensa histórica mediante herramientas de código abierto y de bajo coste de mantenimiento.</p>
 
 </div>
