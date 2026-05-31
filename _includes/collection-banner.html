@@ -29,7 +29,7 @@
 }
 /* ── Main white panel ── */
 .hero-main-panel {
-  flex: 0 0 63%;
+  flex: 0 0 55%;
   background: #fff;
   border-radius: 12px;
   padding: 2.25rem 2.5rem;
@@ -171,7 +171,7 @@
   font-size: .8rem;
   font-weight: 700;
   color: #1a2e22;
-  margin-bottom: .9rem;
+  margin-bottom: .3rem;
   font-family: 'Inter', sans-serif;
 }
 .hero-side-card h4 {
@@ -289,7 +289,7 @@
         <!-- Header selector -->
         <div class="hero-side-card">
           <h3>Explorar por cabecera</h3>
-          <h4>Selecciona una cabecera específica del desplegable para explorar todos sus artículos disponibles.</h4>
+          <h4>Selecciona una cabecera de la lista para explorar todos sus artículos disponibles.</h4>
           <ul class="header-selector-list" id="headerSelectorList">
             {% assign meta = site.data[site.metadata] %}
             {% for coll in collections %}
@@ -319,7 +319,7 @@
       <!-- Carousel: full width -->
       <div class="hero-side-card">
         <h3>Galería de portadas</h3>
-        {% include index/carousel.html height=211 %}
+        {% include index/carousel.html height=201 %}
       </div>
     </div>
 
