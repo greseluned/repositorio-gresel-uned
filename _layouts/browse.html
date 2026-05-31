@@ -328,7 +328,7 @@ function render() {
   tbody.innerHTML = page.map(coll => `
     <tr>
       <td><a href="{{ '/' | relative_url }}headers/${coll.slug}/">${coll.title}</a></td>
-      <td>${coll.count}</td>
+      <td><span style="background:#d8e8d4;color:#3a6b3c;border-radius:10px;padding:.1rem .45rem;font-size:.8rem;font-weight:600;">${coll.count}</span></td>
     </tr>
   `).join("");
 
