@@ -1,10 +1,11 @@
+---
+layout: default
+---
 
----
-layout: page
----
 {% assign meta = site.data[site.metadata] %}
 {% assign items = meta | where: "header", page.title %}
 
+<div class="container my-4 px-1 py-2">
 <style>
 .results-header {
   background: #e9eedf;
@@ -39,7 +40,7 @@ layout: page
 .facet-list li label { cursor: pointer; color: #333; flex: 1; }
 .facet-list li label:hover { color: #4a8a37; }
 .facet-count { background: #e9ecef; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; color: #666; }
-.facet-count.active-count { background: #4a8a37; color: #000; font-weight: 700; }
+.facet-count.active-count { background: #d8e8d4; color: #3a6b3c; font-weight: 700; }
 .btn-clear { font-size: 0.8rem; color: #666; text-decoration: none; }
 .btn-clear:hover { color: #c00; }
 
@@ -74,6 +75,7 @@ layout: page
   margin-bottom: 0.75rem;
   background: #fff;
   transition: box-shadow 0.15s;
+  height: 95px;
 }
 .result-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .result-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
@@ -105,7 +107,7 @@ layout: page
     <div class="facet-sidebar">
       <div class="search-within mb-3">
         <div class="input-group">
-          <input type="text" class="form-control" id="refineQuery" placeholder="Buscar en títulos y transcripciones...">
+          <input type="text" class="form-control" id="refineQuery" placeholder="Buscar en esta cabecera...">
           <button class="btn btn-outline-secondary btn-sm" onclick="refineSearch()">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.156a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/></svg>
           </button>
@@ -218,9 +220,8 @@ function findAllMatches(regions, query) {
       matches.push({ page: entry.page, regionId: entry.regionId, snippet });
     }
   }
-  return matches; // array, may be empty
+  return matches;
 }
-// Keep findMatch as alias for title-match path
 function findMatch(regions, query) {
   const all = findAllMatches(regions, query);
   return all.length ? all[0] : null;
@@ -304,10 +305,8 @@ async function fetchAndSearch(items, query) {
       const regions = await fetchManifestRegions(item.object_location);
       const matches = findAllMatches(regions, query);
       if (!matches.length) return [];
-      // First match updates the item itself; additional matches become clones
       return matches.map((match, i) => {
         if (i === 0) { item._match = match; return item; }
-        // Clone the item for each additional match location
         return Object.assign({}, item, { _match: match, _clone: true });
       });
     })
@@ -315,13 +314,9 @@ async function fetchAndSearch(items, query) {
 
   if (expanded.length) {
     filteredItems = [...filteredItems, ...expanded];
-    buildFacets(filteredItems.filter(i => !i._clone).concat(filteredItems.filter(i => i._clone)));
+    buildFacets(filteredItems);
     sortAndRender();
-    const countArg = typeof initialQuery !== "undefined"
-      ? [query, filteredItems.length]
-      : [filteredItems.length];
-    if (countArg.length === 2) updateHeader(countArg[0], countArg[1]);
-    else updateHeader(countArg[0]);
+    updateHeader(filteredItems.length);
   }
 }
 
@@ -493,3 +488,4 @@ document.getElementById("refineQuery").addEventListener("keydown", e => { if(e.k
 
 loadIndex();
 </script>
+</div>

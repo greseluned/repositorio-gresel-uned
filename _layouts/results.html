@@ -1,4 +1,3 @@
-
 ---
 layout: page
 ---
@@ -44,7 +43,7 @@ layout: page
 .facet-list li label { cursor: pointer; color: #333; flex: 1; }
 .facet-list li label:hover { color: #4a8a37; }
 .facet-count { background: #e9ecef; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; color: #666; }
-.facet-count.active-count { background: #4a8a37; color: #000; font-weight: 700; }
+.facet-count.active-count { background: #d8e8d4; color: #3a6b3c; font-weight: 700; }
 .btn-clear { font-size: 0.8rem; color: #666; text-decoration: none; }
 .btn-clear:hover { color: #c00; }
 
@@ -80,6 +79,7 @@ layout: page
   margin-bottom: 0.75rem;
   background: #fff;
   transition: box-shadow 0.15s;
+  height: 95px;
 }
 .result-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .result-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
@@ -94,7 +94,7 @@ layout: page
 .sort-bar .result-count { font-size: 0.9rem; color: #555; }
 .sort-bar select { font-size: 0.875rem; padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid #ced4da; }
 .pagination .page-link { color: #1a1a2e; }
-.pagination .page-item.active .page-link { background-color: #407943; border-color: #407943; color: #000000; }
+.pagination .page-item.active .page-link { background-color: #5f8b60; border-color: #5f8b60; color: #dbf7d4; }
 .pagination .page-link:hover { color: #396b3b; }
 .search-within { margin-bottom: 1rem; }
 .search-within .form-control { font-size: 0.875rem; }
@@ -239,8 +239,8 @@ function findAllMatches(regions, query) {
     let matchIndex = -1, matchedTerm = "";
     for (const term of terms) {
       const regex = new RegExp("\\b" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
-      const mt = lt.match(regex);
-      const idx = mt ? mt.index : -1;
+      const m = lt.match(regex);
+      const idx = m ? m.index : -1;
       if (idx !== -1) { matchIndex = idx; matchedTerm = term; break; }
     }
     if (matchIndex !== -1) {
@@ -365,10 +365,8 @@ async function fetchAndSearch(items, query) {
       const regions = await fetchManifestRegions(item.object_location);
       const matches = findAllMatches(regions, query);
       if (!matches.length) return [];
-      // First match updates the item itself; additional matches become clones
       return matches.map((match, i) => {
         if (i === 0) { item._match = match; return item; }
-        // Clone the item for each additional match location
         return Object.assign({}, item, { _match: match, _clone: true });
       });
     })
@@ -376,16 +374,11 @@ async function fetchAndSearch(items, query) {
 
   if (expanded.length) {
     filteredItems = [...filteredItems, ...expanded];
-    buildFacets(filteredItems.filter(i => !i._clone).concat(filteredItems.filter(i => i._clone)));
+    buildFacets(filteredItems);
     sortAndRender();
-    const countArg = typeof initialQuery !== "undefined"
-      ? [query, filteredItems.length]
-      : [filteredItems.length];
-    if (countArg.length === 2) updateHeader(countArg[0], countArg[1]);
-    else updateHeader(countArg[0]);
+    updateHeader(filteredItems.length);
   }
 }
-
 // ── Header ────────────────────────────────────────────────────────────────────
 function updateHeader(query, count) {
   const qEl = document.getElementById("headerQuery");
