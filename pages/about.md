@@ -54,7 +54,7 @@ credits: true
   color: rgba(255,255,255,0.75);
   margin-bottom: 1rem;
   line-height: 1.5;
-  padding: 6rem;
+  padding: 2rem;
 }
 .btn-project-link {
   background: #477d49;
