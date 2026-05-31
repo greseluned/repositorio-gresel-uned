@@ -282,7 +282,7 @@
         <!-- Header selector -->
         <div class="hero-side-card">
           <h3>Explorar por cabecera</h3>
-          <input class="header-search-input" id="headerFilterInput" type="text" placeholder="Filtrar cabeceras...">
+          <h4>Selecciona una cabecera específica del desplegable para explorar todos sus artículos disponibles.</h4>
           <ul class="header-selector-list" id="headerSelectorList">
             {% assign meta = site.data[site.metadata] %}
             {% for coll in collections %}
@@ -303,6 +303,7 @@
         <!-- Decade chart -->
         <div class="hero-side-card">
           <h3>Distribución por décadas</h3>
+          <h4>Selecciona una década.</h4>
           <div class="decade-bars" id="decadeBars"></div>
         </div>
 
