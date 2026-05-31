@@ -50,10 +50,11 @@ credits: true
   text-align: center;
 }
 .about-image-caption p {
-  font-size: .82rem;
+  font-size: .85rem;
   color: rgba(255,255,255,0.75);
   margin-bottom: 1rem;
   line-height: 1.5;
+  padding: 6rem;
 }
 .btn-project-link {
   background: #477d49;
