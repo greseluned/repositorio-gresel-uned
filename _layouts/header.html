@@ -94,10 +94,20 @@ layout: default
 .search-within { margin-bottom: 1rem; }
 .search-within .form-control { font-size: 0.875rem; }
 #loadingOverlay { text-align: center; padding: 3rem; color: #888; }
+
+.results-header .query-badge {
+  background: #2f5d31;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
 </style>
 
 <div class="results-header">
   <h1>{{ page.title }}</h1>
+  <div id="headerQueryBadges" style="display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;"></div>
   <span id="headerCount" class="result-count-badge"></span>
 </div>
 
@@ -326,12 +336,21 @@ async function fetchAndSearch(items, query) {
 }
 
 // ── Header count ─────────────────────────────────────────────────────────────
-function updateHeader(query, count) {
-  const qEl = document.getElementById("headerQuery");
-  if (query) { qEl.textContent = query; qEl.style.display = ""; }
-  else { qEl.textContent = ""; qEl.style.display = "none"; }
+function updateHeader(count) {
+  const container = document.getElementById("headerQueryBadges");
+  if (container) {
+    container.innerHTML = "";
+    if (currentQuery) {
+      currentQuery.trim().split(/\s+/).filter(Boolean).forEach(token => {
+        const span = document.createElement("span");
+        span.className = "query-badge";
+        span.textContent = token;
+        container.appendChild(span);
+      });
+    }
+  }
   document.getElementById("headerCount").textContent =
-    count + (count === 1 ? " resultado" : " resultados");
+    count + (count === 1 ? " ejemplar" : " ejemplares");
 }
 
 // ── Sort & render ─────────────────────────────────────────────────────────────

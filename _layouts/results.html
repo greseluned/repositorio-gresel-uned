@@ -102,7 +102,7 @@ layout: page
 
 <div class="results-header">
   <h1>Resultados</h1>
-  <span id="headerQuery" class="query-badge" style="display:none"></span>
+  <div id="headerQueryBadges" style="display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;"></div>
   <span id="headerCount" style="color:#505860; font-size:1rem;"></span>
 </div>
 
@@ -379,9 +379,16 @@ async function fetchAndSearch(items, query) {
 
 // ── Header ────────────────────────────────────────────────────────────────────
 function updateHeader(query, count) {
-  const qEl = document.getElementById("headerQuery");
-  if (query) { qEl.textContent = query; qEl.style.display = ""; }
-  else { qEl.textContent = ""; qEl.style.display = "none"; }
+  const container = document.getElementById("headerQueryBadges");
+  container.innerHTML = "";
+  if (query) {
+    query.trim().split(/\s+/).filter(Boolean).forEach(token => {
+      const span = document.createElement("span");
+      span.className = "query-badge";
+      span.textContent = token;
+      container.appendChild(span);
+    });
+  }
   document.getElementById("headerCount").textContent =
     count + (count === 1 ? " resultado" : " resultados");
 }
