@@ -10,11 +10,11 @@ credits: true
   display: flex;
   gap: 0;
   align-items: stretch;
-  min-height: 520px;
+  min-height: 380px;
   margin-bottom: 3rem;
 }
 .about-image {
-  flex: 0 0 42%;
+  flex: 0 0 35%;
   position: relative;
   overflow: hidden;
 }
