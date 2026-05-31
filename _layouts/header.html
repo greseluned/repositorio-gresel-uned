@@ -1,11 +1,10 @@
----
-layout: default
----
 
+---
+layout: page
+---
 {% assign meta = site.data[site.metadata] %}
 {% assign items = meta | where: "header", page.title %}
 
-<div class="container my-4 px-1 py-2">
 <style>
 .results-header {
   background: #e9eedf;
@@ -40,7 +39,7 @@ layout: default
 .facet-list li label { cursor: pointer; color: #333; flex: 1; }
 .facet-list li label:hover { color: #4a8a37; }
 .facet-count { background: #e9ecef; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; color: #666; }
-.facet-count.active-count { background: #d8e8d4; color: #3a6b3c; font-weight: 700; }
+.facet-count.active-count { background: #4a8a37; color: #000; font-weight: 700; }
 .btn-clear { font-size: 0.8rem; color: #666; text-decoration: none; }
 .btn-clear:hover { color: #c00; }
 
@@ -75,7 +74,6 @@ layout: default
   margin-bottom: 0.75rem;
   background: #fff;
   transition: box-shadow 0.15s;
-  height: 95px;
 }
 .result-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .result-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
@@ -196,31 +194,36 @@ async function fetchManifestRegions(objectLocation) {
   } catch(e) { enrichedItems[objectLocation] = []; return []; }
 }
 
-// ── Find first matching region ────────────────────────────────────────────────
-function findMatch(regions, query) {
+// ── Find ALL matching regions ─────────────────────────────────────────────────
+function findAllMatches(regions, query) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const pattern = terms.map(t => "\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").join("|");
+  const highlightRe = new RegExp("(" + pattern + ")", "gi");
+  const matches = [];
   for (const entry of regions) {
     const text = entry.text;
     const lt   = text.toLowerCase();
     let matchIndex = -1, matchedTerm = "";
     for (const term of terms) {
       const regex = new RegExp("\\b" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
-      const match = lt.match(regex);
-      const idx = match ? match.index : -1;
+      const m = lt.match(regex);
+      const idx = m ? m.index : -1;
       if (idx !== -1) { matchIndex = idx; matchedTerm = term; break; }
     }
     if (matchIndex !== -1) {
       const start = Math.max(0, matchIndex - KWIC_WINDOW / 2);
       const end   = Math.min(text.length, matchIndex + matchedTerm.length + KWIC_WINDOW / 2);
       let snippet = (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
-      if (terms.length > 0) {
-        const pattern = terms.map(t => "\\b" + t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").join("|");
-        snippet = snippet.replace(new RegExp("(" + pattern + ")", "gi"), "<mark>$1</mark>");
-      }
-      return { page: entry.page, regionId: entry.regionId, snippet };
+      snippet = snippet.replace(highlightRe, "<mark>$1</mark>");
+      matches.push({ page: entry.page, regionId: entry.regionId, snippet });
     }
   }
-  return null;
+  return matches; // array, may be empty
+}
+// Keep findMatch as alias for title-match path
+function findMatch(regions, query) {
+  const all = findAllMatches(regions, query);
+  return all.length ? all[0] : null;
 }
 
 // ── Load index, filter to this header ────────────────────────────────────────
@@ -296,20 +299,29 @@ function applyFilters() {
 }
 
 async function fetchAndSearch(items, query) {
-  const results = (await Promise.all(
+  const expanded = (await Promise.all(
     items.map(async item => {
       const regions = await fetchManifestRegions(item.object_location);
-      const match   = findMatch(regions, query);
-      if (match) { item._match = match; return item; }
-      return null;
+      const matches = findAllMatches(regions, query);
+      if (!matches.length) return [];
+      // First match updates the item itself; additional matches become clones
+      return matches.map((match, i) => {
+        if (i === 0) { item._match = match; return item; }
+        // Clone the item for each additional match location
+        return Object.assign({}, item, { _match: match, _clone: true });
+      });
     })
-  )).filter(Boolean);
+  )).flat().filter(Boolean);
 
-  if (results.length) {
-    filteredItems = [...filteredItems, ...results];
-    buildFacets(filteredItems);
+  if (expanded.length) {
+    filteredItems = [...filteredItems, ...expanded];
+    buildFacets(filteredItems.filter(i => !i._clone).concat(filteredItems.filter(i => i._clone)));
     sortAndRender();
-    updateHeader(filteredItems.length);
+    const countArg = typeof initialQuery !== "undefined"
+      ? [query, filteredItems.length]
+      : [filteredItems.length];
+    if (countArg.length === 2) updateHeader(countArg[0], countArg[1]);
+    else updateHeader(countArg[0]);
   }
 }
 
@@ -481,4 +493,3 @@ document.getElementById("refineQuery").addEventListener("keydown", e => { if(e.k
 
 loadIndex();
 </script>
-</div>
