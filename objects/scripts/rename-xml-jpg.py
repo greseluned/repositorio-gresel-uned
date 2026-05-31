@@ -37,9 +37,12 @@ def extract_number(filename: str) -> int:
 
       1. Separator + p/page + digits:  _p001, -p001, _page001, 0001_p001
          (handles filenames like "0001_p001.xml" where the scan number comes first)
-      2. Standalone page marker:       P03, page-5, page_13
-         (handles "P01.xml", "page-3.xml")
-      3. Fallback: last run of digits in the stem
+      2. Standalone page marker:       P03, page-5, page_13, page1
+         (handles "P01.xml", "page-3.xml", "0078_1910_feb_8_page1.xml")
+      3. Leading digits before first underscore:  0007_image00307.jpg
+         (handles files where scan/page number is a leading zero-padded prefix
+          and the rest of the name carries no page information)
+      4. Fallback: last run of digits in the stem
          (handles bare "005.xml")
     """
     stem = Path(filename).stem
@@ -49,12 +52,18 @@ def extract_number(filename: str) -> int:
     if match:
         return int(match.group(1))
 
-    # 2. p-marker at start or after non-separator: P03, page-5, page_13
+    # 2. Standalone p/page marker anywhere in stem: P03, page-5, page1
     match = re.search(r"(?<![a-zA-Z])[Pp](?:age)?[-_]?(\d+)", stem)
     if match:
         return int(match.group(1))
 
-    # 3. Fallback: last run of digits in the stem
+    # 3. Leading digits before the first underscore: "0007_image00307" → 7
+    #    Only used when no page marker was found above.
+    match = re.match(r"^(\d+)_", stem)
+    if match:
+        return int(match.group(1))
+
+    # 4. Fallback: last run of digits in the stem
     matches = re.findall(r"\d+", stem)
     return int(matches[-1]) if matches else 0
 

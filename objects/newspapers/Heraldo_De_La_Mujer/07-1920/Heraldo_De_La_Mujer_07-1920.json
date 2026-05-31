@@ -1,0 +1,2849 @@
+{
+  "id": "Heraldo_De_La_Mujer_07-1920",
+  "pages": [
+    {
+      "page": 1,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/07-1920/images/Heraldo_De_La_Mujer_07-1920_P01.jpg",
+      "textRegions": [
+        {
+          "id": "tr_1761395411",
+          "type": "TextRegion",
+          "points": [
+            [
+              1468,
+              266
+            ],
+            [
+              2208,
+              266
+            ],
+            [
+              2208,
+              398
+            ],
+            [
+              1468,
+              398
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395411_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1558,
+                  325
+                ],
+                [
+                  1650,
+                  316
+                ],
+                [
+                  1785,
+                  319
+                ],
+                [
+                  1785,
+                  369
+                ],
+                [
+                  1650,
+                  366
+                ],
+                [
+                  1558,
+                  375
+                ]
+              ],
+              "text": "1920"
+            },
+            {
+              "id": "tr_1761395411_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1925,
+                  334
+                ],
+                [
+                  2125,
+                  331
+                ],
+                [
+                  2125,
+                  381
+                ],
+                [
+                  1925,
+                  384
+                ]
+              ],
+              "text": "Nº 30"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395409",
+          "type": "TextRegion",
+          "points": [
+            [
+              486,
+              617
+            ],
+            [
+              2080,
+              617
+            ],
+            [
+              2080,
+              840
+            ],
+            [
+              486,
+              840
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395409_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  534,
+                  740
+                ],
+                [
+                  1964,
+                  752
+                ],
+                [
+                  1964,
+                  802
+                ],
+                [
+                  534,
+                  790
+                ]
+              ],
+              "text": "Heraldo de la Mujer"
+            }
+          ]
+        },
+        {
+          "id": "r_3",
+          "type": "TextRegion",
+          "points": [
+            [
+              634,
+              1062
+            ],
+            [
+              890,
+              1062
+            ],
+            [
+              890,
+              1157
+            ],
+            [
+              634,
+              1157
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "r_3_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  659,
+                  1092
+                ],
+                [
+                  883,
+                  1095
+                ],
+                [
+                  883,
+                  1145
+                ],
+                [
+                  659,
+                  1142
+                ]
+              ],
+              "text": "Año 3."
+            }
+          ]
+        },
+        {
+          "id": "r_4",
+          "type": "TextRegion",
+          "points": [
+            [
+              1623,
+              1087
+            ],
+            [
+              1902,
+              1087
+            ],
+            [
+              1902,
+              1160
+            ],
+            [
+              1623,
+              1160
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "r_4_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1633,
+                  1101
+                ],
+                [
+                  1892,
+                  1092
+                ],
+                [
+                  1892,
+                  1142
+                ],
+                [
+                  1633,
+                  1151
+                ]
+              ],
+              "text": "Núm. 30"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395412",
+          "type": "TextRegion",
+          "points": [
+            [
+              636,
+              1561
+            ],
+            [
+              1907,
+              1561
+            ],
+            [
+              1907,
+              1709
+            ],
+            [
+              636,
+              1709
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395412_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  776,
+                  1608
+                ],
+                [
+                  1770,
+                  1617
+                ],
+                [
+                  1770,
+                  1667
+                ],
+                [
+                  776,
+                  1658
+                ]
+              ],
+              "text": "A LAS MUJERES PUERTORRIQUEÑAS"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395410",
+          "type": "TextRegion",
+          "points": [
+            [
+              608,
+              1677
+            ],
+            [
+              1963,
+              1677
+            ],
+            [
+              1963,
+              2405
+            ],
+            [
+              608,
+              2405
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395410_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  761,
+                  1761
+                ],
+                [
+                  1919,
+                  1770
+                ],
+                [
+                  1919,
+                  1820
+                ],
+                [
+                  1836,
+                  1823
+                ],
+                [
+                  761,
+                  1811
+                ]
+              ],
+              "text": "Dentro de unos meses se reunirá la Legislatura, y debemos"
+            },
+            {
+              "id": "tr_1761395410_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  638,
+                  1832
+                ],
+                [
+                  1919,
+                  1835
+                ],
+                [
+                  1892,
+                  1888
+                ],
+                [
+                  638,
+                  1882
+                ]
+              ],
+              "text": "pedir por tercera vez se nos haga justicia, concediéndonos EL DERE¬"
+            },
+            {
+              "id": "tr_1761395410_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  629,
+                  1892
+                ],
+                [
+                  1713,
+                  1901
+                ],
+                [
+                  1713,
+                  1951
+                ],
+                [
+                  629,
+                  1942
+                ]
+              ],
+              "text": "CHO DEL SURAGIO, como seres pensantes que somos."
+            },
+            {
+              "id": "tr_1761395410_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  773,
+                  1961
+                ],
+                [
+                  1922,
+                  1964
+                ],
+                [
+                  1922,
+                  2014
+                ],
+                [
+                  1892,
+                  2020
+                ],
+                [
+                  773,
+                  2011
+                ]
+              ],
+              "text": "Ya en nuestra Metropoli se ha aprobado la enmienda a la Cons¬"
+            },
+            {
+              "id": "tr_1761395410_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  626,
+                  2023
+                ],
+                [
+                  1361,
+                  2035
+                ],
+                [
+                  1361,
+                  2085
+                ],
+                [
+                  626,
+                  2073
+                ]
+              ],
+              "text": "titución concediendo el voto femenino."
+            },
+            {
+              "id": "tr_1761395410_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  767,
+                  2089
+                ],
+                [
+                  1916,
+                  2098
+                ],
+                [
+                  1916,
+                  2148
+                ],
+                [
+                  1886,
+                  2151
+                ],
+                [
+                  767,
+                  2139
+                ]
+              ],
+              "text": "Puerto Rico es la única de las dependencias de los Estados Uni¬"
+            },
+            {
+              "id": "tr_1761395410_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  626,
+                  2155
+                ],
+                [
+                  1913,
+                  2170
+                ],
+                [
+                  1913,
+                  2220
+                ],
+                [
+                  626,
+                  2205
+                ]
+              ],
+              "text": "dos, en que la mujer carece del derecho del voto, y eso es ridículo y"
+            },
+            {
+              "id": "tr_1761395410_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  626,
+                  2224
+                ],
+                [
+                  1922,
+                  2229
+                ],
+                [
+                  1922,
+                  2279
+                ],
+                [
+                  1880,
+                  2282
+                ],
+                [
+                  626,
+                  2274
+                ]
+              ],
+              "text": "deprimente para nuestra isla, que puede, por su cultura, marchar al"
+            },
+            {
+              "id": "tr_1761395410_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  629,
+                  2292
+                ],
+                [
+                  1886,
+                  2298
+                ],
+                [
+                  1886,
+                  2348
+                ],
+                [
+                  629,
+                  2342
+                ]
+              ],
+              "text": "nivel de su Metropoli y de los demás pueblos civilizados del mundo."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395413",
+          "type": "TextRegion",
+          "points": [
+            [
+              773,
+              2834
+            ],
+            [
+              1754,
+              2834
+            ],
+            [
+              1754,
+              2943
+            ],
+            [
+              773,
+              2943
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395413_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  883,
+                  2824
+                ],
+                [
+                  1680,
+                  2827
+                ],
+                [
+                  1680,
+                  2877
+                ],
+                [
+                  1645,
+                  2880
+                ],
+                [
+                  883,
+                  2874
+                ]
+              ],
+              "text": "COMPAÑIA TIPOGRAFICA \"EL COMPAS\", CRISTO 6"
+            },
+            {
+              "id": "tr_1761395413_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1089,
+                  2868
+                ],
+                [
+                  1468,
+                  2868
+                ],
+                [
+                  1468,
+                  2918
+                ],
+                [
+                  1447,
+                  2921
+                ],
+                [
+                  1089,
+                  2918
+                ]
+              ],
+              "text": "San Juan, Puerto Rico"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395414",
+          "type": "TextRegion",
+          "points": [
+            [
+              976,
+              3106
+            ],
+            [
+              1526,
+              3106
+            ],
+            [
+              1526,
+              3192
+            ],
+            [
+              976,
+              3192
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395414_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1059,
+                  3116
+                ],
+                [
+                  1456,
+                  3113
+                ],
+                [
+                  1456,
+                  3163
+                ],
+                [
+                  1059,
+                  3166
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "width": 2479,
+      "height": 3508,
+      "image": "objects/newspapers/Heraldo_De_La_Mujer/07-1920/images/Heraldo_De_La_Mujer_07-1920_P17.jpg",
+      "textRegions": [
+        {
+          "id": "tr_1761395406",
+          "type": "TextRegion",
+          "points": [
+            [
+              453,
+              435
+            ],
+            [
+              2142,
+              435
+            ],
+            [
+              2142,
+              526
+            ],
+            [
+              453,
+              526
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395406_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  994,
+                  459
+                ],
+                [
+                  1492,
+                  456
+                ],
+                [
+                  1492,
+                  506
+                ],
+                [
+                  994,
+                  509
+                ]
+              ],
+              "text": "HERALDO DE LA MUJER"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395402",
+          "type": "TextRegion",
+          "points": [
+            [
+              836,
+              440
+            ],
+            [
+              1738,
+              440
+            ],
+            [
+              1738,
+              520
+            ],
+            [
+              836,
+              520
+            ]
+          ],
+          "text": "",
+          "textLines": []
+        },
+        {
+          "id": "tr_1761395409",
+          "type": "TextRegion",
+          "points": [
+            [
+              1724,
+              434
+            ],
+            [
+              2119,
+              434
+            ],
+            [
+              2119,
+              526
+            ],
+            [
+              1724,
+              526
+            ]
+          ],
+          "text": "",
+          "textLines": []
+        },
+        {
+          "id": "tr_1761395397",
+          "type": "TextRegion",
+          "points": [
+            [
+              296,
+              597
+            ],
+            [
+              1267,
+              597
+            ],
+            [
+              1267,
+              2352
+            ],
+            [
+              296,
+              2352
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395397_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  412,
+                  638
+                ],
+                [
+                  1224,
+                  644
+                ],
+                [
+                  1224,
+                  694
+                ],
+                [
+                  412,
+                  688
+                ]
+              ],
+              "text": "Mas, una cosa nada más espero del caballero. Res¬"
+            },
+            {
+              "id": "tr_1761395397_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  686
+                ],
+                [
+                  776,
+                  689
+                ],
+                [
+                  776,
+                  739
+                ],
+                [
+                  340,
+                  736
+                ]
+              ],
+              "text": "pondame con entera lentad."
+            },
+            {
+              "id": "tr_1761395397_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  734
+                ],
+                [
+                  797,
+                  731
+                ],
+                [
+                  797,
+                  781
+                ],
+                [
+                  417,
+                  784
+                ]
+              ],
+              "text": "Ana V. Más sora:"
+            },
+            {
+              "id": "tr_1761395397_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  444,
+                  773
+                ],
+                [
+                  1224,
+                  779
+                ],
+                [
+                  1224,
+                  829
+                ],
+                [
+                  1206,
+                  831
+                ],
+                [
+                  444,
+                  823
+                ]
+              ],
+              "text": "No va V. a comprenderme frma, porque vás las"
+            },
+            {
+              "id": "tr_1761395397_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  817
+                ],
+                [
+                  1218,
+                  826
+                ],
+                [
+                  1218,
+                  876
+                ],
+                [
+                  343,
+                  867
+                ]
+              ],
+              "text": "mujeres sienten el amor de un modo distinto que moso¬"
+            },
+            {
+              "id": "tr_1761395397_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  346,
+                  862
+                ],
+                [
+                  426,
+                  865
+                ],
+                [
+                  426,
+                  915
+                ],
+                [
+                  346,
+                  912
+                ]
+              ],
+              "text": "tos."
+            },
+            {
+              "id": "tr_1761395397_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  414,
+                  910
+                ],
+                [
+                  1224,
+                  916
+                ],
+                [
+                  1224,
+                  966
+                ],
+                [
+                  414,
+                  960
+                ]
+              ],
+              "text": "Sí, la amo, con un amor tranquilo y bendito que me¬"
+            },
+            {
+              "id": "tr_1761395397_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  952
+                ],
+                [
+                  1227,
+                  958
+                ],
+                [
+                  1227,
+                  1008
+                ],
+                [
+                  340,
+                  1002
+                ]
+              ],
+              "text": "inspira la bondad de su corazón sencillo, y la admiración"
+            },
+            {
+              "id": "tr_1761395397_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  346,
+                  996
+                ],
+                [
+                  1221,
+                  1005
+                ],
+                [
+                  1221,
+                  1055
+                ],
+                [
+                  346,
+                  1046
+                ]
+              ],
+              "text": "de en enturada inteligencia pues Lilian es sumamente"
+            },
+            {
+              "id": "tr_1761395397_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1041
+                ],
+                [
+                  1224,
+                  1050
+                ],
+                [
+                  1224,
+                  1100
+                ],
+                [
+                  340,
+                  1091
+                ]
+              ],
+              "text": "ilustrada, a leer de sus venicatro años Es ductora"
+            },
+            {
+              "id": "tr_1761395397_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1086
+                ],
+                [
+                  1212,
+                  1092
+                ],
+                [
+                  1212,
+                  1142
+                ],
+                [
+                  1191,
+                  1145
+                ],
+                [
+                  340,
+                  1136
+                ]
+              ],
+              "text": "en ciencias es nuta y en medio de esa educación me¬"
+            },
+            {
+              "id": "tr_1761395397_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1131
+                ],
+                [
+                  1221,
+                  1137
+                ],
+                [
+                  1221,
+                  1187
+                ],
+                [
+                  1191,
+                  1190
+                ],
+                [
+                  340,
+                  1181
+                ]
+              ],
+              "text": "riema desenvuelta, que adquiere al la mujer, es tan"
+            },
+            {
+              "id": "tr_1761395397_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1173
+                ],
+                [
+                  931,
+                  1185
+                ],
+                [
+                  931,
+                  1235
+                ],
+                [
+                  340,
+                  1223
+                ]
+              ],
+              "text": "ensible y gradora como ina larna."
+            },
+            {
+              "id": "tr_1761395397_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  432,
+                  1220
+                ],
+                [
+                  1221,
+                  1229
+                ],
+                [
+                  1221,
+                  1279
+                ],
+                [
+                  432,
+                  1270
+                ]
+              ],
+              "text": "Lico.—dijo la vida, apartinose de el con"
+            },
+            {
+              "id": "tr_1761395397_tl_15",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  1268
+                ],
+                [
+                  1152,
+                  1271
+                ],
+                [
+                  1152,
+                  1321
+                ],
+                [
+                  343,
+                  1318
+                ]
+              ],
+              "text": "desecho hogo. nunca me la amado ba mi¬"
+            },
+            {
+              "id": "tr_1761395397_tl_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1313
+                ],
+                [
+                  1227,
+                  1316
+                ],
+                [
+                  1227,
+                  1366
+                ],
+                [
+                  420,
+                  1363
+                ]
+              ],
+              "text": "con ima La mo a ba en locura a es"
+            },
+            {
+              "id": "tr_1761395397_tl_17",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1355
+                ],
+                [
+                  1218,
+                  1361
+                ],
+                [
+                  1218,
+                  1411
+                ],
+                [
+                  340,
+                  1405
+                ]
+              ],
+              "text": "ni pasión a la mujer que me he estremecer que"
+            },
+            {
+              "id": "tr_1761395397_tl_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  1399
+                ],
+                [
+                  1212,
+                  1408
+                ],
+                [
+                  1212,
+                  1458
+                ],
+                [
+                  343,
+                  1449
+                ]
+              ],
+              "text": "miner todos los mbras de mi en que me entonce."
+            },
+            {
+              "id": "tr_1761395397_tl_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1447
+                ],
+                [
+                  853,
+                  1447
+                ],
+                [
+                  853,
+                  1497
+                ],
+                [
+                  832,
+                  1500
+                ],
+                [
+                  340,
+                  1497
+                ]
+              ],
+              "text": "me me arrebata, hasta el derrio"
+            },
+            {
+              "id": "tr_1761395397_tl_20",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1492
+                ],
+                [
+                  1218,
+                  1492
+                ],
+                [
+                  1218,
+                  1542
+                ],
+                [
+                  1182,
+                  1545
+                ],
+                [
+                  420,
+                  1542
+                ]
+              ],
+              "text": "Y apoderándose otra vez de su bello rostro. se"
+            },
+            {
+              "id": "tr_1761395397_tl_21",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  1534
+                ],
+                [
+                  1095,
+                  1543
+                ],
+                [
+                  1095,
+                  1593
+                ],
+                [
+                  343,
+                  1584
+                ]
+              ],
+              "text": "mieron sus labios en un beso largo. lago."
+            },
+            {
+              "id": "tr_1761395397_tl_22",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  1582
+                ],
+                [
+                  1212,
+                  1585
+                ],
+                [
+                  1212,
+                  1635
+                ],
+                [
+                  420,
+                  1632
+                ]
+              ],
+              "text": "Cuando despertaron de es sueño de amor las son¬"
+            },
+            {
+              "id": "tr_1761395397_tl_23",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1626
+                ],
+                [
+                  1212,
+                  1629
+                ],
+                [
+                  1212,
+                  1679
+                ],
+                [
+                  1191,
+                  1682
+                ],
+                [
+                  340,
+                  1676
+                ]
+              ],
+              "text": "bras de la noche entan sobre la naturaleza, y se on el"
+            },
+            {
+              "id": "tr_1761395397_tl_24",
+              "type": "TextLine",
+              "points": [
+                [
+                  349,
+                  1677
+                ],
+                [
+                  1212,
+                  1677
+                ],
+                [
+                  1212,
+                  1727
+                ],
+                [
+                  349,
+                  1727
+                ]
+              ],
+              "text": "alonar del caballo de Lempoido que venta de en trabajo¬"
+            },
+            {
+              "id": "tr_1761395397_tl_25",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  1716
+                ],
+                [
+                  1224,
+                  1719
+                ],
+                [
+                  1224,
+                  1769
+                ],
+                [
+                  417,
+                  1766
+                ]
+              ],
+              "text": "precio es separamos lma vo para olvidaria á"
+            },
+            {
+              "id": "tr_1761395397_tl_26",
+              "type": "TextLine",
+              "points": [
+                [
+                  352,
+                  1758
+                ],
+                [
+                  1221,
+                  1764
+                ],
+                [
+                  1221,
+                  1814
+                ],
+                [
+                  352,
+                  1808
+                ]
+              ],
+              "text": "La parto para princia dentro de dos nos venando mas"
+            },
+            {
+              "id": "tr_1761395397_tl_27",
+              "type": "TextLine",
+              "points": [
+                [
+                  346,
+                  1806
+                ],
+                [
+                  1221,
+                  1809
+                ],
+                [
+                  1221,
+                  1859
+                ],
+                [
+                  346,
+                  1856
+                ]
+              ],
+              "text": "nervios se havan calmado, y esta masión se entible con la"
+            },
+            {
+              "id": "tr_1761395397_tl_28",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1850
+                ],
+                [
+                  1215,
+                  1847
+                ],
+                [
+                  1215,
+                  1897
+                ],
+                [
+                  1170,
+                  1900
+                ],
+                [
+                  340,
+                  1900
+                ]
+              ],
+              "text": "ustencia, je Nura el val me demente en la"
+            },
+            {
+              "id": "tr_1761395397_tl_29",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  1895
+                ],
+                [
+                  1215,
+                  1892
+                ],
+                [
+                  1215,
+                  1942
+                ],
+                [
+                  1170,
+                  1945
+                ],
+                [
+                  340,
+                  1945
+                ]
+              ],
+              "text": "ran la que ero me hara el pues las dotes de su inge¬"
+            },
+            {
+              "id": "tr_1761395397_tl_30",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  1940
+                ],
+                [
+                  880,
+                  1943
+                ],
+                [
+                  880,
+                  1993
+                ],
+                [
+                  343,
+                  1990
+                ]
+              ],
+              "text": "no supirin el fuero del coran¬"
+            },
+            {
+              "id": "tr_1761395397_tl_31",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  1991
+                ],
+                [
+                  1185,
+                  1991
+                ],
+                [
+                  1179,
+                  2044
+                ],
+                [
+                  417,
+                  2041
+                ]
+              ],
+              "text": "Olvideme de también, Irma, y procurre ser feliz."
+            },
+            {
+              "id": "tr_1761395397_tl_32",
+              "type": "TextLine",
+              "points": [
+                [
+                  441,
+                  2035
+                ],
+                [
+                  1221,
+                  2032
+                ],
+                [
+                  1221,
+                  2082
+                ],
+                [
+                  1176,
+                  2088
+                ],
+                [
+                  441,
+                  2085
+                ]
+              ],
+              "text": "con pue tores dijo la buscamente he¬"
+            },
+            {
+              "id": "tr_1761395397_tl_33",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  2083
+                ],
+                [
+                  1089,
+                  2086
+                ],
+                [
+                  1089,
+                  2136
+                ],
+                [
+                  343,
+                  2133
+                ]
+              ],
+              "text": "nandos en la alamela que conducta á su hogar."
+            },
+            {
+              "id": "tr_1761395397_tl_34",
+              "type": "TextLine",
+              "points": [
+                [
+                  420,
+                  2134
+                ],
+                [
+                  1221,
+                  2134
+                ],
+                [
+                  1221,
+                  2184
+                ],
+                [
+                  420,
+                  2184
+                ]
+              ],
+              "text": "miliam la vió marchar tranquilamente al parecer."
+            },
+            {
+              "id": "tr_1761395397_tl_35",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  2176
+                ],
+                [
+                  1215,
+                  2176
+                ],
+                [
+                  1215,
+                  2226
+                ],
+                [
+                  1191,
+                  2229
+                ],
+                [
+                  340,
+                  2226
+                ]
+              ],
+              "text": "enciéndose de hombros volvise a la Mumnia a pie¬"
+            },
+            {
+              "id": "tr_1761395397_tl_36",
+              "type": "TextLine",
+              "points": [
+                [
+                  343,
+                  2224
+                ],
+                [
+                  647,
+                  2224
+                ],
+                [
+                  647,
+                  2274
+                ],
+                [
+                  343,
+                  2274
+                ]
+              ],
+              "text": "como había venido."
+            },
+            {
+              "id": "tr_1761395397_tl_37",
+              "type": "TextLine",
+              "points": [
+                [
+                  417,
+                  2268
+                ],
+                [
+                  901,
+                  2268
+                ],
+                [
+                  901,
+                  2318
+                ],
+                [
+                  417,
+                  2318
+                ]
+              ],
+              "text": "Mas, triste y pesaroso se decía;"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395407",
+          "type": "TextRegion",
+          "points": [
+            [
+              1233,
+              554
+            ],
+            [
+              2195,
+              554
+            ],
+            [
+              2195,
+              702
+            ],
+            [
+              1233,
+              702
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395407_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  340,
+                  546
+                ],
+                [
+                  2128,
+                  555
+                ],
+                [
+                  2128,
+                  605
+                ],
+                [
+                  2051,
+                  611
+                ],
+                [
+                  340,
+                  596
+                ]
+              ],
+              "text": "Sea U. feliz, y quede el dolor y las lágrimas sólo para sario tener juicio y pensar, que no es esta la mujer a pro¬"
+            },
+            {
+              "id": "tr_1761395407_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  602
+                ],
+                [
+                  2137,
+                  605
+                ],
+                [
+                  2137,
+                  655
+                ],
+                [
+                  1262,
+                  652
+                ]
+              ],
+              "text": "peto para compartir mi vida, ni para educar mañana a"
+            },
+            {
+              "id": "tr_1761395407_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1253,
+                  644
+                ],
+                [
+                  1418,
+                  647
+                ],
+                [
+                  1418,
+                  697
+                ],
+                [
+                  1253,
+                  694
+                ]
+              ],
+              "text": "mis hijos."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395408",
+          "type": "TextRegion",
+          "points": [
+            [
+              1241,
+              535
+            ],
+            [
+              2177,
+              535
+            ],
+            [
+              2177,
+              767
+            ],
+            [
+              1241,
+              767
+            ]
+          ],
+          "text": "",
+          "textLines": []
+        },
+        {
+          "id": "tr_1761395405",
+          "type": "TextRegion",
+          "points": [
+            [
+              1232,
+              835
+            ],
+            [
+              2108,
+              835
+            ],
+            [
+              2108,
+              917
+            ],
+            [
+              1232,
+              917
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395405_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1256,
+                  844
+                ],
+                [
+                  1943,
+                  841
+                ],
+                [
+                  1943,
+                  891
+                ],
+                [
+                  1256,
+                  894
+                ]
+              ],
+              "text": "SUSCRIBASE Y ANUNCIESE EN"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395404",
+          "type": "TextRegion",
+          "points": [
+            [
+              1275,
+              900
+            ],
+            [
+              2179,
+              900
+            ],
+            [
+              2179,
+              989
+            ],
+            [
+              1275,
+              989
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395404_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1504,
+                  904
+                ],
+                [
+                  2116,
+                  910
+                ],
+                [
+                  2116,
+                  960
+                ],
+                [
+                  1504,
+                  954
+                ]
+              ],
+              "text": "HERALDO DE LA MUJER"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395400",
+          "type": "TextRegion",
+          "points": [
+            [
+              1252,
+              988
+            ],
+            [
+              2187,
+              988
+            ],
+            [
+              2187,
+              1305
+            ],
+            [
+              1252,
+              1305
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395400_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1358,
+                  1014
+                ],
+                [
+                  2134,
+                  1017
+                ],
+                [
+                  2134,
+                  1067
+                ],
+                [
+                  1358,
+                  1064
+                ]
+              ],
+              "text": "Todo puertorriqueño que ame su patria,"
+            },
+            {
+              "id": "tr_1761395400_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  1053
+                ],
+                [
+                  2134,
+                  1059
+                ],
+                [
+                  2134,
+                  1109
+                ],
+                [
+                  2113,
+                  1112
+                ],
+                [
+                  1262,
+                  1103
+                ]
+              ],
+              "text": "debe ayudar a las mujeres que honran a su país"
+            },
+            {
+              "id": "tr_1761395400_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1265,
+                  1101
+                ],
+                [
+                  2134,
+                  1107
+                ],
+                [
+                  2134,
+                  1157
+                ],
+                [
+                  1265,
+                  1151
+                ]
+              ],
+              "text": "demostrando su cultura y la de su tierra. Al"
+            },
+            {
+              "id": "tr_1761395400_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1259,
+                  1149
+                ],
+                [
+                  2131,
+                  1155
+                ],
+                [
+                  2131,
+                  1205
+                ],
+                [
+                  1259,
+                  1199
+                ]
+              ],
+              "text": "donde la mujer se ocupa de cosas del espiritu¬"
+            },
+            {
+              "id": "tr_1761395400_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  1193
+                ],
+                [
+                  1749,
+                  1193
+                ],
+                [
+                  1749,
+                  1243
+                ],
+                [
+                  1262,
+                  1243
+                ]
+              ],
+              "text": "al hay progreso positivo,"
+            },
+            {
+              "id": "tr_1761395400_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1301,
+                  1250
+                ],
+                [
+                  2006,
+                  1247
+                ],
+                [
+                  2006,
+                  1297
+                ],
+                [
+                  1301,
+                  1300
+                ]
+              ],
+              "text": "No nos ayudará Ud? Subscribase."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395410",
+          "type": "TextRegion",
+          "points": [
+            [
+              1252,
+              1248
+            ],
+            [
+              2131,
+              1248
+            ],
+            [
+              2131,
+              1312
+            ],
+            [
+              1252,
+              1312
+            ]
+          ],
+          "text": "",
+          "textLines": []
+        },
+        {
+          "id": "tr_1761395399",
+          "type": "TextRegion",
+          "points": [
+            [
+              1270,
+              1331
+            ],
+            [
+              2170,
+              1331
+            ],
+            [
+              2170,
+              1420
+            ],
+            [
+              1270,
+              1420
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395399_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1301,
+                  1340
+                ],
+                [
+                  2092,
+                  1340
+                ],
+                [
+                  2092,
+                  1390
+                ],
+                [
+                  1301,
+                  1390
+                ]
+              ],
+              "text": "MEDITACIONES DE AMADO NERVO"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395398",
+          "type": "TextRegion",
+          "points": [
+            [
+              1245,
+              1442
+            ],
+            [
+              2231,
+              1442
+            ],
+            [
+              2231,
+              2378
+            ],
+            [
+              1245,
+              2378
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395398_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1444
+                ],
+                [
+                  2063,
+                  1453
+                ],
+                [
+                  2063,
+                  1503
+                ],
+                [
+                  1331,
+                  1494
+                ]
+              ],
+              "text": "En cuanto caiga la noche, enciende tu lámpara."
+            },
+            {
+              "id": "tr_1761395398_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1501
+                ],
+                [
+                  2134,
+                  1501
+                ],
+                [
+                  2134,
+                  1551
+                ],
+                [
+                  2092,
+                  1554
+                ],
+                [
+                  1331,
+                  1551
+                ]
+              ],
+              "text": "No permanezcas en la oscuridad. Enciende cuida¬"
+            },
+            {
+              "id": "tr_1761395398_tl_3",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  1546
+                ],
+                [
+                  1621,
+                  1546
+                ],
+                [
+                  1621,
+                  1596
+                ],
+                [
+                  1262,
+                  1596
+                ]
+              ],
+              "text": "dosamente tu lámpara."
+            },
+            {
+              "id": "tr_1761395398_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1594
+                ],
+                [
+                  2137,
+                  1597
+                ],
+                [
+                  2137,
+                  1647
+                ],
+                [
+                  1337,
+                  1644
+                ]
+              ],
+              "text": "El viajero que pase, dirá: cuanto reposo deberá"
+            },
+            {
+              "id": "tr_1761395398_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  1259,
+                  1638
+                ],
+                [
+                  1851,
+                  1644
+                ],
+                [
+                  1851,
+                  1694
+                ],
+                [
+                  1259,
+                  1688
+                ]
+              ],
+              "text": "haber cerca de esa luz, y enta par."
+            },
+            {
+              "id": "tr_1761395398_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1337,
+                  1689
+                ],
+                [
+                  2140,
+                  1695
+                ],
+                [
+                  2140,
+                  1745
+                ],
+                [
+                  1337,
+                  1739
+                ]
+              ],
+              "text": "La mujer solitaria que la distingue de lejos, pensará"
+            },
+            {
+              "id": "tr_1761395398_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  1725
+                ],
+                [
+                  2128,
+                  1734
+                ],
+                [
+                  2113,
+                  1787
+                ],
+                [
+                  1262,
+                  1775
+                ]
+              ],
+              "text": "un del anuar el amor los que se quieren son bana¬"
+            },
+            {
+              "id": "tr_1761395398_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  1776
+                ],
+                [
+                  1785,
+                  1782
+                ],
+                [
+                  1785,
+                  1832
+                ],
+                [
+                  1262,
+                  1826
+                ]
+              ],
+              "text": "los por el mismo fulgor blando."
+            },
+            {
+              "id": "tr_1761395398_tl_9",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1832
+                ],
+                [
+                  2131,
+                  1829
+                ],
+                [
+                  2131,
+                  1879
+                ],
+                [
+                  2086,
+                  1882
+                ],
+                [
+                  1331,
+                  1882
+                ]
+              ],
+              "text": "El niño que la contemple, exclamara: tal vez hay"
+            },
+            {
+              "id": "tr_1761395398_tl_10",
+              "type": "TextLine",
+              "points": [
+                [
+                  1265,
+                  1877
+                ],
+                [
+                  2137,
+                  1877
+                ],
+                [
+                  2137,
+                  1927
+                ],
+                [
+                  2116,
+                  1930
+                ],
+                [
+                  1265,
+                  1927
+                ]
+              ],
+              "text": "niños en redor de la mesa y len bellos cuentos y mira"
+            },
+            {
+              "id": "tr_1761395398_tl_11",
+              "type": "TextLine",
+              "points": [
+                [
+                  1253,
+                  1922
+                ],
+                [
+                  1639,
+                  1925
+                ],
+                [
+                  1639,
+                  1975
+                ],
+                [
+                  1253,
+                  1972
+                ]
+              ],
+              "text": "maravillosas estampas."
+            },
+            {
+              "id": "tr_1761395398_tl_12",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  1976
+                ],
+                [
+                  2137,
+                  1979
+                ],
+                [
+                  2137,
+                  2029
+                ],
+                [
+                  1331,
+                  2026
+                ]
+              ],
+              "text": "El ladrón furtivo murmura con recelo: allí vive un"
+            },
+            {
+              "id": "tr_1761395398_tl_13",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  2023
+                ],
+                [
+                  2128,
+                  2023
+                ],
+                [
+                  2113,
+                  2076
+                ],
+                [
+                  1262,
+                  2073
+                ]
+              ],
+              "text": "hombre prevenido á quien no se puede alacar a man¬"
+            },
+            {
+              "id": "tr_1761395398_tl_14",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  2071
+                ],
+                [
+                  1367,
+                  2071
+                ],
+                [
+                  1367,
+                  2121
+                ],
+                [
+                  1262,
+                  2121
+                ]
+              ],
+              "text": "salva."
+            },
+            {
+              "id": "tr_1761395398_tl_15",
+              "type": "TextLine",
+              "points": [
+                [
+                  1331,
+                  2119
+                ],
+                [
+                  2131,
+                  2119
+                ],
+                [
+                  2131,
+                  2169
+                ],
+                [
+                  2092,
+                  2172
+                ],
+                [
+                  1331,
+                  2169
+                ]
+              ],
+              "text": "Muchos, al internarse en la selva, se sentirán con¬"
+            },
+            {
+              "id": "tr_1761395398_tl_16",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  2167
+                ],
+                [
+                  1573,
+                  2164
+                ],
+                [
+                  1573,
+                  2214
+                ],
+                [
+                  1262,
+                  2217
+                ]
+              ],
+              "text": "fortados por tu luz."
+            },
+            {
+              "id": "tr_1761395398_tl_17",
+              "type": "TextLine",
+              "points": [
+                [
+                  1334,
+                  2215
+                ],
+                [
+                  2137,
+                  2215
+                ],
+                [
+                  2137,
+                  2265
+                ],
+                [
+                  2095,
+                  2268
+                ],
+                [
+                  1334,
+                  2265
+                ]
+              ],
+              "text": "En verdad te digo que es misericordioso, a las pri¬"
+            },
+            {
+              "id": "tr_1761395398_tl_18",
+              "type": "TextLine",
+              "points": [
+                [
+                  1262,
+                  2265
+                ],
+                [
+                  2125,
+                  2259
+                ],
+                [
+                  2125,
+                  2309
+                ],
+                [
+                  2080,
+                  2312
+                ],
+                [
+                  1262,
+                  2315
+                ]
+              ],
+              "text": "meras sombras, encener nuestra lámpara de que el pa¬"
+            },
+            {
+              "id": "tr_1761395398_tl_19",
+              "type": "TextLine",
+              "points": [
+                [
+                  441,
+                  2319
+                ],
+                [
+                  1889,
+                  2307
+                ],
+                [
+                  1889,
+                  2357
+                ],
+                [
+                  441,
+                  2369
+                ]
+              ],
+              "text": "pobre lima me ama con pasión, pero es necer de ha provisto al caminante en la vida."
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395401",
+          "type": "TextRegion",
+          "points": [
+            [
+              992,
+              3151
+            ],
+            [
+              1505,
+              3151
+            ],
+            [
+              1505,
+              3234
+            ],
+            [
+              992,
+              3234
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395401_tl_1",
+              "type": "TextLine",
+              "points": [
+                [
+                  1035,
+                  3167
+                ],
+                [
+                  1453,
+                  3164
+                ],
+                [
+                  1453,
+                  3214
+                ],
+                [
+                  1035,
+                  3217
+                ]
+              ],
+              "text": "Ayuntamiento de Madrid"
+            }
+          ]
+        },
+        {
+          "id": "tr_1761395403",
+          "type": "TextRegion",
+          "points": [
+            [
+              352,
+              2471
+            ],
+            [
+              2143,
+              2471
+            ],
+            [
+              2143,
+              3078
+            ],
+            [
+              352,
+              3078
+            ]
+          ],
+          "text": "",
+          "textLines": [
+            {
+              "id": "tr_1761395403_tl_2",
+              "type": "TextLine",
+              "points": [
+                [
+                  374,
+                  2518
+                ],
+                [
+                  2121,
+                  2514
+                ],
+                [
+                  2121,
+                  2564
+                ],
+                [
+                  374,
+                  2568
+                ]
+              ],
+              "text": "Lo mas necesario para su Hogar"
+            },
+            {
+              "id": "tr_1761395403_tl_4",
+              "type": "TextLine",
+              "points": [
+                [
+                  558,
+                  2656
+                ],
+                [
+                  1922,
+                  2653
+                ],
+                [
+                  1922,
+                  2703
+                ],
+                [
+                  558,
+                  2706
+                ]
+              ],
+              "text": "Es un buen equino de cocina¬"
+            },
+            {
+              "id": "tr_1761395403_tl_5",
+              "type": "TextLine",
+              "points": [
+                [
+                  406,
+                  2773
+                ],
+                [
+                  2095,
+                  2764
+                ],
+                [
+                  2095,
+                  2814
+                ],
+                [
+                  2051,
+                  2817
+                ],
+                [
+                  406,
+                  2823
+                ]
+              ],
+              "text": "Nosotros le ofrecemos lo más Moderno en este Ramo."
+            },
+            {
+              "id": "tr_1761395403_tl_6",
+              "type": "TextLine",
+              "points": [
+                [
+                  1038,
+                  2883
+                ],
+                [
+                  1468,
+                  2886
+                ],
+                [
+                  1468,
+                  2936
+                ],
+                [
+                  1038,
+                  2933
+                ]
+              ],
+              "text": "VISIENOS"
+            },
+            {
+              "id": "tr_1761395403_tl_7",
+              "type": "TextLine",
+              "points": [
+                [
+                  1483,
+                  2991
+                ],
+                [
+                  1898,
+                  2991
+                ],
+                [
+                  1898,
+                  3041
+                ],
+                [
+                  1483,
+                  3041
+                ]
+              ],
+              "text": "LILA"
+            },
+            {
+              "id": "tr_1761395403_tl_8",
+              "type": "TextLine",
+              "points": [
+                [
+                  510,
+                  3003
+                ],
+                [
+                  1301,
+                  2997
+                ],
+                [
+                  1301,
+                  3047
+                ],
+                [
+                  510,
+                  3053
+                ]
+              ],
+              "text": "RERRTERIA"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tileSources": [
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/07-1920/images/Heraldo_De_La_Mujer_07-1920_P01.jpg",
+      "buildPyramid": true
+    },
+    {
+      "type": "image",
+      "url": "objects/newspapers/Heraldo_De_La_Mujer/07-1920/images/Heraldo_De_La_Mujer_07-1920_P17.jpg",
+      "buildPyramid": true
+    }
+  ]
+}
