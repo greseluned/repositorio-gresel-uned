@@ -194,8 +194,8 @@ function parseDeepLink() {
 
   if (page && region) {
     deepLinkParams = {
-      page:     parseInt(page) - 1, // convert to 0-indexed
-      regionId: region               // this is region.id from the manifest
+      page:     parseInt(page), // keep as actual page number
+      regionId: region
     };
   }
 }
@@ -228,8 +228,10 @@ async function init() {
       if (currentPage < pages.length - 1) loadPage(currentPage + 1);
     };
 
-    const startPage = deepLinkParams ? deepLinkParams.page : 0;
-    loadPage(startPage);
+    const startPage = deepLinkParams
+      ? pages.findIndex(p => p.page === deepLinkParams.page)
+      : 0;
+    loadPage(startPage === -1 ? 0 : startPage);
 
   } catch (error) {
     console.error('Initialization error:', error);
