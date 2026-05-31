@@ -101,7 +101,7 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
         pages = []
         osd_tiles = []
 
-        for page_num, xml_file in sorted(pages_list):
+        for seq_num, (page_num, xml_file) in enumerate(sorted(pages_list), start=1):
             xml_path = os.path.join(date_folder_path, xml_file)
             image_filename = os.path.splitext(xml_file)[0] + ".jpg"
 
@@ -118,7 +118,7 @@ def process_date_folder(date_folder_path, newspaper_name, date_folder):
                 print(f"  No se pudo abrir {full_image_path}: {e}")
 
             try:
-                page_data = parse_page_xml(xml_path, image_path, page_num, actual_width, actual_height)
+                page_data = parse_page_xml(xml_path, image_path, seq_num, actual_width, actual_height)
                 pages.append(page_data)
                 osd_tiles.append({"type": "image", "url": image_path, "buildPyramid": True})
             except Exception as e:
